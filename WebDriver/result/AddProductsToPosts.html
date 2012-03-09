@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>Test Result</h1>
-<p class='attribute'><strong>Start Time:</strong> 2012-03-04 11:53:13</p>
-<p class='attribute'><strong>Duration:</strong> 10:36:21.501685</p>
-<p class='attribute'><strong>Status:</strong> Error 5</p>
+<p class='attribute'><strong>Start Time:</strong> 2012-03-09 16:46:55</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:50.192920</p>
+<p class='attribute'><strong>Status:</strong> Pass 3</p>
 
 <p class='description'>Test Report</p>
 </div>
@@ -221,230 +221,54 @@ function showOutput(id, name) {
     <td>View</td>
 </tr>
 
-<tr class='errorClass'>
-    <td>AddProductsToPosts</td>
-    <td>5</td>
+<tr class='passClass'>
+    <td>EnAddProductsToPostsVerification</td>
+    <td>1</td>
+    <td>1</td>
     <td>0</td>
     <td>0</td>
-    <td>5</td>
-    <td><a href="javascript:showClassDetail('c1',5)">Detail</a></td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
 </tr>
 
-<tr id='ft1.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_en_add_products_to_posts_verification</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
-        error</a>
-
-    <div id='div_ft1.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft1.1: Traceback (most recent call last):
-  File "/home/yueran/Zignage/seleniumTest/WebDriver/testSuites/AddProductsToPosts.py", line 116, in tearDown
-    self.assertEqual([], self.verificationErrors)
-AssertionError: Lists differ: [] != ['False is not true', 'False i...
-
-Second list contains 4 additional elements.
-First extra element 0:
-False is not true
-
-- []
-+ ['False is not true',
-+  'False is not true',
-+  'False is not true',
-+  "'Find Products/Accessories' != u'Find Product'"]
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_en_add_products_to_posts_verification</div></td>
+    <td colspan='5' align='center'>pass</td>
 </tr>
 
-<tr id='ft1.2' class='none'>
-    <td class='errorCase'><div class='testcase'>test_en_add_products_to_posts_help</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.2')" >
-        error</a>
-
-    <div id='div_ft1.2' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.2').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft1.2: Traceback (most recent call last):
-  File "/home/yueran/Zignage/seleniumTest/WebDriver/testSuites/AddProductsToPosts.py", line 73, in test_en_add_products_to_posts_help
-    driver.find_element_by_css_selector("img.exit").click()
-  File "/usr/local/lib/python2.7/dist-packages/selenium-2.20.0-py2.7.egg/selenium/webdriver/remote/webdriver.py", line 354, in find_element_by_css_selector
-    return self.find_element(by=By.CSS_SELECTOR, value=css_selector)
-  File "/usr/local/lib/python2.7/dist-packages/selenium-2.20.0-py2.7.egg/selenium/webdriver/remote/webdriver.py", line 645, in find_element
-    {'using': by, 'value': value})['value']
-  File "/usr/local/lib/python2.7/dist-packages/selenium-2.20.0-py2.7.egg/selenium/webdriver/remote/webdriver.py", line 153, in execute
-    self.error_handler.check_response(response)
-  File "/usr/local/lib/python2.7/dist-packages/selenium-2.20.0-py2.7.egg/selenium/webdriver/remote/errorhandler.py", line 147, in check_response
-    raise exception_class(message, screen, stacktrace)
-NoSuchElementException: Message: u'Unable to locate element: {"method":"css selector","selector":"img.exit"}' 
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
+<tr class='passClass'>
+    <td>EnAddProductsToPostsHelp</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
 </tr>
 
-<tr id='ft1.3' class='none'>
-    <td class='errorCase'><div class='testcase'>test_en_add_products_to_posts_help</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.3')" >
-        error</a>
-
-    <div id='div_ft1.3' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.3').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft1.3: Traceback (most recent call last):
-  File "/home/yueran/Zignage/seleniumTest/WebDriver/testSuites/AddProductsToPosts.py", line 116, in tearDown
-    self.assertEqual([], self.verificationErrors)
-AssertionError: Lists differ: [] != ["'Help' != u'Add Products To ...
-
-Second list contains 1 additional elements.
-First extra element 0:
-'Help' != u'Add Products To Posts'
-
-- []
-+ ["'Help' != u'Add Products To Posts'"]
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_en_add_products_to_posts_help</div></td>
+    <td colspan='5' align='center'>pass</td>
 </tr>
 
-<tr id='ft1.4' class='none'>
-    <td class='errorCase'><div class='testcase'>test_en_add_products_to_posts_search</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.4')" >
-        error</a>
-
-    <div id='div_ft1.4' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.4').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft1.4: Traceback (most recent call last):
-  File "/home/yueran/Zignage/seleniumTest/WebDriver/testSuites/AddProductsToPosts.py", line 87, in test_en_add_products_to_posts_search
-    driver.get(self.base_url + "/ev/addproductstoposts")
-  File "/usr/local/lib/python2.7/dist-packages/selenium-2.20.0-py2.7.egg/selenium/webdriver/remote/webdriver.py", line 165, in get
-    self.execute(Command.GET, {'url': url})
-  File "/usr/local/lib/python2.7/dist-packages/selenium-2.20.0-py2.7.egg/selenium/webdriver/remote/webdriver.py", line 151, in execute
-    response = self.command_executor.execute(driver_command, params)
-  File "/usr/local/lib/python2.7/dist-packages/selenium-2.20.0-py2.7.egg/selenium/webdriver/remote/remote_connection.py", line 280, in execute
-    return self._request(url, method=command_info[0], data=data)
-  File "/usr/local/lib/python2.7/dist-packages/selenium-2.20.0-py2.7.egg/selenium/webdriver/remote/remote_connection.py", line 321, in _request
-    response = opener.open(request)
-  File "/usr/lib/python2.7/urllib2.py", line 394, in open
-    response = self._open(req, data)
-  File "/usr/lib/python2.7/urllib2.py", line 412, in _open
-    '_open', req)
-  File "/usr/lib/python2.7/urllib2.py", line 372, in _call_chain
-    result = func(*args)
-  File "/usr/lib/python2.7/urllib2.py", line 1201, in http_open
-    return self.do_open(httplib.HTTPConnection, req)
-  File "/usr/lib/python2.7/urllib2.py", line 1174, in do_open
-    r = h.getresponse(buffering=True)
-  File "/usr/lib/python2.7/httplib.py", line 1027, in getresponse
-    response.begin()
-  File "/usr/lib/python2.7/httplib.py", line 407, in begin
-    version, status, reason = self._read_status()
-  File "/usr/lib/python2.7/httplib.py", line 371, in _read_status
-    raise BadStatusLine(line)
-BadStatusLine: ''
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
+<tr class='passClass'>
+    <td>EnAddProductsToPostsSearch</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
 </tr>
 
-<tr id='ft1.5' class='none'>
-    <td class='errorCase'><div class='testcase'>test_en_add_products_to_posts_search</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.5')" >
-        error</a>
-
-    <div id='div_ft1.5' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.5').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft1.5: Traceback (most recent call last):
-  File "/home/yueran/Zignage/seleniumTest/WebDriver/testSuites/AddProductsToPosts.py", line 115, in tearDown
-    self.driver.quit()
-  File "/usr/local/lib/python2.7/dist-packages/selenium-2.20.0-py2.7.egg/selenium/webdriver/firefox/webdriver.py", line 55, in quit
-    RemoteWebDriver.quit(self)
-  File "/usr/local/lib/python2.7/dist-packages/selenium-2.20.0-py2.7.egg/selenium/webdriver/remote/webdriver.py", line 443, in quit
-    self.execute(Command.QUIT)
-  File "/usr/local/lib/python2.7/dist-packages/selenium-2.20.0-py2.7.egg/selenium/webdriver/remote/webdriver.py", line 151, in execute
-    response = self.command_executor.execute(driver_command, params)
-  File "/usr/local/lib/python2.7/dist-packages/selenium-2.20.0-py2.7.egg/selenium/webdriver/remote/remote_connection.py", line 280, in execute
-    return self._request(url, method=command_info[0], data=data)
-  File "/usr/local/lib/python2.7/dist-packages/selenium-2.20.0-py2.7.egg/selenium/webdriver/remote/remote_connection.py", line 321, in _request
-    response = opener.open(request)
-  File "/usr/lib/python2.7/urllib2.py", line 394, in open
-    response = self._open(req, data)
-  File "/usr/lib/python2.7/urllib2.py", line 412, in _open
-    '_open', req)
-  File "/usr/lib/python2.7/urllib2.py", line 372, in _call_chain
-    result = func(*args)
-  File "/usr/lib/python2.7/urllib2.py", line 1201, in http_open
-    return self.do_open(httplib.HTTPConnection, req)
-  File "/usr/lib/python2.7/urllib2.py", line 1171, in do_open
-    raise URLError(err)
-URLError: &lt;urlopen error [Errno 111] Connection refused&gt;
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_en_add_products_to_posts_search</div></td>
+    <td colspan='5' align='center'>pass</td>
 </tr>
 
 <tr id='total_row'>
     <td>Total</td>
-    <td>5</td>
+    <td>3</td>
+    <td>3</td>
     <td>0</td>
     <td>0</td>
-    <td>5</td>
     <td>&nbsp;</td>
 </tr>
 </table>

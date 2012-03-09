@@ -6,108 +6,52 @@ from selenium.common.exceptions import NoSuchElementException
 import unittest, time, re
 import HTMLTestRunner
 from Webdriver.all_globals import *
+from Webdriver.testCase.functionalTesting.addPostsToDisplay import en_AddPostsToDisplay_contentVerification as TestCase1
+from Webdriver.testCase.functionalTesting.addPostsToDisplay import en_AddPostsToDisplay_Help as TestCase2
+from Webdriver.testCase.functionalTesting.addPostsToDisplay import en_AddPostsToDisplay_SelectADevice as TestCase3
+from Webdriver.testCase.functionalTesting.addPostsToDisplay import en_AddPostsToDisplay_IdentifyDevice as TestCase4
 
-class AddPostsToDisplay(unittest.TestCase):
-    def setUp(self):
+def setUp(self):
         gb_setUp(self)
-    
-    def test_en_add_posts_to_display_content_verification(self):
-        driver = self.driver
-        gb_login(self)
-        driver.get(self.base_url + "/ev/addpoststodisplay")
-        gb_frame(self)
-        driver.find_element_by_css_selector("span.bigDownArrow").click()
-        driver.find_element_by_xpath("//li[@id='hierarchy_storeGroup199']/div/span").click()
-        driver.find_element_by_xpath("//li[@id='hierarchy_store200']/div/span").click()
-        driver.find_element_by_xpath("//li[@id='deviceContainersCol_device28']/div/div").click()
-        driver.find_element_by_css_selector("span.bigDownArrow").click()
-        try: self.assertEqual("Add Posts To Display", driver.title)
-        except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertTrue(self.is_element_present(By.ID, "pageTitle"))
-        except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertEqual("", driver.find_element_by_css_selector("div.corporateLogo").text)
-        except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertTrue(self.is_element_present(By.ID, "welcomeTitle"))
-        except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertEqual("Logout", driver.find_element_by_xpath("//div[@id='header']/div[2]/div[2]/a/button").text)
-        except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertEqual("Choose Media Player", driver.find_element_by_css_selector("span.deviceHeader").text)
-        except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertEqual("Displays", driver.find_element_by_xpath("//div[@id='body']/div[2]/div[3]/div[2]/div").text)
-        except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertTrue(self.is_element_present(By.ID, "footer"))
-        except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertEqual("Help", driver.find_element_by_xpath("//div[@id='footer']/div").text)
-        except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertTrue(self.is_element_present(By.CSS_SELECTOR, "img"))
-        except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertEqual("Display", driver.find_element_by_css_selector("#displaysCol_display4 > div.displayContent > span").text)
-        except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertEqual("Identify Display", driver.find_element_by_css_selector("#displaysCol_display4 > button.identifyDisplay").text)
-        except AssertionError as e: self.verificationErrors.append(str(e))
-
-    def test_en_add_posts_to_display_help_content(self):
-        driver = self.driver
-        gb_login(self)
-        driver.get(self.base_url + "/ev/addpoststodisplay")
-        driver.find_element_by_xpath("//div[@id='footer']/div").click()
-        try: self.assertTrue(self.is_element_present(By.CSS_SELECTOR, "span"))
-        except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertIn(u"In Non-touchscreen media players with multiple displays attached, this section allows posts to be assigned to specific displays.", driver.find_element_by_id("helpBody").text)
-        except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertIn(u"Select a device from the Choose Media Player. All DIB(s) and all Displays attached to the media player will appear. Click on the post and drag to a display that you want the product information to be displayed on.", driver.find_element_by_id("helpBody").text)
-        except AssertionError as e: self.verificationErrors.append(str(e))
-        driver.find_element_by_css_selector("img.exit").click()
-        driver.refresh()
         
+#TestCase1: content verification
+class EnAddPostsToDisplayContentVerification(TestCase1.EnAddPostsToDisplayContentVerification):
+    def test_en_add_posts_to_display_content_verification(self):
+        TestCase1.EnAddPostsToDisplayContentVerification.test_en_add_posts_to_display_content_verification(self)
+#TestCase2: help content
+class EnAddPostsToDisplayHelpContent(TestCase2.EnAddPostsToDisplayHelpContent):
+    def test_en_add_posts_to_display_help_content(self):
+        TestCase2.EnAddPostsToDisplayHelpContent.test_en_add_posts_to_display_help_content(self)
+
+#TestCase3:Select a device
+class EnAddPostsToDisplaySelectADevice(TestCase3.EnAddPostsToDisplaySelectADevice):
     def test_en_add_posts_to_display_select_a_device(self):
-        driver = self.driver
-        gb_login(self)
-        driver.get(self.base_url + "/ev/addpoststodisplay")
-        driver.find_element_by_css_selector("span.bigDownArrow").click()
-        driver.find_element_by_xpath("//li[@id='hierarchy_storeGroup199']/div/span").click()
-        driver.find_element_by_xpath("//li[@id='hierarchy_store200']/div/span").click()
-        driver.find_element_by_xpath("//li[@id='deviceContainersCol_device28']/div/div").click()
-        driver.find_element_by_css_selector("span.bigDownArrow").click()
+        TestCase3.EnAddPostsToDisplaySelectADevice.test_en_add_posts_to_display_select_a_device(self)
 
+#TestCase4:Identify a device
+class EnAddPostsToDisplayIdentifyDevice(TestCase4.EnAddPostsToDisplayIdentifyDevice):
     def test_en_add_posts_to_display_identify_device(self):
-        driver = self.driver
-        gb_login(self)
-        driver.get(self.base_url + "/ev/addpoststodisplay")
-        driver.find_element_by_css_selector("span.bigDownArrow").click()
-        driver.find_element_by_xpath("//li[@id='hierarchy_storeGroup199']/div/span").click()
-        driver.find_element_by_xpath("//li[@id='hierarchy_store200']/div/span").click()
-        driver.find_element_by_xpath("//li[@id='deviceContainersCol_device28']/div/div").click()
-        driver.find_element_by_css_selector("span.bigDownArrow").click()
-        driver.find_element_by_css_selector("#displaysCol_display4 > button.identifyDisplay").click()
-        driver.find_element_by_id("pop-up").click()
-        try: self.assertEqual("Identifying Display", driver.find_element_by_css_selector("span").text)
-        except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertEqual("Identifying Display", driver.find_element_by_css_selector("#idDisplayInner > div > span").text)
-        except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertTrue(self.is_element_present(By.ID, "identifyDisplayProgressBar"))
-        except AssertionError as e: self.verificationErrors.append(str(e))
-        driver.find_element_by_css_selector("img.exit").click()
+        TestCase4.EnAddPostsToDisplayIdentifyDevice.test_en_add_posts_to_display_identify_device(self)
 
-    def is_element_present(self, how, what):
-        try: self.driver.find_element(by=how, value=what)
-        except NoSuchElementException, e: return False
-        return True
+def is_element_present(self, how, what):
+    try: self.driver.find_element(by=how, value=what)
+    except NoSuchElementException, e: return False
+    return True
     
-    def tearDown(self):
-        self.driver.quit()
-        self.assertEqual([], self.verificationErrors)
+def tearDown(self):
+    self.driver.quit()
+    self.assertEqual([], self.verificationErrors)
 
 if __name__ == "__main__":
     testsuite = unittest.TestSuite()
 
-    testsuite.addTest(AddPostsToDisplay("test_en_add_posts_to_display_content_verification"))
-    testsuite.addTest(AddPostsToDisplay("test_en_add_posts_to_display_help_content"))
-    testsuite.addTest(AddPostsToDisplay("test_en_add_posts_to_display_select_a_device"))
-    testsuite.addTest(AddPostsToDisplay("test_en_add_posts_to_display_identify_device"))
+    testsuite.addTest(EnAddPostsToDisplayContentVerification("test_en_add_posts_to_display_content_verification"))
+    testsuite.addTest(EnAddPostsToDisplayHelpContent("test_en_add_posts_to_display_help_content"))
+    testsuite.addTest(EnAddPostsToDisplaySelectADevice("test_en_add_posts_to_display_select_a_device"))
+    testsuite.addTest(EnAddPostsToDisplayIdentifyDevice("test_en_add_posts_to_display_identify_device"))
 
 
-    filename = '/home/zignage/seleniumTest/WebDriver/result/AddPostsToDisplay.html'
+    filename = gb_filename_prefix+'/AddPostsToDisplay.html'
     fp = file(filename,'wb')
 
     runner = HTMLTestRunner.HTMLTestRunner(

@@ -19,8 +19,8 @@ class EnSetupUsersOrGroupsFunctionUsersEditUsers(unittest.TestCase):
         except AssertionError as e: self.verificationErrors.append(str(e))
         try: self.assertNotIn(u"ccz",driver.find_element_by_id("usrBrowser").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
-        #driver.find_element_by_id("users_userOptions149").click()
-        driver.find_element_by_id("users_userOptions15").click()
+        driver.find_element_by_id("users_userOptions149").click()
+        #driver.find_element_by_id("users_userOptions15").click()
         driver.find_element_by_id("firstName").clear()
         driver.find_element_by_id("firstName").send_keys("ccz")
         driver.find_element_by_id("lastName").clear()
@@ -31,12 +31,19 @@ class EnSetupUsersOrGroupsFunctionUsersEditUsers(unittest.TestCase):
         driver.find_element_by_id("userName").send_keys("cdz")
         driver.find_element_by_id("okSingleUser").click()
         #driver.find_element_by_id("users_userOptions149").click()
+        for i in range(60):
+            try:
+                if u"ddz, ccz" == driver.find_element_by_css_selector("#users_user149 > div.userBg.itemContent > div.blockText").text: break
+            except: pass
+            time.sleep(1)
+        else: self.fail("time out")
         self.driver.implicitly_wait(30)
         try: self.assertNotIn(u"Modify",driver.find_element_by_id("usrBrowser").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
         try: self.assertIn(u"ccz",driver.find_element_by_id("usrBrowser").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
-        driver.find_element_by_id("users_userOptions15").click()
+        driver.find_element_by_id("users_userOptions149").click()
+        #driver.find_element_by_id("users_userOptions15").click()
         driver.find_element_by_id("firstName").clear()
         driver.find_element_by_id("firstName").send_keys("Modify")
         driver.find_element_by_id("lastName").clear()
