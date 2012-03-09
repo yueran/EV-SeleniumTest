@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>Test Result</h1>
-<p class='attribute'><strong>Start Time:</strong> 2012-03-02 19:54:00</p>
-<p class='attribute'><strong>Duration:</strong> 0:01:36.402306</p>
-<p class='attribute'><strong>Status:</strong> Pass 6 Error 1</p>
+<p class='attribute'><strong>Start Time:</strong> 2012-03-09 17:49:02</p>
+<p class='attribute'><strong>Duration:</strong> 0:01:48.327553</p>
+<p class='attribute'><strong>Status:</strong> Pass 5 Error 2</p>
 
 <p class='description'>Test Report</p>
 </div>
@@ -221,13 +221,13 @@ function showOutput(id, name) {
     <td>View</td>
 </tr>
 
-<tr class='errorClass'>
-    <td>EnClassifyProducts</td>
-    <td>7</td>
-    <td>6</td>
-    <td>0</td>
+<tr class='passClass'>
+    <td>EnClassifyProductsContentVerification</td>
     <td>1</td>
-    <td><a href="javascript:showClassDetail('c1',7)">Detail</a></td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
 </tr>
 
 <tr id='pt1.1' class='hiddenRow'>
@@ -235,54 +235,98 @@ function showOutput(id, name) {
     <td colspan='5' align='center'>pass</td>
 </tr>
 
-<tr id='pt1.2' class='hiddenRow'>
+<tr class='passClass'>
+    <td>EnClassifyProductsContentVerificationHelp</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_en_classify_products_content_verification_help</div></td>
     <td colspan='5' align='center'>pass</td>
 </tr>
 
-<tr id='pt1.3' class='hiddenRow'>
+<tr class='passClass'>
+    <td>EnClassifyProductsFunctionCategoryOption</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_en_classify_products_function_category_option</div></td>
     <td colspan='5' align='center'>pass</td>
 </tr>
 
-<tr id='pt1.4' class='hiddenRow'>
+<tr class='passClass'>
+    <td>EnClassifyProductsFunctionSubCategoryOption</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_en_classify_products_function_sub_option</div></td>
     <td colspan='5' align='center'>pass</td>
 </tr>
 
-<tr id='pt1.5' class='hiddenRow'>
+<tr class='passClass'>
+    <td>EnClassifyProductsFunctionKeywordOption</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_en_classify_products_function_keyword_option</div></td>
     <td colspan='5' align='center'>pass</td>
 </tr>
 
-<tr id='ft1.6' class='none'>
+<tr class='errorClass'>
+    <td>EnClassifyProductsFunctionAddElement</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
+</tr>
+
+<tr id='ft6.1' class='none'>
     <td class='errorCase'><div class='testcase'>test_en_classify_products_function_add_element</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.6')" >
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.1')" >
         error</a>
 
-    <div id='div_ft1.6' class="popup_window">
+    <div id='div_ft6.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.6').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-ft1.6: Traceback (most recent call last):
-  File "/home/zignage/seleniumTest/WebDriver/testSuites/en_ClassifyProducts", line 287, in tearDown
+ft6.1: Traceback (most recent call last):
+  File "/home/zignage/EV-SeleniumTest/WebDriver/Webdriver/testCase/functionalTesting/ClassifyProduct/en_ClassifyProducts_Function_addElement.py", line 66, in tearDown
     self.assertEqual([], self.verificationErrors)
-AssertionError: Lists differ: [] != ["'NewCat' unexpectedly found ...
+AssertionError: Lists differ: [] != ["'newSubCat' not found in u'N...
 
-Second list contains 3 additional elements.
+Second list contains 2 additional elements.
 First extra element 0:
-'NewCat' unexpectedly found in u'AddElements\nAddElementsSub\nnewSubCat\nNewKey\nDragAndDropSource\nDragAndDropTarget\nNewCat\ntest'
+'newSubCat' not found in u'NewCat\nAddElements\nDragAndDropSource\nDragAndDropTarget\ntest'
 
 - []
-+ ["'NewCat' unexpectedly found in u'AddElements\\nAddElementsSub\\nnewSubCat\\nNewKey\\nDragAndDropSource\\nDragAndDropTarget\\nNewCat\\ntest'",
-+  "'newSubCat' unexpectedly found in u'AddElements\\nAddElementsSub\\nnewSubCat\\nNewKey\\nDragAndDropSource\\nDragAndDropTarget\\nNewCat\\ntest'",
-+  "'NewKey' unexpectedly found in u'AddElements\\nAddElementsSub\\nnewSubCat\\nNewKey\\nDragAndDropSource\\nDragAndDropTarget\\nNewCat\\ntest'"]
++ ["'newSubCat' not found in u'NewCat\\nAddElements\\nDragAndDropSource\\nDragAndDropTarget\\ntest'",
++  "'NewKey' not found in u'NewCat\\nAddElements\\nDragAndDropSource\\nDragAndDropTarget\\ntest'"]
 
 
         </pre>
@@ -292,17 +336,51 @@ First extra element 0:
     </td>
 </tr>
 
-<tr id='pt1.7' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_en_classify_products_function_drag_and_drop</div></td>
-    <td colspan='5' align='center'>pass</td>
+<tr class='errorClass'>
+    <td>EnClassifyProductsFunctionDragAndDrop</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c7',1)">Detail</a></td>
+</tr>
+
+<tr id='ft7.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_en_classify_products_function_drag_and_drop</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft7.1')" >
+        error</a>
+
+    <div id='div_ft7.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft7.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft7.1: Traceback (most recent call last):
+  File "/home/zignage/EV-SeleniumTest/WebDriver/Webdriver/testSuites/en_ClassifyProducts", line 62, in test_en_classify_products_function_drag_and_drop
+    TestCase7.EnClassifyProductsFunctionDragAndDrop.test_en_classify_products_function_drag_and_drop(self)
+  File "/home/zignage/EV-SeleniumTest/WebDriver/Webdriver/testCase/functionalTesting/ClassifyProduct/en_ClassifyProducts_Function_DragAndDrop.py", line 21, in test_en_classify_products_function_drag_and_drop
+    action_chains = ActionChains(driver)
+NameError: global name 'ActionChains' is not defined
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
 </tr>
 
 <tr id='total_row'>
     <td>Total</td>
     <td>7</td>
-    <td>6</td>
+    <td>5</td>
     <td>0</td>
-    <td>1</td>
+    <td>2</td>
     <td>&nbsp;</td>
 </tr>
 </table>
