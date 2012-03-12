@@ -4,9 +4,9 @@ from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 import unittest, time, re
 import HTMLTestRunner
-from all_globals import *
+from Webdriver.all_globals import *
 #from Webdriver.testCase.login.login_loginVerification import *
-from Webdriver.testCase.login import loginVerification as loginCase
+from Webdriver.testCase.functionalTesting.login import loginVerification as loginCase
 
 
 class LoginLoginVerification(loginCase.LoginVerification):

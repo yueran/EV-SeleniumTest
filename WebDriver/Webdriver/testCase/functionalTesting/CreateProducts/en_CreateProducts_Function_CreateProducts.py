@@ -21,7 +21,7 @@ class EnCreateProductsFunctionCreateProducts(unittest.TestCase):
         #Office:
         #driver.find_element_by_css_selector("#products_category155 > div.categoryBg.itemContent > span.fold").click()
         #Home:
-        driver.find_element_by_css_selector("#products_category60 > div.categoryBg.itemContent > span.fold").click()
+        #driver.find_element_by_css_selector("#products_category60 > div.categoryBg.itemContent > span.fold").click()
         try: self.assertNotIn("testMod", driver.find_element_by_id("productSpace").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
         driver.find_element_by_id("newProduct").click()
@@ -29,7 +29,7 @@ class EnCreateProductsFunctionCreateProducts(unittest.TestCase):
         try: self.assertIn("New Product", driver.find_element_by_id("productName").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
         Select(driver.find_element_by_id("detailManufacturer")).select_by_visible_text("CreatePro")
-        Select(driver.find_element_by_id("detailCategory")).select_by_visible_text("TestCate")
+        #Select(driver.find_element_by_id("detailCategory")).select_by_visible_text("")
         driver.find_element_by_id("detailModel").clear()
         driver.find_element_by_id("detailModel").send_keys("testMod")
         driver.find_element_by_id("detailSeries").clear()
@@ -63,7 +63,7 @@ class EnCreateProductsFunctionCreateProducts(unittest.TestCase):
         driver.find_element_by_css_selector("#detailAdditionalText_bullist > span.mceIcon.mce_bullist").click()
         driver.find_element_by_css_selector("#detailAdditionalText_numlist > span.mceIcon.mce_numlist").click()
         driver.find_element_by_xpath("//div[@id='keywordsSection']/span").click()
-        Select(driver.find_element_by_id("keywordSelect0")).select_by_visible_text("test")
+        #Select(driver.find_element_by_id("keywordSelect0")).select_by_visible_text("test")
         driver.find_element_by_id("saveProduct").click()
         try: self.assertTrue(self.is_element_present(By.ID, "previewProduct"))
         except AssertionError as e: self.verificationErrors.append(str(e))
@@ -71,34 +71,10 @@ class EnCreateProductsFunctionCreateProducts(unittest.TestCase):
         except AssertionError as e: self.verificationErrors.append(str(e))
         driver.refresh()
         driver.find_element_by_css_selector("div.bigDownArrow").click()
-        driver.find_element_by_css_selector("#products_category60 > div.categoryBg.itemContent > span.fold").click()
+        #driver.find_element_by_css_selector("#products_category60 > div.categoryBg.itemContent > span.fold").click()
+        #driver.find_element_by_css_selector("#products_category155 > div.categoryBg.itemContent > span.fold").click()
         try: self.assertIn("testMod", driver.find_element_by_id("productSpace").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
-
-    def test_en_create_products_function_media_search(self):
-        driver = self.driver
-        gb_login(self)
-        driver.get(self.base_url + "/ev/createproducts")
-        try: self.assertIn("defaultBackgroundImage.jpg", driver.find_element_by_id("mediaSpace").text)
-        except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertIn("defaultSecondaryImage.jpg", driver.find_element_by_id("mediaSpace").text)
-        except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertIn("defaultLogo.png", driver.find_element_by_id("mediaSpace").text)
-        except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertIn("AVI_to_MPEG-4.avi", driver.find_element_by_id("mediaSpace").text)
-        except AssertionError as e: self.verificationErrors.append(str(e))
-        driver.find_element_by_id("mediaSearchText").clear()
-        driver.find_element_by_id("mediaSearchText").send_keys("defa")
-        driver.find_element_by_id("mediaSearchButton").click()
-        try: self.assertIn("defaultBackgroundImage.jpg", driver.find_element_by_id("mediaSpace").text)
-        except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertIn("defaultSecondaryImage.jpg", driver.find_element_by_id("mediaSpace").text)
-        except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertIn("defaultLogo.png", driver.find_element_by_id("mediaSpace").text)
-        except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertNotIn("AVI_to_MPEG-4.avi", driver.find_element_by_id("mediaSpace").text)
-        except AssertionError as e: self.verificationErrors.append(str(e))
-
     
     def is_element_present(self, how, what):
         try: self.driver.find_element(by=how, value=what)

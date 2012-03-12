@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>Test Result</h1>
-<p class='attribute'><strong>Start Time:</strong> 2012-03-09 17:49:02</p>
-<p class='attribute'><strong>Duration:</strong> 0:01:48.327553</p>
-<p class='attribute'><strong>Status:</strong> Pass 5 Error 2</p>
+<p class='attribute'><strong>Start Time:</strong> 2012-03-12 11:48:25</p>
+<p class='attribute'><strong>Duration:</strong> 0:01:51.383350</p>
+<p class='attribute'><strong>Status:</strong> Pass 7</p>
 
 <p class='description'>Test Report</p>
 </div>
@@ -291,96 +291,40 @@ function showOutput(id, name) {
     <td colspan='5' align='center'>pass</td>
 </tr>
 
-<tr class='errorClass'>
+<tr class='passClass'>
     <td>EnClassifyProductsFunctionAddElement</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
 </tr>
 
-<tr id='ft6.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_en_classify_products_function_add_element</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.1')" >
-        error</a>
-
-    <div id='div_ft6.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft6.1: Traceback (most recent call last):
-  File "/home/zignage/EV-SeleniumTest/WebDriver/Webdriver/testCase/functionalTesting/ClassifyProduct/en_ClassifyProducts_Function_addElement.py", line 66, in tearDown
-    self.assertEqual([], self.verificationErrors)
-AssertionError: Lists differ: [] != ["'newSubCat' not found in u'N...
-
-Second list contains 2 additional elements.
-First extra element 0:
-'newSubCat' not found in u'NewCat\nAddElements\nDragAndDropSource\nDragAndDropTarget\ntest'
-
-- []
-+ ["'newSubCat' not found in u'NewCat\\nAddElements\\nDragAndDropSource\\nDragAndDropTarget\\ntest'",
-+  "'NewKey' not found in u'NewCat\\nAddElements\\nDragAndDropSource\\nDragAndDropTarget\\ntest'"]
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_en_classify_products_function_add_element</div></td>
+    <td colspan='5' align='center'>pass</td>
 </tr>
 
-<tr class='errorClass'>
+<tr class='passClass'>
     <td>EnClassifyProductsFunctionDragAndDrop</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td><a href="javascript:showClassDetail('c7',1)">Detail</a></td>
 </tr>
 
-<tr id='ft7.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_en_classify_products_function_drag_and_drop</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft7.1')" >
-        error</a>
-
-    <div id='div_ft7.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft7.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft7.1: Traceback (most recent call last):
-  File "/home/zignage/EV-SeleniumTest/WebDriver/Webdriver/testSuites/en_ClassifyProducts", line 62, in test_en_classify_products_function_drag_and_drop
-    TestCase7.EnClassifyProductsFunctionDragAndDrop.test_en_classify_products_function_drag_and_drop(self)
-  File "/home/zignage/EV-SeleniumTest/WebDriver/Webdriver/testCase/functionalTesting/ClassifyProduct/en_ClassifyProducts_Function_DragAndDrop.py", line 21, in test_en_classify_products_function_drag_and_drop
-    action_chains = ActionChains(driver)
-NameError: global name 'ActionChains' is not defined
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
+<tr id='pt7.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_en_classify_products_function_drag_and_drop</div></td>
+    <td colspan='5' align='center'>pass</td>
 </tr>
 
 <tr id='total_row'>
     <td>Total</td>
     <td>7</td>
-    <td>5</td>
+    <td>7</td>
     <td>0</td>
-    <td>2</td>
+    <td>0</td>
     <td>&nbsp;</td>
 </tr>
 </table>
