@@ -5,7 +5,7 @@ from selenium.common.exceptions import NoSuchElementException
 import unittest, time, re
 from Webdriver.all_globals import *
 
-class EnStoreHierarchyContentVerification(unittest.TestCase):
+class EnStoreHierarchyHelpContentVerification(unittest.TestCase):
     def setUp(self):
         gb_setUp(self)
 
