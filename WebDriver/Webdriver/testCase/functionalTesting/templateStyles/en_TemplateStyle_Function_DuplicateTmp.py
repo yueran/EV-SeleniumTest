@@ -3,33 +3,49 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 import unittest, time, re
+from Webdriver.all_globals import *
 
 class EnTemplateStyleFunctionDuplicateTmp(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Firefox()
-        self.driver.implicitly_wait(30)
-        self.base_url = "http://192.168.1.204:8080/"
-        self.verificationErrors = []
-    
+        gb_setUp(self)
+        # delete DuplicateCopyTmp before testing
     def test_en_template_style_function_duplicate_tmp(self):
         driver = self.driver
-        # delete DuplicateCopyTmp before testing
+        gb_login(self)
         driver.get(self.base_url + "/ev/templatestyles")
-        driver.find_element_by_css_selector("div.blockText.selectedText").click()
+        driver.find_element_by_css_selector("div.bigDownArrow").click()
+        for i in range(60):
+            try:
+                if u"DuplicateTmp" == driver.find_element_by_css_selector("#templates_template466 > div.itemContent.templateBg > div.blockText").text: break
+            except: pass
+            time.sleep(1)
+        else: self.fail("time out")
+        #driver.find_element_by_css_selector("div.blockText.selectedText").click()
+        try: self.assertIn(u"DuplicateTmp", driver.find_element_by_id("templateSpace").text)
+        except AssertionError as e: self.verificationErrors.append(str(e))
+        try: self.assertNotIn(u"DuplicateCopyTmp", driver.find_element_by_id("templateSpace").text)
+        except AssertionError as e: self.verificationErrors.append(str(e))
         driver.find_element_by_css_selector("#templates_template466 > div.itemContent.templateBg > div.blockText").click()
-        # ERROR: Caught exception [ERROR: Unsupported command [isTextPresent]]
-        # ERROR: Caught exception [ERROR: Unsupported command [isTextPresent]]
+
         driver.find_element_by_id("duplicateTemplate").click()
         driver.find_element_by_id("templateEditName").clear()
         driver.find_element_by_id("templateEditName").send_keys("DuplicateCopyTmp")
         driver.find_element_by_id("createTemplate").click()
-        driver.find_element_by_css_selector("button.exit").click()
-        driver.find_element_by_css_selector("#renameTemplateOption > div.buttonStyle > button.exit").click()
+
         # ERROR: Caught exception [ERROR: Unsupported command [isTextPresent]]
         # ERROR: Caught exception [ERROR: Unsupported command [isTextPresent]]
         driver.refresh()
-        # ERROR: Caught exception [ERROR: Unsupported command [isTextPresent]]
-        # ERROR: Caught exception [ERROR: Unsupported command [isTextPresent]]
+        driver.find_element_by_css_selector("div.bigDownArrow").click()
+        for i in range(60):
+            try:
+                if u"DuplicateTmp" == driver.find_element_by_css_selector("#templates_template466 > div.itemContent.templateBg > div.blockText").text: break
+            except: pass
+            time.sleep(1)
+        else: self.fail("time out")
+        try: self.assertIn(u"DuplicateTmp", driver.find_element_by_id("templateSpace").text)
+        except AssertionError as e: self.verificationErrors.append(str(e))
+        try: self.assertIn(u"DuplicateCopyTmp", driver.find_element_by_id("templateSpace").text)
+        except AssertionError as e: self.verificationErrors.append(str(e))
     
     def is_element_present(self, how, what):
         try: self.driver.find_element(by=how, value=what)
