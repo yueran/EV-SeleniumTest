@@ -1,25 +1,34 @@
+#This test case is pending: have problem with 'double-click'
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 import unittest, time, re
+from Webdriver.all_globals import *
 
 class EnTemplateStyleFunctionModifyTmpContentLogo(unittest.TestCase):
     def setUp(self):
-        self.driver = webdriver.Firefox()
-        self.driver.implicitly_wait(30)
-        self.base_url = "http://192.168.1.204:8080/"
-        self.verificationErrors = []
+        gb_setUp(self)
     
     def test_en_template_style_function_modify_tmp_content_logo(self):
         driver = self.driver
+        gb_login(self)
         # this one is pending.
         driver.get(self.base_url + "/ev/templatestyles")
+        driver.find_element_by_css_selector("div.bigDownArrow").click()
+        for i in range(60):
+            try:
+                if u"ModifyTmp" == driver.find_element_by_css_selector("#templates_template462 > div.itemContent.templateBg > div.blockText").text: break
+            except: pass
+            time.sleep(1)
+        else: self.fail("time out")
+        driver.find_element_by_css_selector("#templates_template462 > div.itemContent.templateBg > div.blockText").click()
         try: self.assertTrue(self.is_element_present(By.ID, "logo"))
         except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertEqual("width: 136.855px;", driver.find_element_by_id("log").get_attribute("id=logo"))
-        except AssertionError as e: self.verificationErrors.append(str(e))
-        driver.find_element_by_id("logo").click()
+        #driver.double_click(id="logo")
+        #try: self.assertIn(u"Logo", driver.find_element_by_css_selector("span").text)
+        #except AssertionError as e: self.verificationErrors.append(str(e))
+        
     
     def is_element_present(self, how, what):
         try: self.driver.find_element(by=how, value=what)
