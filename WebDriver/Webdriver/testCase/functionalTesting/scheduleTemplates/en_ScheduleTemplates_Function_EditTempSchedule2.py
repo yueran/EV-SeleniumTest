@@ -1,3 +1,4 @@
+#Only start date, end date functions are tested. Functions for start time, end time, days of the week have not been tested yet.
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
@@ -9,6 +10,7 @@ class EnScheduleTemplatesFunctionEditTempSchedule2(unittest.TestCase):
     def setUp(self):
         gb_setUp(self)
  #Note the test is time sensitive. Need to adjust the testing time as time goes by.
+ #Test the start date and end date.
     def test_en_schedule_templates_function_edit_temp_schedule2(self):
         driver = self.driver
         gb_login(self)
@@ -16,7 +18,7 @@ class EnScheduleTemplatesFunctionEditTempSchedule2(unittest.TestCase):
         driver = self.driver
         gb_login(self)
         driver.get(self.base_url + "/ev/scheduletemplates")
-        try: self.assertIn(u"EditTempSchedule2", driver.find_element_by_class_name("templateColumn").text)
+        try: self.assertIn(u"EditTempSchedule2", driver.find_element_by_class_name("scheduleColumn").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
         try: self.assertTrue(self.is_element_present(By.CSS_SELECTOR,"#scheduleCol_schedule919 > div.itemContent.templateBg > span.fold"))
         except AssertionError as e: self.verificationErrors.append(str(e))
@@ -44,6 +46,15 @@ class EnScheduleTemplatesFunctionEditTempSchedule2(unittest.TestCase):
         else: self.fail("time out")
         try: self.assertEqual("04/05/2012", driver.find_element_by_id("scheduleCol_schedule919startDate").get_attribute("value"))
         except AssertionError as e: self.verificationErrors.append(str(e))
+		
+        driver.refresh()
+        driver.find_element_by_css_selector("#scheduleCol_schedule919 > div.itemContent.templateBg > span.fold").click()
+        for i in range(60):
+            try:
+                if u"Start Date:" == driver.find_element_by_css_selector("#scheduleCol_schedule919 > div.scheduleInfo > span.dateSettings > label > span").text: break
+            except: pass
+            time.sleep(1)
+        else: self.fail("time out")
         driver.find_element_by_id("scheduleCol_schedule919startDate").click()
         driver.find_element_by_link_text("1").click()
         for i in range(60):
@@ -70,6 +81,15 @@ class EnScheduleTemplatesFunctionEditTempSchedule2(unittest.TestCase):
         else: self.fail("time out")
         try: self.assertEqual("07/25/2012", driver.find_element_by_id("scheduleCol_schedule919endDate").get_attribute("value"))
         except AssertionError as e: self.verificationErrors.append(str(e))
+
+        driver.refresh()
+        driver.find_element_by_css_selector("#scheduleCol_schedule919 > div.itemContent.templateBg > span.fold").click()
+        for i in range(60):
+            try:
+                if u"End Date:" == driver.find_element_by_xpath("//li[@id='scheduleCol_schedule919']/div[2]/span/label[2]/span").text: break
+            except: pass
+            time.sleep(1)
+        else: self.fail("time out")
         driver.find_element_by_id("scheduleCol_schedule919endDate").click()
         driver.find_element_by_link_text("31").click()
         for i in range(60):
@@ -78,6 +98,7 @@ class EnScheduleTemplatesFunctionEditTempSchedule2(unittest.TestCase):
             except: pass
             time.sleep(1)
         else: self.fail("time out")
+
         try: self.assertEqual("07/31/2012", driver.find_element_by_id("scheduleCol_schedule919endDate").get_attribute("value"))
         except AssertionError as e: self.verificationErrors.append(str(e))
 

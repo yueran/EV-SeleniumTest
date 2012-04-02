@@ -13,7 +13,7 @@ class EnScheduleTemplatesFunctionEditTempSchedule1(unittest.TestCase):
         driver = self.driver
         gb_login(self)
         driver.get(self.base_url + "/ev/scheduletemplates")
-        try: self.assertIn(u"EditTmpSchedule", driver.find_element_by_class_name("templateColumn").text)
+        try: self.assertIn(u"EditTmpSchedule", driver.find_element_by_class_name("scheduleColumn").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
         try: self.assertTrue(self.is_element_present(By.CSS_SELECTOR,"#scheduleCol_schedule918 > div.itemContent.templateBg > span.fold"))
         except AssertionError as e: self.verificationErrors.append(str(e))

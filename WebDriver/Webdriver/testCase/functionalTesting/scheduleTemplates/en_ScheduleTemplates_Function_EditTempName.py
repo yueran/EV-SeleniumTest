@@ -14,9 +14,9 @@ class EnScheduleTemplatesFunctionEditTempName(unittest.TestCase):
         driver = self.driver
         gb_login(self)
         driver.get(self.base_url + "/ev/scheduletemplates")
-        try: self.assertIn(u"ModifyTmp", driver.find_element_by_class_name("templateColumn").text)
+        try: self.assertIn(u"ModifyTmp", driver.find_element_by_class_name("scheduleColumn").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertNotIn(u"SuccessModified", driver.find_element_by_class_name("templateColumn").text)
+        try: self.assertNotIn(u"SuccessModified", driver.find_element_by_class_name("scheduleColumn").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
 
         driver.find_element_by_id("scheduleCol_schedule462Options").click()
@@ -29,9 +29,9 @@ class EnScheduleTemplatesFunctionEditTempName(unittest.TestCase):
             except: pass
             time.sleep(1)
         else: self.fail("time out")
-        try: self.assertNotIn(u"ModifyTmp", driver.find_element_by_class_name("templateColumn").text)
+        try: self.assertNotIn(u"ModifyTmp", driver.find_element_by_class_name("scheduleColumn").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertIn(u"SuccessModified", driver.find_element_by_class_name("templateColumn").text)
+        try: self.assertIn(u"SuccessModified", driver.find_element_by_class_name("scheduleColumn").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
 
         driver.refresh()
@@ -41,9 +41,9 @@ class EnScheduleTemplatesFunctionEditTempName(unittest.TestCase):
             except: pass
             time.sleep(1)
         else: self.fail("time out")
-        try: self.assertNotIn(u"ModifyTmp", driver.find_element_by_class_name("templateColumn").text)
+        try: self.assertNotIn(u"ModifyTmp", driver.find_element_by_class_name("scheduleColumn").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertIn(u"SuccessModified", driver.find_element_by_class_name("templateColumn").text)
+        try: self.assertIn(u"SuccessModified", driver.find_element_by_class_name("scheduleColumn").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
         driver.find_element_by_id("scheduleCol_schedule462Options").click()
         driver.find_element_by_id("scheduleName").clear()
@@ -55,9 +55,9 @@ class EnScheduleTemplatesFunctionEditTempName(unittest.TestCase):
             except: pass
             time.sleep(1)
         else: self.fail("time out")
-        try: self.assertIn(u"ModifyTmp", driver.find_element_by_class_name("templateColumn").text)
+        try: self.assertIn(u"ModifyTmp", driver.find_element_by_class_name("scheduleColumn").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertNotIn(u"SuccessModified", driver.find_element_by_class_name("templateColumn").text)
+        try: self.assertNotIn(u"SuccessModified", driver.find_element_by_class_name("scheduleColumn").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
 
     
