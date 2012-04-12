@@ -32,19 +32,19 @@ class EnScheduleTemplatesFunctionEditTempSchedule2(unittest.TestCase):
             except: pass
             time.sleep(1)
         else: self.fail("time out")
-        try: self.assertEqual("04/01/2012", driver.find_element_by_id("scheduleCol_schedule919startDate").get_attribute("value"))
+        try: self.assertEqual("04/15/2012", driver.find_element_by_id("scheduleCol_schedule919startDate").get_attribute("value"))
         except AssertionError as e: self.verificationErrors.append(str(e))
         try: self.assertTrue(self.is_element_present(By.ID,"scheduleCol_schedule919startDate"))
         except AssertionError as e: self.verificationErrors.append(str(e))
         driver.find_element_by_id("scheduleCol_schedule919startDate").click()
-        driver.find_element_by_link_text("5").click()
+        driver.find_element_by_link_text("20").click()
         for i in range(60):
             try:
-                if u"04/05/2012" == driver.find_element_by_id("scheduleCol_schedule919startDate").get_attribute("value"): break
+                if u"04/20/2012" == driver.find_element_by_id("scheduleCol_schedule919startDate").get_attribute("value"): break
             except: pass
             time.sleep(1)
         else: self.fail("time out")
-        try: self.assertEqual("04/05/2012", driver.find_element_by_id("scheduleCol_schedule919startDate").get_attribute("value"))
+        try: self.assertEqual("04/20/2012", driver.find_element_by_id("scheduleCol_schedule919startDate").get_attribute("value"))
         except AssertionError as e: self.verificationErrors.append(str(e))
 		
         driver.refresh()
@@ -56,14 +56,14 @@ class EnScheduleTemplatesFunctionEditTempSchedule2(unittest.TestCase):
             time.sleep(1)
         else: self.fail("time out")
         driver.find_element_by_id("scheduleCol_schedule919startDate").click()
-        driver.find_element_by_link_text("1").click()
+        driver.find_element_by_link_text("15").click()
         for i in range(60):
             try:
-                if u"04/01/2012" == driver.find_element_by_id("scheduleCol_schedule919startDate").get_attribute("value"): break
+                if u"04/15/2012" == driver.find_element_by_id("scheduleCol_schedule919startDate").get_attribute("value"): break
             except: pass
             time.sleep(1)
         else: self.fail("time out")
-        try: self.assertEqual("04/01/2012", driver.find_element_by_id("scheduleCol_schedule919startDate").get_attribute("value"))
+        try: self.assertEqual("04/15/2012", driver.find_element_by_id("scheduleCol_schedule919startDate").get_attribute("value"))
         except AssertionError as e: self.verificationErrors.append(str(e))
 
         try: self.assertEqual("07/31/2012", driver.find_element_by_id("scheduleCol_schedule919endDate").get_attribute("value"))
