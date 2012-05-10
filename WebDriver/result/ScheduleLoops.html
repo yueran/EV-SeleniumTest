@@ -189,11 +189,11 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>Test Result</h1>
-<p class='attribute'><strong>Start Time:</strong> 2012-04-16 16:54:29</p>
-<p class='attribute'><strong>Duration:</strong> 0:01:01.025691</p>
-<p class='attribute'><strong>Status:</strong> Pass 5</p>
+<p class='attribute'><strong>Start Time:</strong> 2012-04-13 16:47:46</p>
+<p class='attribute'><strong>Duration:</strong> 0:02:10.743489</p>
+<p class='attribute'><strong>Status:</strong> Pass 4 Error 1</p>
 
-<p class='description'>Test Report</p>
+<p class='description'>View Network Status</p>
 </div>
 
 
@@ -222,45 +222,114 @@ function showOutput(id, name) {
 </tr>
 
 <tr class='passClass'>
-    <td>LoginLoginVerification</td>
-    <td>5</td>
-    <td>5</td>
+    <td>EnViewNetworkStatusContentVerification</td>
+    <td>1</td>
+    <td>1</td>
     <td>0</td>
     <td>0</td>
-    <td><a href="javascript:showClassDetail('c1',5)">Detail</a></td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
 </tr>
 
 <tr id='pt1.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_login_login_verification_case1</div></td>
+    <td class='none'><div class='testcase'>test_en_view_network_status_content_verification</div></td>
     <td colspan='5' align='center'>pass</td>
 </tr>
 
-<tr id='pt1.2' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_login_login_verification_case2</div></td>
+<tr class='passClass'>
+    <td>EnViewNetworkStatusContentVerificationHelp</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_en_view_network_status_content_verification_help</div></td>
     <td colspan='5' align='center'>pass</td>
 </tr>
 
-<tr id='pt1.3' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_login_login_verification_case3</div></td>
+<tr class='passClass'>
+    <td>EnViewNetworkStatusFunctionLockUnlock</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_en_view_network_status_function_lock_unlock</div></td>
     <td colspan='5' align='center'>pass</td>
 </tr>
 
-<tr id='pt1.4' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_login_login_verification_case4</div></td>
-    <td colspan='5' align='center'>pass</td>
+<tr class='errorClass'>
+    <td>EnViewNetworkStatusFunctionResetPwd</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
 </tr>
 
-<tr id='pt1.5' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_login_login_verification_case5</div></td>
+<tr id='ft4.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_en_view_network_status_function_reset_pwd</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft4.1')" >
+        error</a>
+
+    <div id='div_ft4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft4.1: Traceback (most recent call last):
+  File "/home/zignage/EV-SeleniumTest/WebDriver/Webdriver/testSuites/en_ViewNetworkStatus.py", line 35, in test_en_view_network_status_function_reset_pwd
+    TestCase4.EnViewNetworkStatusFunctionResetPwd.test_en_view_network_status_function_reset_pwd(self)
+  File "/home/zignage/EV-SeleniumTest/WebDriver/Webdriver/testCase/functionalTesting/viewNetworkStatus/en_ViewNetworkStatus_Function_ResetPwd.py", line 40, in test_en_view_network_status_function_reset_pwd
+    driver.find_element_by_css_selector("button.exit").click()
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webelement.py", line 45, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webelement.py", line 194, in _execute
+    return self._parent.execute(command, params)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 153, in execute
+    self.error_handler.check_response(response)
+  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/errorhandler.py", line 147, in check_response
+    raise exception_class(message, screen, stacktrace)
+ElementNotVisibleException: Message: u'Element is not currently visible and so may not be interacted with' 
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>EnViewNetworkStatusFunctionSearch</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_en_view_network_status_function_search</div></td>
     <td colspan='5' align='center'>pass</td>
 </tr>
 
 <tr id='total_row'>
     <td>Total</td>
     <td>5</td>
-    <td>5</td>
+    <td>4</td>
     <td>0</td>
-    <td>0</td>
+    <td>1</td>
     <td>&nbsp;</td>
 </tr>
 </table>

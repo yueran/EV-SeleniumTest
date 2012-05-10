@@ -18,10 +18,11 @@ gb_filename_prefix = '/home/zignage/EV-SeleniumTest/WebDriver/result'
 gb_manTestValue = 6
 
 def gb_setUp(self):
-    self.driver = webdriver.Firefox()
-    self.driver.implicitly_wait(30)
-    self.base_url = "http://%s:%s" %(gb_ip, gb_port)
-    self.verificationErrors = []
+	self.driver = webdriver.Firefox()
+	#self.driver = webdriver.Chrome()
+	self.driver.implicitly_wait(30)
+	self.base_url = "http://%s:%s" %(gb_ip, gb_port)
+	self.verificationErrors = []
 
 def gb_login(self):
     driver = self.driver
