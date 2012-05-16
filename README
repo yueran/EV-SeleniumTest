@@ -15,3 +15,32 @@ $ git merge upstream/master
 Check Status:
 $ git status
 
+Clone the “Spoon-Knife” project
+
+Run the following code:
+
+$ git clone git@github.com:username/Spoon-Knife.gitClones your copy of the repo into the current directory in terminal
+Configure remotes
+
+When a repo is cloned, it has a default remote called origin that points to your fork on GitHub, not the original repo it was forked from. To keep track of the original repo, you need to add another remote named upstream:
+
+More about remotes
+
+$ cd Spoon-KnifeChanges the active directory in the prompt to the newly cloned "Spoon-Knife" directory
+$ git remote add upstream git://github.com/octocat/Spoon-Knife.gitAssigns the original repo to a remote called "upstream"
+$ git fetch upstreamPulls in changes not present in your local repository, without modifying your files
+Then: More Things You Can Do
+
+You’ve successfully forked a repo, but get a load of these other cool things you can do:
+
+Push commits
+Once you’ve made some commits to a forked repo and want to push it to your forked project, you do it the same way you would with a regular repo:
+
+More about commits
+
+$ git push origin masterPushes commits to your remote repo stored on GitHub
+Pull in upstream changes
+If the original repo you forked your project from gets updated, you can add those updates to your fork by running the following code:
+
+$ git fetch upstreamFetches any new changes from the original repo
+$ git merge upstream/masterMerges any changes fetched into your working files
