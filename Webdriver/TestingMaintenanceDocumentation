@@ -1,0 +1,136 @@
+1.Purpose of this document:
+This document is to give some descriptions about how to maintain the testing script.
+
+2. Before running the testing script:
+1)Login as 'Andrew', 'Andrew';
+2)Go to 'Setup Users Or Groups' page, create user. Here I create 'yrtest'/'test'
+3)Assign user 'yrtest' to a store.
+4) Go to 'Assign Media Groups' page under 'Store Hierarchy'. Assign media devices to the store which contains user 'yrtest'
+
+#Add Products To Posts:
+1)Create a product 'abcd' in Create Product page.
+
+#Add Posts To Display:
+1)Check the id/xpath/etc for addPostsToDisplayStore, and addPostsToDisplayDevice.
+2)Update these two factors in contentMaintenance.py file under section 'AddPostsToDisplay'
+3)Update the Help content in addPostsToDisplayHelpLine1 and addPostsToDisplayHelpLine2
+4)Update the select 'identify display button' in 'addPostsToDisplayButtonIdentifyDisplay'
+
+#Upload Media:
+1)Create 'ModifyMediaGroup'
+2)Should manually delete 'CreateMediaGroup' after testing.
+
+#Classify Product:
+1)Create 'test' category before testing, update the classifyProductsCategoryId in contentMaintenance.py file.
+2)Need to delete 'newCat' 'newSubCate' and 'newKeyword' after the testing.
+
+#Create Product:
+#2)Modify Manufacture: Need to create a manufacture first named as 'ManTest'
+#3)Create product: need to delete 'testMod' after testing.
+#4)Need to create prod: 'abcd' 'xyz' for the test user, and 'InvuePro1''InvuePro2' for invueprod.
+
+#Assign Accessory:
+#1)Create an accessory first named as accessory1:
+#Update the accessory id.
+
+#Setup Users Or Groups:
+#1)User search: create user 'abcd' 'xyz' before testing.
+#2)Assign User Group:
+#3)Need to delete 'setupUsersOrGroupsNewUserGroup' after testing.
+#4)Create Duplicate User Group: DuplicateUserGroup
+#5)Need to delete user group 'DuplicateSuccess' after testing.
+#6)Need to create 'EditUserGroup' before testing.
+#7)Need to delete user 'lastName, firstName' after testing.
+#8)Need to create 'EditUser' before Testing.
+
+#StoreHierarchy:
+#1)Need to create 'companyTest' and 'storeGroupTest' before testing.
+#2)Need to delete newCompany, newStoreGroup and newStore aftertesting..
+#3)Need to delete the following after testing:
+#storeHierarchyCompanyCopy =u"companyTest - Copy (1)"
+#storeHierarchyStoreGroupCopy = u"storeGroupTest - Copy (1)"
+#storeHierarchyStoreCopy = u"test - Copy (1)"
+
+#Template Styles:
+#1)Need to delete 'CreateTmp' after testing.
+#2)Need to create templateStylesDuplicateTemp = u"DuplicateTmp" before testing...
+#3)Need to create templateStylesModifyTmp = u"ModifyTmp"
+#4)Need to create EditTmpSchedule = u"EditTmpSchedule"
+
+#Create Loops:
+#1)Need to delete: NewAttractLoop after testing.
+#2)Need to create:assignLoops before testing.
+#3)Need to create: EditNameOfLoop before testing.
+
+#################################################################################
+Preprocess:
+1.Step 1:
+1)Login as user 'andrew/andrew'
+2)Go to 'Store Hierarchy' page, create store 'Storetest'
+3)Go to 'Setup Users Or Groups' page, create user 'yrtest/test' assign it to user group 2,give all the premissions for group 2.
+4)Assign user 'yrtest' to 'Storetest'.
+5) Go to 'Assign Media Groups' page under 'Store Hierarchy'. Assign media devices to the store which contains user 'yrtest'
+Note: this step might should be manually implemented for now.
+
+2.Step 2:
+Login as user 'yrtest/test',
+1)Upload Media:
+*Create 'ModifyMediaGroup',find its id as 'uploadMediaModifyMediaGroupId'
+*Create 'TestMediaGroup', find its id as 'uploadMediaGroupID'
+*Find media with title 'MediaEditTest.avi', find its id as 'uploadMediaMediumID'
+
+2)Classify Products:
+*Create category named as 'test', find its id as 'classifyProductsCategoryId'
+*Create subcategory under category 'test' named as 'subCategoryOptions', find its id as 'classfiyProductsSubCategoryId'
+*Create keyword under category 'test' named as 'keywordOptions', find its id as 'classifyProductsKeywordId'
+
+3)Create Products:
+*Create Manufacture named as 'ManTest', find its id as 'createProductsManufactureId'
+*Create Prod1 named as 'abcd', find its id as 'createProductsProduct1ID'
+*Create Prod1 named as 'xyz', find its id as 'createProductsProduct2ID'
+*Create Acc1 named as 'acc1', find its id as 'createProductsAcc1ID'
+*Create Prod1 named as 'acc2', find its id as 'createProductsAcc2ID'
+
+4)Setup Users Or Groups:
+*Create User1:'setupUsersOrGroupsSearchUser1'fn:ab, ln:cd, email:abcd@abcd.com; Login:abcd, pwd: test/test; find its id as setupUsersOrGroupsSearchUser1ID
+*Create User2:'setupUsersOrGroupsSearchUser2' fn:xyz, ln:xyz, email:xyz@xyz.com; login: xyz, pwd:test/test; find its id as setupUsersOrGroupsSearchUser2D
+*Create User3:'setupUsersOrGroupsEditUser' fn:editUser; ln:edituser; email: editUser@test.com; login:editUser; pwd:test/test; find its id as setupUsersOrGroupsEditUserID
+*Create UserGroup:setupUsersOrGroupsDuplicateUserGroup named as 'u"DuplicateUserGroup"', find its id as setupUsersOrGroupsDuplicateUserGroupID
+*Create UserGroup:setupUsersOrGroupsEditUserGroup = u"EditUserGroup", find its id as setupUsersOrGroupsEditUserGroupID
+
+5)Store Hierarchy:
+*Create Company:
+storeHierarchyCompanyID = "28"
+storeHierarchyCompany = u"companyTest"
+storeHierarchyStoreGroupID = "27"
+storeHierarchyStoreGroup = u"storeGroupTest"
+storeHierarchyStoreID = "19"
+storeHierarchyStore = u"Storetest"
+storeHierarchyDuplicateStore = u"dStore"
+storeHierarchyDuplicateStoreID = "60"
+groupMediaPlayersAssignStoreID = "20"
+groupMediaPlayersAssignStore = "assignStore"
+
+6)Template Styles:
+templateStylesDuplicateTemp = u"DuplicateTmp"
+templateStylesDuplicateTempID = "225"
+templateStylesModifyTmp = u"ModifyTmp"
+templateStylesModifyTmpID = "227"
+EditTmpSchedule = u"EditTmpSchedule"
+EditTmpScheduleID ="74"
+
+7)Create Loops:
+assignLoops = u"assignLoops"
+assignLoopsID= "232"
+video1ID = "118"
+video1 =u"AVI_to_MPEG-4.avi"
+video2ID = "69"
+video2 = u"MediaEditTest.avi"
+EditNameOfLoop= u"EditNameOfLoop"
+EditAttractLoopID="233"
+
+
+
+
+
+
