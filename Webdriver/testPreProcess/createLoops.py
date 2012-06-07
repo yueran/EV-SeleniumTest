@@ -37,31 +37,33 @@ class createStoreHierarchy(unittest.TestCase):
         driver.find_element_by_id("loopName").clear()
         driver.find_element_by_id("loopName").send_keys(assignLoops)
         driver.find_element_by_id("attractLoopPopupOK").click()
-
-        assignLoopsId = driver.find_element_by_xpath("//ul[@class='loopList genericBrowser']/li[last()]").get_attribute("id")
-        print "assignLoopsId=\""+assignLoopsId+"\""
-        assignLoopsIdValue = re.sub("\D","",assignLoopsId)
-        print "assignLoopsIdValue=\""+assignLoopsIdValue+"\""
         driver.refresh()
 
 	driver.find_element_by_css_selector("div.createNewLoop.commonButton").click()
         driver.find_element_by_id("loopName").clear()
         driver.find_element_by_id("loopName").send_keys(editLoopSchedule)
         driver.find_element_by_id("attractLoopPopupOK").click()
-
-        editLoopScheduleId = driver.find_element_by_xpath("//ul[@class='loopList genericBrowser']/li[last()]").get_attribute("id")
-        print "editLoopScheduleId=\""+editLoopScheduleId+"\""
-        editLoopScheduleIdValue = re.sub("\D","",editLoopScheduleId)
-        print "editLoopScheduleIdValue=\""+editLoopScheduleIdValue+"\""
         driver.refresh()
-
 	driver.find_element_by_css_selector("div.createNewLoop.commonButton").click()
         driver.find_element_by_id("loopName").clear()
         driver.find_element_by_id("loopName").send_keys(editNameOfLoop)
         driver.find_element_by_id("attractLoopPopupOK").click()
+        driver.refresh()
 
-        editNameOfLoopId = driver.find_element_by_xpath("//ul[@class='loopList genericBrowser']/li[last()]").get_attribute("id")
-        print "editNameOfLoopId=\""+editNameOfLoopId+"\""
+        assignLoopsId = driver.find_element_by_xpath("//ul[@class='loopList genericBrowser']/li[1]").get_attribute("id")
+#        print "assignLoopsId=\""+assignLoopsId+"\""
+        assignLoopsIdValue = re.sub("\D","",assignLoopsId)
+        print "assignLoopsIdValue=\""+assignLoopsIdValue+"\""
+
+
+        editLoopScheduleId = driver.find_element_by_xpath("//ul[@class='loopList genericBrowser']/li[2]").get_attribute("id")
+#        print "editLoopScheduleId=\""+editLoopScheduleId+"\""
+        editLoopScheduleIdValue = re.sub("\D","",editLoopScheduleId)
+        print "editLoopScheduleIdValue=\""+editLoopScheduleIdValue+"\""
+        driver.refresh()
+
+        editNameOfLoopId = driver.find_element_by_xpath("//ul[@class='loopList genericBrowser']/li[3]").get_attribute("id")
+#        print "editNameOfLoopId=\""+editNameOfLoopId+"\""
         editNameOfLoopIdValue = re.sub("\D","",editNameOfLoopId)
         print "editNameOfLoopIdValue=\""+editNameOfLoopIdValue+"\""
         driver.refresh()

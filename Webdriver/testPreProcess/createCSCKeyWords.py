@@ -59,13 +59,13 @@ class createCSCKeywords(unittest.TestCase):
         driver.find_element_by_id("okAddKeywordValue").click()
         driver.find_element_by_id("okKeyword").click()
         
-        classifyProductsCategoryId = driver.find_element_by_xpath("//ul[@id='categoryBrowser']/li[last()]").get_attribute("id")
-        print "classifyProductsCategoryId="+classifyProductsCategoryId
-        classifyProductsCategoryIdValue = re.sub("\D","",classifyProductsCategoryId)
-        print "classifyProductsCategoryIdValue="+classifyProductsCategoryIdValue
 #Verify if the Category, Subcategory and keyword successfully created by checking the name.
         self.driver.implicitly_wait(30)
         driver.refresh()
+        classifyProductsCategoryId = driver.find_element_by_xpath("//ul[@id='categoryBrowser']/li[1]").get_attribute("id")
+#        print "classifyProductsCategoryId="+classifyProductsCategoryId
+        classifyProductsCategoryIdValue = re.sub("\D","",classifyProductsCategoryId)
+        print "classifyProductsCategoryIdValue=\""+classifyProductsCategoryIdValue+"\""
         driver.find_element_by_xpath("//li[@id='categoryCol_category"+classifyProductsCategoryIdValue+"']/div/span").click()
         #self.driver.implicitly_wait(30)
 #False Negative, test it manually!!
@@ -76,8 +76,21 @@ class createCSCKeywords(unittest.TestCase):
         try: self.assertIn(classifyProductsKeyword, driver.find_element_by_id("categoryBrowser").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
         print "Please record the ids for classifyProductsKeyword,classifyProductsCategory and classifyProductsSubCategory in ids.py"
+#########################################################################################################################################3
+        classifyProductsCategoryId = driver.find_element_by_xpath("//ul[@id='categoryBrowser']/li[1]").get_attribute("id")
+#        print "classifyProductsCategoryId="+classifyProductsCategoryId
+        classifyProductsCategoryIdValue = re.sub("\D","",classifyProductsCategoryId)
+        print "classifyProductsCategoryIdValue=\""+classifyProductsCategoryIdValue+"\""
 
+        classifyProductsSubCategoryId = driver.find_element_by_xpath("//ul[@id='categoryBrowser']/li[1]/ul[1]/li").get_attribute("id")
+#        print "classifyProductsCategoryId="+classifyProductsCategoryId
+        classifyProductsSubCategoryIdValue = re.sub("\D","",classifyProductsSubCategoryId)
+        print "classifyProductsSubCategoryIdValue=\""+classifyProductsSubCategoryIdValue+"\""
 
+        classifyProductsKeywordId = driver.find_element_by_xpath("//ul[@id='categoryBrowser']/li[1]/ul[2]/li").get_attribute("id")
+#        print "classifyProductsKeywordId="+classifyProductsKeywordId
+        classifyProductsKeywordIdValue = re.sub("\D","",classifyProductsKeywordId)
+        print "classifyProductsKeywordIdValue=\""+classifyProductsKeywordIdValue+"\""
     def is_element_present(self, how, what):
         try: self.driver.find_element(by=how, value=what)
         except NoSuchElementException, e: return False

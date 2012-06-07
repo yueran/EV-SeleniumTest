@@ -72,37 +72,8 @@ class createTestUser(unittest.TestCase):
         driver.find_element_by_id("okSingleUser").click()
         driver.refresh()
 
-        editUserId = driver.find_element_by_xpath("//ul[@id='usrBrowser']//li[last()]").get_attribute("id")
-        print "editUserId=\""+editUserId+"\""
-        editUserIdValue = re.sub("\D","",editUserId)
-        print "editUserIdValue=\""+editUserIdValue+"\""
+
     #####################################################################################################
-    #Create test user group:
-        driver.find_element_by_css_selector("div.createNewUserGroup.commonButton").click()
-        driver.find_element_by_id("userGroupName").clear()
-        driver.find_element_by_id("userGroupName").send_keys(userGroupName)
-        driver.find_element_by_id("okUserGroupOptions").click()
-        self.driver.implicitly_wait(30)
-        driver.refresh()
-        try: self.assertIn(userGroupName,driver.find_element_by_class_name("userGroupColumn").text)
-        except AssertionError as e: self.verificationErrors.append(str(e))
-
-        testUserGroupId = driver.find_element_by_xpath("//ul[@class='userGroupList genericBrowser']/li[last()]").get_attribute("id")
-        print "testUserGroupId="+testUserGroupId
-        testUserGroupIdValue = re.sub("\D","",testUserGroupId)
-        print "testUserGroupIdValue=\""+testUserGroupIdValue+"\""
-
-        for i in range(60):
-            try:
-                if userGroupName == driver.find_element_by_xpath("//li[@id='userGroup_userGroup"+testUserGroupIdValue+"']/div/div[2]").text: break
-            except: pass
-            time.sleep(1)
-        else: self.fail("time out")
-
-
-        try: self.assertIn(userGroupName, driver.find_element_by_class_name("userGroupList").text)
-        except AssertionError as e: self.verificationErrors.append(str(e))
-        print "Please record the testUserId, testUserIdValue, testUserGroupId and testUserGroupIdValue in the ids.py."
 
 ###DuplicateUserGroup
         driver.find_element_by_css_selector("div.createNewUserGroup.commonButton").click()
@@ -114,11 +85,6 @@ class createTestUser(unittest.TestCase):
         try: self.assertIn(userGroupName,driver.find_element_by_class_name("userGroupColumn").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
 
-        duplicateUserGroupId = driver.find_element_by_xpath("//ul[@class='userGroupList genericBrowser']/li[last()]").get_attribute("id")
-        print "duplicateUserGroupId="+duplicateUserGroupId
-        duplicateUserGroupIdValue = re.sub("\D","",duplicateUserGroupId)
-        print "duplicateUserGroupIdValue=\""+duplicateUserGroupIdValue+"\""
-
 ###EditUserGroup
         driver.find_element_by_css_selector("div.createNewUserGroup.commonButton").click()
         driver.find_element_by_id("userGroupName").clear()
@@ -129,8 +95,18 @@ class createTestUser(unittest.TestCase):
         try: self.assertIn(userGroupName,driver.find_element_by_class_name("userGroupColumn").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
 
-        editUserGroupId = driver.find_element_by_xpath("//ul[@class='userGroupList genericBrowser']/li[last()]").get_attribute("id")
-        print "editUserGroupId="+editUserGroupId
+
+#########################################################################################################################
+        editUserId = driver.find_element_by_xpath("//ul[@id='usrBrowser']//li[2]").get_attribute("id")
+#        print "editUserId=\""+editUserId+"\""
+        editUserIdValue = re.sub("\D","",editUserId)
+        print "editUserIdValue=\""+editUserIdValue+"\""
+        duplicateUserGroupId = driver.find_element_by_xpath("//ul[@class='userGroupList genericBrowser']/li[1]").get_attribute("id")
+#        print "duplicateUserGroupId="+duplicateUserGroupId
+        duplicateUserGroupIdValue = re.sub("\D","",duplicateUserGroupId)
+        print "duplicateUserGroupIdValue=\""+duplicateUserGroupIdValue+"\""
+        editUserGroupId = driver.find_element_by_xpath("//ul[@class='userGroupList genericBrowser']/li[2]").get_attribute("id")
+#        print "editUserGroupId="+editUserGroupId
         editUserGroupIdValue = re.sub("\D","",editUserGroupId)
         print "editUserGroupIdValue=\""+editUserGroupIdValue+"\""
 

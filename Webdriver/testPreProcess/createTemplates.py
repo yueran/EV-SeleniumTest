@@ -41,10 +41,6 @@ class createStoreHierarchy(unittest.TestCase):
         driver.find_element_by_id("touchPopup").click()
         driver.find_element_by_id("createTemplate").click()
 
-        editTmpScheduleId = driver.find_element_by_xpath("//ul[@id='templateBrowser']/li[last()]").get_attribute("id")
-        print "editTmpScheduleId=\""+editTmpScheduleId+"\""
-        editTmpScheduleIdValue = re.sub("\D","",editTmpScheduleId)
-        print "editTmpScheduleValue=\""+editTmpScheduleIdValue+"\""
         driver.refresh()
 
         driver.find_element_by_id("newTemplate").click()
@@ -55,11 +51,6 @@ class createStoreHierarchy(unittest.TestCase):
         driver.find_element_by_id("touchPopup").click()
         driver.find_element_by_id("createTemplate").click()
 
-        duplicateTmpId = driver.find_element_by_xpath("//ul[@id='templateBrowser']/li[last()]").get_attribute("id")
-        print "duplicateTmpId=\""+duplicateTmpId+"\""
-        duplicateTmpIdValue = re.sub("\D","",duplicateTmpId)
-        print "duplicateTmpIdValue="+duplicateTmpIdValue
-
         driver.find_element_by_id("newTemplate").click()
 
         driver.find_element_by_id("templateEditName").clear()
@@ -68,8 +59,20 @@ class createStoreHierarchy(unittest.TestCase):
         driver.find_element_by_id("touchPopup").click()
         driver.find_element_by_id("createTemplate").click()
 
-        modifyTmpId = driver.find_element_by_xpath("//ul[@id='templateBrowser']/li[last()]").get_attribute("id")
-        print "modifyTmp=\""+modifyTmp+"\""
+        driver.refresh()
+
+        duplicateTmpId = driver.find_element_by_xpath("//ul[@id='templateBrowser']/li[1]").get_attribute("id")
+#        print "duplicateTmpId=\""+duplicateTmpId+"\""
+        duplicateTmpIdValue = re.sub("\D","",duplicateTmpId)
+        print "duplicateTmpIdValue=\""+duplicateTmpIdValue+"\""
+        
+        editTmpScheduleId = driver.find_element_by_xpath("//ul[@id='templateBrowser']/li[2]").get_attribute("id")
+#        print "editTmpScheduleId=\""+editTmpScheduleId+"\""
+        editTmpScheduleIdValue = re.sub("\D","",editTmpScheduleId)
+        print "editTmpScheduleValue=\""+editTmpScheduleIdValue+"\""
+
+        modifyTmpId = driver.find_element_by_xpath("//ul[@id='templateBrowser']/li[3]").get_attribute("id")
+#        print "modifyTmp=\""+modifyTmp+"\""
         modifyTmpIdValue = re.sub("\D","",modifyTmpId)
         print "modifyTmpIdValue=\""+modifyTmpIdValue+"\""
 

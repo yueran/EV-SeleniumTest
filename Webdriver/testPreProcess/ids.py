@@ -14,18 +14,18 @@ userPassword = "test"
 userPasswordRepeat = "test"
 userGroupName = "ztestUserGroup"
 
-searchUserFirstName = u"zab"
-searchUserLastName = u"zcd"
-searchUserEmailAdd = u"zabcd@abcd.com"
-searchUserName = u"zabcd"
+searchUserFirstName = u"1ab"
+searchUserLastName = u"1cd"
+searchUserEmailAdd = u"1abcd@abcd.com"
+searchUserName = u"1abcd"
 
-editUserFirstName = u"zeditUser"
-editUserLastName = u"zeditUser"
-editUserEmailAdd = u"zeditUser@test.com"
-editUserName = u"zeditUser"
+editUserFirstName = u"1editUser"
+editUserLastName = u"1editUser"
+editUserEmailAdd = u"1editUser@test.com"
+editUserName = u"1editUser"
 
-duplicateUserGroup = u"zduplicateUserGroup"
-editUserGroup = u"zeditUserGroup"
+duplicateUserGroup = u"1duplicateUserGroup"
+editUserGroup = u"2editUserGroup"
 #*****************************************************************
 #createStuffs.py
 ModifyMediaGroup = u"ModifyMediaGroup"
@@ -43,20 +43,20 @@ classifyProductsKeyword = u"keywordOptions"
 classfiyProductsSubCategory = u"subCategoryOptions"
 
 #********************************************************************
-testProduct1 = u"atestProduct1"
-testProduct2 = u"atestProduct2"
-testAcc1 = u"atestzAcc1"
-testAcc2 = u"atestzAcc2"
+testProduct1 = u"1testProduct1"
+testProduct2 = u"2testProduct2"
+testAcc1 = u"3testzAcc1"
+testAcc2 = u"4testzAcc2"
 
 #*****************************************************
-duplicateTmp = u"zDuplicateTmp"
-editTmpSchedule = u"zeditTmpSchedule"
-modifyTmp = u"zmodifyTmp"
+duplicateTmp = u"1DuplicateTmp"
+editTmpSchedule = u"2editTmpSchedule"
+modifyTmp = u"3modifyTmp"
 
 #******************************************************
-assignLoops = u"zassignLoops"
-editLoopSchedule = u"zeditLoopSchedule"
-editNameOfLoop = u"editNameOfLoop"
+assignLoops = u"1assignLoops"
+editLoopSchedule = u"2editLoopSchedule"
+editNameOfLoop = u"3editNameOfLoop"
 
 #########################################################
 #Update the data here:
@@ -81,33 +81,30 @@ TestMediaGroupIdValue = "403"
 uploadMediaMediumID = "69"
 
 #Step5:Run createCSCKeyWords.py, record the following data:
-classifyProductsCategoryId = "409"
-classifyProductsKeywordId = "410"
-classfiyProductsSubCategoryId = "411"
+classifyProductsCategoryIdValue="504"
+classifyProductsSubCategoryIdValue="505"
+classifyProductsKeywordIdValue="506"
 
 #Step 6: Run createProducts.py, record the following data:
-testProduct1IdValue="422"
-testProduct1IdValue="423"
-testAcc1IdValue="424"
-testAcc2IdValue="425"
+testProduct1IdValue="491"
+testProduct2IdValue="492"
+testAcc1IdValue="97"
+testAcc2IdValue="98"
 
 #Step 7: Run createUsersAndGroups, record the following data:
-editUserIdValue="221"
-duplicateUserGroupIdValue=""
-editUserGroupIdValue=""
+editUserIdValue="233"
+duplicateUserGroupIdValue="234"
+editUserGroupIdValue="235"
 
 #Step 8: Run createTemplates,py record the following data:
-editTmpScheduleValue="391"
-duplicateTmpIdValue="434"
-modifyTmpIdValue="434"
+duplicateTmpIdValue="481"
+editTmpScheduleValue="480"
+modifyTmpIdValue="482"
 
 #Step 9: Run createLoops.py record the following data:
-assignLoopsId="aLCol_attractLoop385"
-assignLoopsIdValue="440"
-editLoopScheduleId="aLCol_attractLoop440"
-editLoopScheduleIdValue="441"
-editNameOfLoopId="aLCol_attractLoop441"
-editNameOfLoopIdValue="442"
+assignLoopsIdValue="471"
+editLoopScheduleIdValue="472"
+editNameOfLoopIdValue="473"
 
 
 

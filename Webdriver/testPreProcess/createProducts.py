@@ -47,10 +47,6 @@ class createStoreHierarchy(unittest.TestCase):
         driver.find_element_by_id("detailModel").send_keys(testProduct1)
         driver.find_element_by_id("detailSeries").clear()
         driver.find_element_by_id("saveProduct").click()
-        driver.find_element_by_css_selector("div.bigDownArrow").click()
-        testProduct1Id = driver.find_element_by_xpath("//ul[@id='productBrowser']/li[1]").get_attribute("id")
-        testProduct1IdValue = re.sub("\D","",testProduct1Id)
-        print "testProduct1IdValue=\""+ testProduct1IdValue+"\""
 
         driver.refresh()
         driver.find_element_by_id("newProduct").click()
@@ -60,14 +56,9 @@ class createStoreHierarchy(unittest.TestCase):
         Select(driver.find_element_by_id("detailManufacturer")).select_by_visible_text("test")
         #Select(driver.find_element_by_id("detailCategory")).select_by_visible_text("")
         driver.find_element_by_id("detailModel").clear()
-        driver.find_element_by_id("detailModel").send_keys(testAcc1)
+        driver.find_element_by_id("detailModel").send_keys(testProduct2)
         driver.find_element_by_id("detailSeries").clear()
         driver.find_element_by_id("saveProduct").click()
-        driver.find_element_by_css_selector("div.bigDownArrow").click()
-        testAcc1Id = driver.find_element_by_xpath("//ul[@id='productBrowser']/li[1]").get_attribute("id")
-        testAcc1IdValue = re.sub("\D","",testAcc1Id)
-        print "testProduct1IdValue=\""+ testAcc1IdValue+"\""
-
 
         driver.refresh()
         driver.find_element_by_id("newProduct").click()
@@ -80,10 +71,6 @@ class createStoreHierarchy(unittest.TestCase):
         driver.find_element_by_id("detailModel").send_keys(testAcc1)
         driver.find_element_by_id("detailSeries").clear()
         driver.find_element_by_id("saveProduct").click()
-        driver.find_element_by_css_selector("div.bigDownArrow").click()
-        testAcc1Id = driver.find_element_by_xpath("//ul[@id='productBrowser']/li[1]").get_attribute("id")
-        testAcc1IdValue = re.sub("\D","",testAcc1Id)
-        print "testAcc1IdValue=\""+ testAcc1IdValue+"\""
 
         driver.refresh()
         driver.find_element_by_id("newProduct").click()
@@ -96,8 +83,22 @@ class createStoreHierarchy(unittest.TestCase):
         driver.find_element_by_id("detailModel").send_keys(testAcc2)
         driver.find_element_by_id("detailSeries").clear()
         driver.find_element_by_id("saveProduct").click()
+        driver.refresh()
+####################################################################################################################
         driver.find_element_by_css_selector("div.bigDownArrow").click()
-        testAcc2Id = driver.find_element_by_xpath("//ul[@id='productBrowser']/li[1]").get_attribute("id")
+        testProduct1Id = driver.find_element_by_xpath("//ul[@id='productBrowser']/li[1]").get_attribute("id")
+        testProduct1IdValue = re.sub("\D","",testProduct1Id)
+        print "testProduct1IdValue=\""+ testProduct1IdValue+"\""
+
+        testProduct2Id = driver.find_element_by_xpath("//ul[@id='productBrowser']/li[2]").get_attribute("id")
+        testProduct2IdValue = re.sub("\D","",testProduct2Id)
+        print "testProduct2IdValue=\""+ testProduct2IdValue+"\""
+
+        testAcc1Id = driver.find_element_by_xpath("//ul[@id='productBrowser']/li[3]").get_attribute("id")
+        testAcc1IdValue = re.sub("\D","",testAcc1Id)
+        print "testAcc1IdValue=\""+ testAcc1IdValue+"\""
+
+        testAcc2Id = driver.find_element_by_xpath("//ul[@id='productBrowser']/li[4]").get_attribute("id")
         testAcc2IdValue = re.sub("\D","",testAcc2Id)
         print "testAcc2IdValue=\""+ testAcc2IdValue+"\""
 
