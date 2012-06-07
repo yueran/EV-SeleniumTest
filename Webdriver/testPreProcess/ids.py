@@ -28,15 +28,15 @@ duplicateUserGroup = u"1duplicateUserGroup"
 editUserGroup = u"2editUserGroup"
 #*****************************************************************
 #createStuffs.py
-ModifyMediaGroup = u"ModifyMediaGroup"
-TestMediaGroup =u"TestMediaGroup"
+ModifyMediaGroup = u"1ModifyMediaGroup"
+TestMediaGroup =u"2TestMediaGroup"
 #*****************************************************************
 #store Hierarchy:
-companyTest = u"companyTest"
-storeGroupTest = u"storeGroupTest"
-storeTest = u"storeTest"
-dStore = u"dStore"
-assignStore = u"assignStore"
+companyTest = u"1companyTest"
+storeGroupTest = u"2storeGroupTest"
+storeTest = u"3storeTest"
+dStore = u"4dStore"
+assignStore = u"5assignStore"
 #******************************************************************
 classifyProductsCategory = u"test"
 classifyProductsKeyword = u"keywordOptions"
@@ -62,22 +62,22 @@ editNameOfLoop = u"3editNameOfLoop"
 #Update the data here:
 #data from createTestUser.py
 #Step 1: run createTestUser.py, record the following data; assgin userName to userGroupName;
-testUserIdValue = "205"
-testUserGroupIdValue = "206"
+testUserGroupIdValue="246"
+testUserIdValue="245"
 
 #Step 2: Run assignPermissions.py
 
 #Step 3: Run createStoreHierarchy.py, record the following data, assign userGroupName to storeTest;
 #data from createStuffs.py
-companyTestIdValue= "127"
-storeGroupTestIdValue = "128"
-storeTestIdValue = "129"
-dStoreIdValue = "130"
-assignStoreIdValue ="131"
+companyTestIdValue="142"
+storeGroupTestIdValue="143"
+storeTestIdValue="144"
+dStoreIdValue="145"
+assignStoreIdValue="146"
 
 #Step 4: Run createMedia.py, record the following data.; Assign MediaEditTest.avi to TestMediaGroup
-ModifyMediaGroupIdValue= "402"
-TestMediaGroupIdValue = "403"
+ModifyMediaGroupIdValue= "513"
+TestMediaGroupIdValue= "514"
 uploadMediaMediumID = "69"
 
 #Step5:Run createCSCKeyWords.py, record the following data:

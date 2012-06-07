@@ -54,64 +54,18 @@ class createTestUser(unittest.TestCase):
         driver.find_element_by_id("okSingleUser").click()
 
 
-        testUserId = driver.find_element_by_xpath("//ul[@id='usrBrowser']//li[last()]").get_attribute("id")
-        print "testUserId="+testUserId
-        testUserIdValue = re.sub("\D","",testUserId)
-        print "testUserIdValue="+testUserIdValue
-
-        for i in range(60):
-            try:
-                if userLastName+", "+userFirstName == driver.find_element_by_xpath("//li[@id='users_user"+testUserIdValue +"']/div/div[2]").text: break
-            except: pass
-            time.sleep(1)
-        else: self.fail("time out")
-
-
-        try: self.assertIn(userLastName+", "+userFirstName, driver.find_element_by_id("usrBrowser").text)
-        except AssertionError as e: self.verificationErrors.append(str(e))
+#        for i in range(60):
+#            try:
+#                if userLastName+", "+userFirstName == driver.find_element_by_xpath("//li[@id='users_user"+testUserIdValue +"']/div/div[2]").text: break
+#            except: pass
+#            time.sleep(1)
+#        else: self.fail("time out")
+#
+#
+#        try: self.assertIn(userLastName+", "+userFirstName, driver.find_element_by_id("usrBrowser").text)
+#        except AssertionError as e: self.verificationErrors.append(str(e))
 
 
-######create other test user:
-
-        driver.find_element_by_css_selector("div.createNewUser.commonButton").click()
-        driver.find_element_by_id("firstName").clear()
-        driver.find_element_by_id("firstName").send_keys(searchUserFirstName)
-        driver.find_element_by_id("lastName").clear()
-        driver.find_element_by_id("lastName").send_keys(searchUserLastName)
-        driver.find_element_by_id("email").clear()
-        driver.find_element_by_id("email").send_keys(searchUserEmailAdd)
-        driver.find_element_by_id("userName").clear()
-        driver.find_element_by_id("userName").send_keys(searchUserName)
-        driver.find_element_by_id("password").clear()
-        driver.find_element_by_id("password").send_keys(userPassword)
-        driver.find_element_by_id("repeatPassword").clear()
-        driver.find_element_by_id("repeatPassword").send_keys(userPasswordRepeat)
-        driver.find_element_by_id("okSingleUser").click()
-
-
-#####edit user:
-
-
-        driver.find_element_by_css_selector("div.createNewUser.commonButton").click()
-        driver.find_element_by_id("firstName").clear()
-        driver.find_element_by_id("firstName").send_keys(editUserFirstName)
-        driver.find_element_by_id("lastName").clear()
-        driver.find_element_by_id("lastName").send_keys(editUserLastName)
-        driver.find_element_by_id("email").clear()
-        driver.find_element_by_id("email").send_keys(editUserEmailAdd)
-        driver.find_element_by_id("userName").clear()
-        driver.find_element_by_id("userName").send_keys(editUserName)
-        driver.find_element_by_id("password").clear()
-        driver.find_element_by_id("password").send_keys(userPassword)
-        driver.find_element_by_id("repeatPassword").clear()
-        driver.find_element_by_id("repeatPassword").send_keys(userPasswordRepeat)
-        driver.find_element_by_id("okSingleUser").click()
-
-
-        testUserId = driver.find_element_by_xpath("//ul[@id='usrBrowser']//li[last()]").get_attribute("id")
-        print "editUserId=\""+testUserId+"\""
-        testUserIdValue = re.sub("\D","",editUserId)
-        print "editUserIdValue=\""+editUserIdValue+"\""
     #####################################################################################################
     #Create test user group:
         driver.find_element_by_css_selector("div.createNewUserGroup.commonButton").click()
@@ -120,55 +74,27 @@ class createTestUser(unittest.TestCase):
         driver.find_element_by_id("okUserGroupOptions").click()
         self.driver.implicitly_wait(30)
         driver.refresh()
-        try: self.assertIn(userGroupName,driver.find_element_by_class_name("userGroupColumn").text)
-        except AssertionError as e: self.verificationErrors.append(str(e))
+        driver.get(self.base_url + "/ev/setupusersorgroups")
+#        try: self.assertIn(userGroupName,driver.find_element_by_class_name("userGroupColumn").text)
+#        except AssertionError as e: self.verificationErrors.append(str(e))
 
-        testUserGroupId = driver.find_element_by_xpath("//ul[@class='userGroupList genericBrowser']/li[last()]").get_attribute("id")
-        print "testUserGroupId="+testUserGroupId
-        testUserGroupIdValue = re.sub("\D","",testUserGroupId)
-        print "testUserGroupIdValue=\""+testUserGroupIdValue+"\""
+#        testUserGroupId = driver.find_element_by_xpath("//ul[@class='userGroupList genericBrowser']/li[last()]").get_attribute("id")
+#        print "testUserGroupId="+testUserGroupId
+#        testUserGroupIdValue = re.sub("\D","",testUserGroupId)
+#        print "testUserGroupIdValue=\""+testUserGroupIdValue+"\""
 
-        for i in range(60):
-            try:
-                if userGroupName == driver.find_element_by_xpath("//li[@id='userGroup_userGroup"+testUserGroupIdValue+"']/div/div[2]").text: break
-            except: pass
-            time.sleep(1)
-        else: self.fail("time out")
+#        for i in range(60):
+#            try:
+#                if userGroupName == driver.find_element_by_xpath("//li[@id='userGroup_userGroup"+testUserGroupIdValue+"']/div/div[2]").text: break
+#            except: pass
+#            time.sleep(1)
+#        else: self.fail("time out")
 
-
-        try: self.assertIn(userGroupName, driver.find_element_by_class_name("userGroupList").text)
-        except AssertionError as e: self.verificationErrors.append(str(e))
+#
+#        try: self.assertIn(userGroupName, driver.find_element_by_class_name("userGroupList").text)
+#        except AssertionError as e: self.verificationErrors.append(str(e))
         print "Please record the testUserId, testUserIdValue, testUserGroupId and testUserGroupIdValue in the ids.py."
 
-###DuplicateUserGroup
-        driver.find_element_by_css_selector("div.createNewUserGroup.commonButton").click()
-        driver.find_element_by_id("userGroupName").clear()
-        driver.find_element_by_id("userGroupName").send_keys(duplicateUserGroup)
-        driver.find_element_by_id("okUserGroupOptions").click()
-        self.driver.implicitly_wait(30)
-        driver.refresh()
-        try: self.assertIn(userGroupName,driver.find_element_by_class_name("userGroupColumn").text)
-        except AssertionError as e: self.verificationErrors.append(str(e))
-
-        duplicateUserGroupId = driver.find_element_by_xpath("//ul[@class='userGroupList genericBrowser']/li[last()]").get_attribute("id")
-        print "duplicateUserGroupId="+duplicateUserGroupId
-        duplicateUserGroupIdValue = re.sub("\D","",duplicateUserGroupId)
-        print "duplicateUserGroupIdValue=\""+duplicateUserGroupIdValue+"\""
-
-###EditUserGroup
-        driver.find_element_by_css_selector("div.createNewUserGroup.commonButton").click()
-        driver.find_element_by_id("userGroupName").clear()
-        driver.find_element_by_id("userGroupName").send_keys(editUserGroup)
-        driver.find_element_by_id("okUserGroupOptions").click()
-        self.driver.implicitly_wait(30)
-        driver.refresh()
-        try: self.assertIn(userGroupName,driver.find_element_by_class_name("userGroupColumn").text)
-        except AssertionError as e: self.verificationErrors.append(str(e))
-
-        duplicateUserGroupId = driver.find_element_by_xpath("//ul[@class='userGroupList genericBrowser']/li[last()]").get_attribute("id")
-        print "editUserGroupId="+editUserGroupId
-        editUserGroupIdValue = re.sub("\D","",editUserGroupId)
-        print "editUserGroupIdValue=\""+editUserGroupIdValue+"\""
 
 #######################################################################################################################################################
     #Assign user to user Groups:
@@ -203,7 +129,15 @@ class createTestUser(unittest.TestCase):
 ##        action_chains.perform()
 #################################################################################################################3
 #
+        testUserGroupId = driver.find_element_by_xpath("//ul[@class='userGroupList genericBrowser']/li[last()]").get_attribute("id")
+#        print "testUserGroupId="+testUserGroupId
+        testUserGroupIdValue = re.sub("\D","",testUserGroupId)
+        print "testUserGroupIdValue=\""+testUserGroupIdValue+"\""
 
+        testUserId = driver.find_element_by_xpath("//ul[@id='usrBrowser']//li[last()]").get_attribute("id")
+#        print "testUserId="+testUserId
+        testUserIdValue = re.sub("\D","",testUserId)
+        print "testUserIdValue=\""+testUserIdValue+"\""
 
 
     def is_element_present(self, how, what):

@@ -43,31 +43,31 @@ class createStoreHierarchy(unittest.TestCase):
         driver.find_element_by_id("renameOK").click()
         companyTestId = driver.find_element_by_xpath("//ul[@class='genericBrowser']/li[last()]").get_attribute("id")
         companyTestIdValue = re.sub("\D","",companyTestId)
-        print "companyTestId="+companyTestId
-        print "companyTestIdValue="+companyTestIdValue
-
-        for i in range(60):
-            try:
-                if companyTest == driver.find_element_by_xpath("//li[@id='hierarchy_company"+companyTestIdValue +"']/div/div[2]").text: break
-            except: pass
-            time.sleep(1)
-        else: self.fail("time out")
-        try: self.assertIn(companyTest, driver.find_element_by_class_name("genericBrowser").text)
-        except AssertionError as e: self.verificationErrors.append(str(e))
-	self.driver.implicitly_wait(30)
+#        print "companyTestId="+companyTestId
+#        print "companyTestIdValue="+companyTestIdValue
+#
+#        for i in range(60):
+#            try:
+#                if companyTest == driver.find_element_by_xpath("//li[@id='hierarchy_company"+companyTestIdValue +"']/div/div[2]").text: break
+#            except: pass
+#            time.sleep(1)
+#        else: self.fail("time out")
+#        try: self.assertIn(companyTest, driver.find_element_by_class_name("genericBrowser").text)
+#        except AssertionError as e: self.verificationErrors.append(str(e))
+#	self.driver.implicitly_wait(30)
         driver.refresh()
         driver.get(self.base_url + "/ev/storehierarchy")
         driver.find_element_by_id("newStoreGroup").click()
         driver.find_element_by_id("rename").clear()
         driver.find_element_by_id("rename").send_keys(storeGroupTest)
         driver.find_element_by_id("renameOK").click()
-        storeGroupTestId = driver.find_element_by_xpath("//ul[@class='genericBrowser']/li[last()]").get_attribute("id")
-        storeGroupTestIdValue = re.sub("\D","",storeGroupTestId)
+#        storeGroupTestId = driver.find_element_by_xpath("//ul[@class='genericBrowser']/li[last()]").get_attribute("id")
+#        storeGroupTestIdValue = re.sub("\D","",storeGroupTestId)
 
-        try: self.assertIn(storeGroupTest, driver.find_element_by_class_name("genericBrowser").text)
-        except AssertionError as e: self.verificationErrors.append(str(e))
-        print "storeGroupTestId="+storeGroupTestId
-        print "storeGroupTestIdValue="+storeGroupTestIdValue
+#        try: self.assertIn(storeGroupTest, driver.find_element_by_class_name("genericBrowser").text)
+#        except AssertionError as e: self.verificationErrors.append(str(e))
+#        print "storeGroupTestId="+storeGroupTestId
+#        print "storeGroupTestIdValue="+storeGroupTestIdValue
 	self.driver.implicitly_wait(30)
         driver.refresh()
 
@@ -76,11 +76,11 @@ class createStoreHierarchy(unittest.TestCase):
         driver.find_element_by_id("rename").clear()
         driver.find_element_by_id("rename").send_keys(storeTest)
         driver.find_element_by_id("renameOK").click()
-        storeTestId = driver.find_element_by_xpath("//ul[@class='genericBrowser']/li[last()]").get_attribute("id")
-        storeTestIdValue = re.sub("\D","",storeTestId)
-
-        print "storeTestId="+storeTestId
-        print "storeTestIdValue="+storeTestIdValue
+#        storeTestId = driver.find_element_by_xpath("//ul[@class='genericBrowser']/li[last()]").get_attribute("id")
+#        storeTestIdValue = re.sub("\D","",storeTestId)
+#
+#        print "storeTestId="+storeTestId
+#        print "storeTestIdValue="+storeTestIdValue
 	self.driver.implicitly_wait(30)
         driver.refresh()
 
@@ -89,11 +89,11 @@ class createStoreHierarchy(unittest.TestCase):
         driver.find_element_by_id("rename").clear()
         driver.find_element_by_id("rename").send_keys(dStore)
         driver.find_element_by_id("renameOK").click()
-        dStoreId = driver.find_element_by_xpath("//ul[@class='genericBrowser']/li[last()]").get_attribute("id")
-        dStoreIdValue = re.sub("\D","",dStoreId)
-
-        print "dStore="+dStoreId
-        print "dStoreIdValue="+dStoreIdValue
+#        dStoreId = driver.find_element_by_xpath("//ul[@class='genericBrowser']/li[last()]").get_attribute("id")
+#        dStoreIdValue = re.sub("\D","",dStoreId)
+#
+#        print "dStore="+dStoreId
+#        print "dStoreIdValue="+dStoreIdValue
 	self.driver.implicitly_wait(30)
         driver.refresh()
 
@@ -102,11 +102,36 @@ class createStoreHierarchy(unittest.TestCase):
         driver.find_element_by_id("rename").clear()
         driver.find_element_by_id("rename").send_keys(assignStore)
         driver.find_element_by_id("renameOK").click()
-        assignStoreId = driver.find_element_by_xpath("//ul[@class='genericBrowser']/li[last()]").get_attribute("id")
-        assignStoreIdValue = re.sub("\D","",assignStoreId)
+#        assignStoreId = driver.find_element_by_xpath("//ul[@class='genericBrowser']/li[last()]").get_attribute("id")
+#        assignStoreIdValue = re.sub("\D","",assignStoreId)
 
-        print "assignStore="+assignStoreId
-        print "assignStoreIdValue="+assignStoreIdValue
+##############################################################################################################################
+        companyTestId = driver.find_element_by_xpath("//ul[@class='genericBrowser']/li[1]").get_attribute("id")
+        companyTestIdValue = re.sub("\D","",companyTestId)
+#        print "companyTestId="+companyTestId
+        print "companyTestIdValue=\""+companyTestIdValue+"\""
+
+        storeGroupTestId = driver.find_element_by_xpath("//ul[@class='genericBrowser']/li[2]").get_attribute("id")
+        storeGroupTestIdValue = re.sub("\D","",storeGroupTestId)
+#        print "storeGroupTestId="+storeGroupTestId
+        print "storeGroupTestIdValue=\""+storeGroupTestIdValue+"\""
+
+        storeTestId = driver.find_element_by_xpath("//ul[@class='genericBrowser']/li[3]").get_attribute("id")
+        storeTestIdValue = re.sub("\D","",storeTestId)
+
+#        print "storeTestId="+storeTestId
+        print "storeTestIdValue=\""+storeTestIdValue+"\""
+
+        dStoreId = driver.find_element_by_xpath("//ul[@class='genericBrowser']/li[4]").get_attribute("id")
+        dStoreIdValue = re.sub("\D","",dStoreId)
+
+#        print "dStore="+dStoreId
+        print "dStoreIdValue=\""+dStoreIdValue+"\""
+
+        assignStoreId = driver.find_element_by_xpath("//ul[@class='genericBrowser']/li[5]").get_attribute("id")
+        assignStoreIdValue = re.sub("\D","",assignStoreId)
+#        print "assignStore="+assignStoreId
+        print "assignStoreIdValue=\""+assignStoreIdValue+"\""
 	self.driver.implicitly_wait(30)
         driver.refresh()
 

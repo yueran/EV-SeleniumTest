@@ -47,39 +47,45 @@ class createStoreHierarchy(unittest.TestCase):
         driver.find_element_by_id("mediaGroupPopupOK").click()
         driver.refresh()
 
-        ModifyMediaGroupId = driver.find_element_by_xpath("//ul[@id='mediaGroupBrowser']/li[last()]").get_attribute("id")
-        print "ModifyMediaGroupId="+ModifyMediaGroupId
-        ModifyMediaGroupIdValue = re.sub("\D","",ModifyMediaGroupId)
-        print "ModifyMediaGroupIdValue="+ModifyMediaGroupIdValue
+
         driver.refresh()
-        for i in range(60):
-            try:
-                if ModifyMediaGroup == driver.find_element_by_css_selector("#mediaGroup_mediaGroup"+ModifyMediaGroupIdValue +"> div.mediaGroupBg.itemContent > div.blockText").text: break
-            except: pass
-            time.sleep(1)
-        else: self.fail("time out")
+#        for i in range(60):
+#            try:
+#                if ModifyMediaGroup == driver.find_element_by_css_selector("#mediaGroup_mediaGroup"+ModifyMediaGroupIdValue +"> div.mediaGroupBg.itemContent > div.blockText").text: break
+#            except: pass
+#            time.sleep(1)
+#        else: self.fail("time out")
         driver.get(self.base_url + "/ev/uploadmedia")
         driver.find_element_by_css_selector("div.createNewMediaGroup.commonButton").click()
         driver.find_element_by_id("mediaGroupName").clear()
         driver.find_element_by_id("mediaGroupName").send_keys(TestMediaGroup)
         driver.find_element_by_id("mediaGroupPopupOK").click()
+        driver.refresh()
 
-        TestMediaGroupId = driver.find_element_by_xpath("//ul[@id='mediaGroupBrowser']/li[last()]").get_attribute("id")
-        print "TestMediaGroupId="+TestMediaGroupId
-        TestMediaGroupIdValue = re.sub("\D","",TestMediaGroupId)
-        print "TestMediaGroupIdValue="+TestMediaGroupIdValue
+#        for i in range(60):
+#            try:
+#                if ModifyMediaGroup == driver.find_element_by_css_selector("#mediaGroup_mediaGroup"+ModifyMediaGroupIdValue +"> div.mediaGroupBg.itemContent > div.blockText").text: break
+#            except: pass
+#            time.sleep(1)
+#        else: self.fail("time out")
+#        try: self.assertIn(ModifyMediaGroup, driver.find_element_by_id("mediaGroupBrowser").text)
+#        except AssertionError as e: self.verificationErrors.append(str(e))
+#        try: self.assertIn(TestMediaGroup, driver.find_element_by_id("mediaGroupBrowser").text)
+#        except AssertionError as e: self.verificationErrors.append(str(e))
 
-        for i in range(60):
-            try:
-                if ModifyMediaGroup == driver.find_element_by_css_selector("#mediaGroup_mediaGroup"+ModifyMediaGroupIdValue +"> div.mediaGroupBg.itemContent > div.blockText").text: break
-            except: pass
-            time.sleep(1)
-        else: self.fail("time out")
-        try: self.assertIn(ModifyMediaGroup, driver.find_element_by_id("mediaGroupBrowser").text)
-        except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertIn(TestMediaGroup, driver.find_element_by_id("mediaGroupBrowser").text)
-        except AssertionError as e: self.verificationErrors.append(str(e))
+
+
+############################################################################################################
         print "Please record the ModifyMediaGroupIdValue, TestMediaGroupIdValue in the ids.py."
+        ModifyMediaGroupId = driver.find_element_by_xpath("//ul[@id='mediaGroupBrowser']/li[1]").get_attribute("id")
+#        print "ModifyMediaGroupId="+ModifyMediaGroupId
+        ModifyMediaGroupIdValue = re.sub("\D","",ModifyMediaGroupId)
+        print "ModifyMediaGroupIdValue=\""+ModifyMediaGroupIdValue+"\""
+
+        TestMediaGroupId = driver.find_element_by_xpath("//ul[@id='mediaGroupBrowser']/li[2]").get_attribute("id")
+#        print "TestMediaGroupId="+TestMediaGroupId
+        TestMediaGroupIdValue = re.sub("\D","",TestMediaGroupId)
+        print "TestMediaGroupIdValue=\""+TestMediaGroupIdValue+"\""
 
 
 
