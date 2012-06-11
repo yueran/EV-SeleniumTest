@@ -1,5 +1,7 @@
 from selenium.common.exceptions import NoSuchElementException
 from Webdriver.all_globals import *
+from Webdriver.testPreProcess.ids import *
+from Webdriver.testPreProcess.input import *
 
 class EnIndexVerification(unittest.TestCase):
     def setUp(self):

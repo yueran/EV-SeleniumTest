@@ -4,7 +4,8 @@ from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 import unittest, time, re
 import HTMLTestRunner
-
+from Webdriver.testPreProcess.ids import *
+from Webdriver.testPreProcess.input import *
 class BaseTestCase(unittest.TestCase):
     def setUp(self):
         self.driver = webdriver.Firefox()

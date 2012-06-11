@@ -95,9 +95,9 @@ class createCSCKeywords(unittest.TestCase):
 
         text_file = open(gb_Preprocess_ids_Prefix+"ids.py", "a")
 #        ids =[]
-        text_file.write("classifyProductsCategoryIdValue=\""+classifyProductsCategoryIdValue+"\"\n")
-        text_file.write("classifyProductsSubCategoryIdValue=\""+classifyProductsSubCategoryIdValue+"\"\n")
-        text_file.write("classifyProductsKeywordIdValue=\""+classifyProductsKeywordIdValue+"\"\n")
+        text_file.write("classifyProductsCategoryId=\""+classifyProductsCategoryIdValue+"\"\n")
+        text_file.write("classfiyProductsSubCategoryId=\""+classifyProductsSubCategoryIdValue+"\"\n")
+        text_file.write("classifyProductsKeywordId=\""+classifyProductsKeywordIdValue+"\"\n")
 #        text_file.write(("".join(ids))+"\n")
         text_file.close()
     def is_element_present(self, how, what):

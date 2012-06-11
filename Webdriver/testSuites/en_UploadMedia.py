@@ -17,6 +17,8 @@ from Webdriver.HTMLTestRunner import *
 from Webdriver.all_globals import *
 from Webdriver.contentMaintenance import *
 from selenium.webdriver import ActionChains
+from Webdriver.testPreProcess.ids import *
+from Webdriver.testPreProcess.input import *
 from Webdriver.testCase.functionalTesting.UploadMedia import en_UploadMedia_ContentVerification as TestCase1
 from Webdriver.testCase.functionalTesting.UploadMedia import en_UploadMedia_ContentVerification_Help as TestCase2
 from Webdriver.testCase.functionalTesting.UploadMedia import en_UploadMedia_Function_CreateMedia as TestCase3

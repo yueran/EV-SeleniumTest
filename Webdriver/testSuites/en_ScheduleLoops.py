@@ -10,6 +10,8 @@ from selenium.common.exceptions import NoSuchElementException
 from Webdriver.HTMLTestRunner import *
 from Webdriver.contentMaintenance import *
 from Webdriver.all_globals import *
+from Webdriver.testPreProcess.ids import *
+from Webdriver.testPreProcess.input import *
 from Webdriver.testCase.functionalTesting.scheduleLoops import en_ScheduleLoops_ContentVerification as TestCase1
 from Webdriver.testCase.functionalTesting.scheduleLoops import en_ScheduleLoops_ContentVerification_Help as TestCase2
 from Webdriver.testCase.functionalTesting.scheduleLoops import en_ScheduleLoops_Function_DragAndDrop as TestCase3

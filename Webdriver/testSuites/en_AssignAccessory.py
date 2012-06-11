@@ -9,6 +9,8 @@ from Webdriver.contentMaintenance import *
 from Webdriver.HTMLTestRunner import *
 from selenium.webdriver import ActionChains
 from Webdriver.all_globals import *
+from Webdriver.testPreProcess.ids import *
+from Webdriver.testPreProcess.input import *
 from Webdriver.testCase.functionalTesting.AssignAccessory import en_AssignAccessory_ContentVerification as TestCase1
 from Webdriver.testCase.functionalTesting.AssignAccessory import en_AssignAccessory_ContentVerification_Help as TestCase2
 from Webdriver.testCase.functionalTesting.AssignAccessory import en_AssignAccessory_Function_Assign as TestCase3

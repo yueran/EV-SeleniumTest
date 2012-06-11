@@ -3,6 +3,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 import unittest, time, re
+from Webdriver.testPreProcess.ids import *
+from Webdriver.testPreProcess.input import *
 
 class EnScheduleTemplatesFunctionEditSchedule3(unittest.TestCase):
     def setUp(self):

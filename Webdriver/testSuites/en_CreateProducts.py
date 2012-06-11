@@ -7,7 +7,8 @@ from Webdriver.all_globals import *
 from Webdriver.contentMaintenance import *
 from Webdriver.HTMLTestRunner import *
 from selenium.webdriver import ActionChains
-
+from Webdriver.testPreProcess.ids import *
+from Webdriver.testPreProcess.input import *
 from Webdriver.testCase.functionalTesting.CreateProducts import en_CreateProducts_ContentVerification as TestCase1
 from Webdriver.testCase.functionalTesting.CreateProducts import en_CreateProducts_ContentVerification_Help as TestCase2
 from Webdriver.testCase.functionalTesting.CreateProducts import en_CreateProducts_Function_CreateManufacture as TestCase3

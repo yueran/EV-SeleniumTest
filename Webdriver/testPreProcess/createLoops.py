@@ -54,19 +54,19 @@ class createLoops(unittest.TestCase):
         assignLoopsId = driver.find_element_by_xpath("//ul[@class='loopList genericBrowser']/li[1]").get_attribute("id")
 #        print "assignLoopsId=\""+assignLoopsId+"\""
         assignLoopsIdValue = re.sub("\D","",assignLoopsId)
-        print "assignLoopsIdValue=\""+assignLoopsIdValue+"\""
+        print "assignLoopsID=\""+assignLoopsIdValue+"\""
 
 
         editLoopScheduleId = driver.find_element_by_xpath("//ul[@class='loopList genericBrowser']/li[2]").get_attribute("id")
 #        print "editLoopScheduleId=\""+editLoopScheduleId+"\""
         editLoopScheduleIdValue = re.sub("\D","",editLoopScheduleId)
-        print "editLoopScheduleIdValue=\""+editLoopScheduleIdValue+"\""
+        print "EditLoopScheduleID=\""+editLoopScheduleIdValue+"\""
         driver.refresh()
 
         editNameOfLoopId = driver.find_element_by_xpath("//ul[@class='loopList genericBrowser']/li[3]").get_attribute("id")
 #        print "editNameOfLoopId=\""+editNameOfLoopId+"\""
         editNameOfLoopIdValue = re.sub("\D","",editNameOfLoopId)
-        print "editNameOfLoopIdValue=\""+editNameOfLoopIdValue+"\""
+        print "EditAttractLoopID=\""+editNameOfLoopIdValue+"\""
         driver.refresh()
 
         print "Please record the editNameOfLoopId, editLoopSchedule and assignLoops in the ids.py."

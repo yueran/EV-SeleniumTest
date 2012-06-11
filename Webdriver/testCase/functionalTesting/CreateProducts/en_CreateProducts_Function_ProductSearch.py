@@ -5,7 +5,9 @@ from selenium.common.exceptions import NoSuchElementException
 import unittest, time, re
 from Webdriver.all_globals import *
 from Webdriver.contentMaintenance import *
-#Search product xpath;'//li[@id='products_category73']/div/span'
+from Webdriver.testPreProcess.ids import *
+from Webdriver.testPreProcess.input import *
+
 class EnCreateProductsFunctionProductSearch(unittest.TestCase):
     def setUp(self):
         gb_setUp(self)

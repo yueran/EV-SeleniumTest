@@ -7,6 +7,8 @@ import unittest, time, re
 from Webdriver.HTMLTestRunner import *
 from Webdriver.contentMaintenance import *
 from Webdriver.all_globals import *
+from Webdriver.testPreProcess.ids import *
+from Webdriver.testPreProcess.input import *
 from Webdriver.testCase.functionalTesting.StoreHierarchy import en_StoreHierarchy_ContentVerification as TestCase1
 from Webdriver.testCase.functionalTesting.StoreHierarchy import en_StoreHierarchy_ContentVerification_Help as TestCase2
 from Webdriver.testCase.functionalTesting.StoreHierarchy import en_StoreHierarchy_Function_Create as TestCase3

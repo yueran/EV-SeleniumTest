@@ -42,9 +42,9 @@ uploadMediaModifiedMedia =u"MediaSuccess.avi"
 uploadMediaMediaModifiedId = "69"
 
 #Classify Products
-classifyProductsCategoryId = "70"
-classifyProductsKeywordId = "83"
-classfiyProductsSubCategoryId = "84"
+#classifyProductsCategoryId = "70"
+#classifyProductsKeywordId = "83"
+#classfiyProductsSubCategoryId = "84"
 
 #Create Products:
 #1)CreateManufacture:
@@ -176,19 +176,19 @@ NewAttractLoop=u"NewAttractLoop"
 DefaultAttractLoop =u"companyTest's Default Loop"
 DefaultAttractLoopID="117"
 assignLoops = u"assignLoops"
-assignLoopsID= "232"
+#assignLoopsID= "232"
 video1ID = "118"
 video1 =u"AVI_to_MPEG-4.avi"
 video2ID = "69"
 video2 = u"MediaEditTest.avi"
 EditNameOfLoop= u"EditNameOfLoop"
-EditAttractLoopID="233"
+#EditAttractLoopID="233"
 EditLoopNameSuccess =u"EditLoopNameSuccess"
 
 #********************************************
 #Schedule Loops:
 EditLoopSchedule=u"EditLoopSchedule"
-EditLoopScheduleID = "235"
+#EditLoopScheduleID = "235"
 EditLoopScheduleStartDateKey1 = "10"
 EditLoopScheduleStartDateKey2 = "15"
 EditLoopScheduleStartDate1 = u"06/10/2012"
@@ -199,7 +199,7 @@ EditLoopScheduleEndDate2 = u"07/25/2012"
 EditLoopScheduleEndDateKey2 = "31"
 #***************************************************
 #view Network Status:
-Device1ID="17"
+#Device1ID="17"
 Device1 = u"test device 1 (store 15)"
 Device2 = u"test device 1 (store 16)"
-Device2ID="18"
+#Device2ID="18"

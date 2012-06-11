@@ -6,7 +6,8 @@ from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver import ActionChains
 import unittest, time, re
-
+from Webdriver.testPreProcess.ids import *
+from Webdriver.testPreProcess.input import *
 class EnClassifyProductsFunctionDragAndDrop(unittest.TestCase):
     def setUp(self):
         gb_setUp(self)

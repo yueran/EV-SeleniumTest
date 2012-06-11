@@ -6,6 +6,8 @@ import unittest, time, re
 from Webdriver.all_globals import *
 from Webdriver.contentMaintenance import *
 from Webdriver.HTMLTestRunner import *
+from Webdriver.testPreProcess.ids import *
+from Webdriver.testPreProcess.input import *
 from Webdriver.testCase.functionalTesting.ClassifyProduct import en_ClassifyProducts_ContentVerification as TestCase1
 from Webdriver.testCase.functionalTesting.ClassifyProduct import en_ClassifyProducts_ContentVerification_Help as TestCase2
 from Webdriver.testCase.functionalTesting.ClassifyProduct import en_ClassifyProducts_Function_DragAndDrop as TestCase3

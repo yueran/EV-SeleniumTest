@@ -4,7 +4,8 @@ from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 import unittest, time, re
 from Webdriver.all_globals import *
-
+from Webdriver.testPreProcess.ids import *
+from Webdriver.testPreProcess.input import *
 class EnClassifyProductsContentVerificationHelp(unittest.TestCase):
     def setUp(self):
         gb_setUp(self)

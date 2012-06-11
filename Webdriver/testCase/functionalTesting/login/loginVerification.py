@@ -6,7 +6,8 @@ from selenium.common.exceptions import NoSuchElementException
 import unittest, time, re
 #import HTMLTestRunner
 from Webdriver.all_globals import *
-
+from Webdriver.testPreProcess.ids import *
+from Webdriver.testPreProcess.input import *
 
 class LoginVerification(unittest.TestCase):
     def setUp(self):

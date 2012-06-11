@@ -7,6 +7,8 @@ import unittest, time, re
 #import HTMLTestRunner
 from Webdriver.HTMLTestRunner import *
 from Webdriver.all_globals import *
+from Webdriver.testPreProcess.ids import *
+from Webdriver.testPreProcess.input import *
 from Webdriver.testCase.functionalTesting.login import languageSelection as loginCase1
 from Webdriver.testCase.functionalTesting.login import languageSelection_en as loginCase2
 from Webdriver.testCase.functionalTesting.login import languageSelection_de as loginCase3
