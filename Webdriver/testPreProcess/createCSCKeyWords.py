@@ -13,6 +13,7 @@ from selenium.webdriver import ActionChains
 #import HTMLTestRunner
 from Webdriver.all_globals import *
 from Webdriver.testPreProcess.ids import *
+from Webdriver.testPreProcess.input import *
 
 testUserId = None
 testUserIdValue = None
@@ -91,6 +92,14 @@ class createCSCKeywords(unittest.TestCase):
 #        print "classifyProductsKeywordId="+classifyProductsKeywordId
         classifyProductsKeywordIdValue = re.sub("\D","",classifyProductsKeywordId)
         print "classifyProductsKeywordIdValue=\""+classifyProductsKeywordIdValue+"\""
+
+        text_file = open(gb_Preprocess_ids_Prefix+"ids.py", "a")
+#        ids =[]
+        text_file.write("classifyProductsCategoryIdValue=\""+classifyProductsCategoryIdValue+"\"\n")
+        text_file.write("classifyProductsSubCategoryIdValue=\""+classifyProductsSubCategoryIdValue+"\"\n")
+        text_file.write("classifyProductsKeywordIdValue=\""+classifyProductsKeywordIdValue+"\"\n")
+#        text_file.write(("".join(ids))+"\n")
+        text_file.close()
     def is_element_present(self, how, what):
         try: self.driver.find_element(by=how, value=what)
         except NoSuchElementException, e: return False

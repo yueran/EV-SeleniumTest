@@ -7,6 +7,8 @@ import unittest, time, re
 #import HTMLTestRunner
 from Webdriver.HTMLTestRunner import *
 from Webdriver.all_globals import *
+from Webdriver.testPreProcess.ids import *
+from Webdriver.testPreProcess.input import *
 from Webdriver.contentMaintenance import *
 from Webdriver.testCase.functionalTesting.addPostsToDisplay import en_AddPostsToDisplay_contentVerification as TestCase1
 from Webdriver.testCase.functionalTesting.addPostsToDisplay import en_AddPostsToDisplay_Help as TestCase2

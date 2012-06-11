@@ -6,6 +6,8 @@ import unittest, time, re
 #import HTMLTestRunner
 from Webdriver.HTMLTestRunner import *
 from Webdriver.all_globals import *
+from Webdriver.testPreProcess.ids import *
+from Webdriver.testPreProcess.input import *
 from Webdriver.testCase.functionalTesting.Index import en_Index_Verification as IndexCase1
 from Webdriver.testCase.functionalTesting.Index import en_Index_HelpContent as IndexCase2
 

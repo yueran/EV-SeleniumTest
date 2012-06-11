@@ -13,6 +13,7 @@ from selenium.webdriver import ActionChains
 #import HTMLTestRunner
 from Webdriver.all_globals import *
 from Webdriver.testPreProcess.ids import *
+from Webdriver.testPreProcess.input import *
 
 testUserId = None
 testUserIdValue = None
@@ -139,7 +140,13 @@ class createTestUser(unittest.TestCase):
         testUserIdValue = re.sub("\D","",testUserId)
         print "testUserIdValue=\""+testUserIdValue+"\""
 
-
+        text_file = open(gb_Preprocess_ids_Prefix+"ids.py", "a")
+#        ids =[]
+        text_file.write("testUserGroupIdValue=\""+testUserGroupIdValue+"\"\n")
+        text_file.write("testUserIdValue=\""+testUserIdValue+"\"\n")
+#        text_file.write(("".join(ids))+"\n")
+        text_file.close()
+        
     def is_element_present(self, how, what):
         try: self.driver.find_element(by=how, value=what)
         except NoSuchElementException, e: return False

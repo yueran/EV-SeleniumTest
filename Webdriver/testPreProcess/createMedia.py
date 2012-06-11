@@ -13,17 +13,18 @@ from selenium.webdriver import ActionChains
 #import HTMLTestRunner
 from Webdriver.all_globals import *
 from Webdriver.testPreProcess.ids import *
+from Webdriver.testPreProcess.input import *
 
 testUserId = None
 testUserIdValue = None
 testUserGroupId = None
 testUserGroupIdValue = None
 
-class createStoreHierarchy(unittest.TestCase):
+class createMedia(unittest.TestCase):
     def setUp(self):
         gb_setUp(self)
 
-    def test_create_store_hierarchy(self):
+    def test_create_media(self):
         driver = self.driver
         driver.get(self.base_url + "/ev/login")
         driver.find_element_by_id("form.password").clear()
@@ -87,6 +88,12 @@ class createStoreHierarchy(unittest.TestCase):
         TestMediaGroupIdValue = re.sub("\D","",TestMediaGroupId)
         print "TestMediaGroupIdValue=\""+TestMediaGroupIdValue+"\""
 
+        text_file = open(gb_Preprocess_ids_Prefix+"ids.py", "a")
+#        ids =[]
+        text_file.write("ModifyMediaGroupIdValue=\""+ModifyMediaGroupIdValue+"\"\n")
+        text_file.write("TestMediaGroupIdValue=\""+TestMediaGroupIdValue+"\"\n")
+#        text_file.write(("".join(ids))+"\n")
+        text_file.close()
 
 
     def is_element_present(self, how, what):

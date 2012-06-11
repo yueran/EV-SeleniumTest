@@ -11,6 +11,7 @@ gb_ip = "10.0.2.15"
 gb_port = "8080"
 gb_filename_prefix = '/home/yueran/zignage/test/EV-SeleniumTest/result'
 gb_Preprocess_Result_Prefix = '/home/yueran/zignage/test/EV-SeleniumTest/Webdriver/testPreProcess/PreProcessResults'
+gb_Preprocess_ids_Prefix = '/home/yueran/zignage/test/EV-SeleniumTest/Webdriver/testPreProcess/'
 
 gb_manTestValue = 6
 

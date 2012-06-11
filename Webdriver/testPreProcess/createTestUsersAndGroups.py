@@ -13,17 +13,18 @@ from selenium.webdriver import ActionChains
 #import HTMLTestRunner
 from Webdriver.all_globals import *
 from Webdriver.testPreProcess.ids import *
+from Webdriver.testPreProcess.input import *
 
 testUserId = None
 testUserIdValue = None
 testUserGroupId = None
 testUserGroupIdValue = None
 
-class createTestUser(unittest.TestCase):
+class createTestUsersAndGroups(unittest.TestCase):
     def setUp(self):
         gb_setUp(self)
 
-    def test_create_test_user(self):
+    def test_create_test_users_and_groups(self):
         driver = self.driver
         driver.get(self.base_url + "/ev/login")
         driver.find_element_by_id("form.password").clear()
@@ -110,7 +111,14 @@ class createTestUser(unittest.TestCase):
         editUserGroupIdValue = re.sub("\D","",editUserGroupId)
         print "editUserGroupIdValue=\""+editUserGroupIdValue+"\""
 
+        text_file = open(gb_Preprocess_ids_Prefix+"ids.py", "a")
+#        ids =[]
+        text_file.write("editUserIdValue=\""+editUserIdValue+"\"\n")
+        text_file.write("duplicateUserGroupIdValue=\""+duplicateUserGroupIdValue+"\"\n")
+        text_file.write("editUserGroupIdValue=\""+editUserGroupIdValue+"\"\n")
 
+#        text_file.write(("".join(ids))+"\n")
+        text_file.close()
 
 
     def is_element_present(self, how, what):

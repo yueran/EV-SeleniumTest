@@ -13,17 +13,18 @@ from selenium.webdriver import ActionChains
 #import HTMLTestRunner
 from Webdriver.all_globals import *
 from Webdriver.testPreProcess.ids import *
+from Webdriver.testPreProcess.input import *
 
 testUserId = None
 testUserIdValue = None
 testUserGroupId = None
 testUserGroupIdValue = None
 
-class createStoreHierarchy(unittest.TestCase):
+class createProducts(unittest.TestCase):
     def setUp(self):
         gb_setUp(self)
 
-    def test_create_store_hierarchy(self):
+    def test_create_products(self):
         driver = self.driver
         driver.get(self.base_url + "/ev/login")
         driver.find_element_by_id("form.password").clear()
@@ -105,7 +106,14 @@ class createStoreHierarchy(unittest.TestCase):
         print "Please record the testProduct1IdValue, testProduct2IdValue, testAcc1IdValue, testAcc2IdValue in the ids.py."
         print "Please go to setup Users Or Groups page, assign user group ztestUserGroup to assignStore"
 
-
+        text_file = open(gb_Preprocess_ids_Prefix+"ids.py", "a")
+#        ids =[]
+        text_file.write("testProduct1IdValue=\""+ testProduct1IdValue+"\"\n")
+        text_file.write("testProduct2IdValue=\""+ testProduct2IdValue+"\"\n")
+        text_file.write("testAcc1IdValue=\""+ testAcc1IdValue+"\"\n")
+        text_file.write("testAcc2IdValue=\""+ testAcc2IdValue+"\"\n")
+#        text_file.write(("".join(ids))+"\n")
+        text_file.close()
 
 
     def is_element_present(self, how, what):

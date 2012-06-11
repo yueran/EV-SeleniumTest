@@ -13,6 +13,7 @@ from selenium.webdriver import ActionChains
 #import HTMLTestRunner
 from Webdriver.all_globals import *
 from Webdriver.testPreProcess.ids import *
+from Webdriver.testPreProcess.input import *
 
 testUserId = None
 testUserIdValue = None
@@ -137,7 +138,17 @@ class createStoreHierarchy(unittest.TestCase):
 
         print "Please record the storeTestIdValue, storeGroupTestIdValue, assignStoreIdValue, dStoreIdValue and companyTest in the ids.py."
         print "Please go to setup Users Or Groups page, assign user group ztestUserGroup to assignStore"
+##############################################################################################################################
 
+        text_file = open(gb_Preprocess_ids_Prefix+"ids.py", "a")
+#        ids =[]
+        text_file.write("companyTestIdValue=\""+companyTestIdValue+"\"\n")
+        text_file.write("storeGroupTestIdValue=\""+storeGroupTestIdValue+"\"\n")
+        text_file.write("storeTestIdValue=\""+storeTestIdValue+"\"\n")
+        text_file.write("dStoreIdValue=\""+dStoreIdValue+"\"\n")
+        text_file.write("assignStoreIdValue=\""+assignStoreIdValue+"\"\n")
+#        text_file.write(("".join(ids))+"\n")
+        text_file.close()
 
 
 

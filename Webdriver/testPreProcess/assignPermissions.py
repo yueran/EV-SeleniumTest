@@ -13,6 +13,7 @@ from selenium.webdriver import ActionChains
 #import HTMLTestRunner
 from Webdriver.all_globals import *
 from Webdriver.testPreProcess.ids import *
+from Webdriver.testPreProcess.input import *
 #from Webdriver.testPreProcess.createTestUser import *
 
 class assignPermissions(unittest.TestCase):

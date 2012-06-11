@@ -13,13 +13,14 @@ from selenium.webdriver import ActionChains
 #import HTMLTestRunner
 from Webdriver.all_globals import *
 from Webdriver.testPreProcess.ids import *
+from Webdriver.testPreProcess.input import *
 
 
-class createStoreHierarchy(unittest.TestCase):
+class createTemplates(unittest.TestCase):
     def setUp(self):
         gb_setUp(self)
 
-    def test_create_store_hierarchy(self):
+    def test_create_templates(self):
         driver = self.driver
         driver.get(self.base_url + "/ev/login")
         driver.find_element_by_id("form.password").clear()
@@ -78,6 +79,14 @@ class createStoreHierarchy(unittest.TestCase):
 
         print "Please record the modifyTmpIdValue, duplicateTmpIdValue and editTmpScheduleIdValue in the ids.py."
 
+        text_file = open(gb_Preprocess_ids_Prefix+"ids.py", "a")
+#        ids =[]
+        text_file.write("duplicateTmpIdValue=\""+duplicateTmpIdValue+"\"\n")
+        text_file.write("editTmpScheduleValue=\""+editTmpScheduleIdValue+"\"\n")
+        text_file.write("modifyTmpIdValue=\""+modifyTmpIdValue+"\"\n")
+
+#        text_file.write(("".join(ids))+"\n")
+        text_file.close()
 
 
     def is_element_present(self, how, what):
