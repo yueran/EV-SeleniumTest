@@ -37,7 +37,19 @@ class createProducts(unittest.TestCase):
         gb_frame(self)
 
         driver.get(self.base_url + "/ev/createproducts")
-
+        Select(driver.find_element_by_id("detailManufacturer")).select_by_visible_text("--New Manufacturer--")
+        driver.find_element_by_id("addManufacturer").click()
+        driver.find_element_by_id("manufacturerName").clear()
+        driver.find_element_by_id("manufacturerName").send_keys("test")
+        driver.find_element_by_id("newManufacturer").click()
+        driver.refresh()
+        driver.get(self.base_url + "/ev/createproducts")
+        Select(driver.find_element_by_id("detailManufacturer")).select_by_visible_text("--New Manufacturer--")
+        driver.find_element_by_id("addManufacturer").click()
+        driver.find_element_by_id("manufacturerName").clear()
+        driver.find_element_by_id("manufacturerName").send_keys("ManTest")
+        driver.find_element_by_id("newManufacturer").click()
+        driver.refresh()
         driver.find_element_by_id("newProduct").click()
         driver.find_element_by_id("product").click()
         try: self.assertIn("New Product", driver.find_element_by_id("productName").text)
@@ -86,6 +98,9 @@ class createProducts(unittest.TestCase):
         driver.find_element_by_id("saveProduct").click()
         driver.refresh()
 ####################################################################################################################
+#        testManId= Select(driver.find_element_by_id("detailManufacturer")).select_by_visible_text("test").get_attribute("value")
+#        print "testManId=\""+testManId+"\""
+
         driver.find_element_by_css_selector("div.bigDownArrow").click()
         testProduct1Id = driver.find_element_by_xpath("//ul[@id='productBrowser']/li[1]").get_attribute("id")
         testProduct1IdValue = re.sub("\D","",testProduct1Id)
@@ -112,6 +127,7 @@ class createProducts(unittest.TestCase):
         text_file.write("testProduct2IdValue=\""+ testProduct2IdValue+"\"\n")
         text_file.write("testAcc1IdValue=\""+ testAcc1IdValue+"\"\n")
         text_file.write("testAcc2IdValue=\""+ testAcc2IdValue+"\"\n")
+#        text_file.write("testManId=\""+testManId+"\"")
 #        text_file.write(("".join(ids))+"\n")
         text_file.close()
 

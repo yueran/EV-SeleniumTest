@@ -41,7 +41,7 @@ class EnCreateProductsFunctionProductSearch(unittest.TestCase):
         self.driver.implicitly_wait(100)
         for i in range(60):
             try:
-                if createProductsProduct1 == driver.find_element_by_xpath("//li[@id='products_product"+createProductsProduct1ID+"']/div/div").text: break
+                if createProductsProduct1 == driver.find_element_by_xpath("//li[@id='products_product"+testProduct1IdValue+"']/div/div").text: break
             except: pass
             time.sleep(1)
         else: self.fail("time out")

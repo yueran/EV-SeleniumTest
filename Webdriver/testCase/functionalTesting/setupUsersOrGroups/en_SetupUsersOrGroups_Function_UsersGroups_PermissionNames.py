@@ -16,7 +16,7 @@ class EnSetupUsersOrGroupsFunctionUsersGroupsPermissionNames(unittest.TestCase):
         driver = self.driver
         gb_login(self)
         driver.get(self.base_url + "/ev/setupusersorgroups")
-        driver.find_element_by_id("userGroup_userGroupOptions"+setupUsersOrGroupsUserGroupID).click()
+        driver.find_element_by_id("userGroup_userGroupOptions"+editUserGroupIdValue).click()
         try: self.assertEqual("User Group Options", driver.find_element_by_id("title").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
         try: self.assertIn(u"User Group Name",driver.find_element_by_id("userGroupHeader").text)

@@ -16,17 +16,17 @@ class EnUploadMediaFunctionModifyMedia(unittest.TestCase):
         driver = self.driver
         gb_login(self)
         driver.get(self.base_url + "/ev/uploadmedia")
-        try: self.assertIn(uploadMediaOriginalMedia, driver.find_element_by_id("mediaBrowser").text)
-        except AssertionError as e: self.verificationErrors.append(str(e))
+#        try: self.assertIn(uploadMediaOriginalMedia, driver.find_element_by_id("mediaBrowser").text)
+#        except AssertionError as e: self.verificationErrors.append(str(e))
         try: self.assertNotIn(uploadMediaModifiedMedia, driver.find_element_by_id("mediaBrowser").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
-        driver.find_element_by_id("media_medium"+uploadMediaMediaModifiedId+"Options").click()
+        driver.find_element_by_id("media_medium"+TestMediaIdValue+"Options").click()
         driver.find_element_by_id("inputInfo").clear()
         driver.find_element_by_id("inputInfo").send_keys("MediaSuccess.avi")
         driver.find_element_by_id("okExistingMedia").click()
         for i in range(60):
             try:
-                if u"MediaSuccess.avi" == driver.find_element_by_css_selector("#media_medium"+uploadMediaMediaModifiedId +"> div.mediaBg.itemContent > div.blockText").text: break
+                if u"MediaSuccess.avi" == driver.find_element_by_css_selector("#media_medium"+TestMediaIdValue +"> div.mediaBg.itemContent > div.blockText").text: break
             except: pass
             time.sleep(1)
         else: self.fail("time out")
@@ -35,13 +35,13 @@ class EnUploadMediaFunctionModifyMedia(unittest.TestCase):
         try: self.assertIn(u"MediaSuccess.avi", driver.find_element_by_id("mediaBrowser").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
 
-        driver.find_element_by_id("media_medium"+uploadMediaMediaModifiedId+"Options").click()
+        driver.find_element_by_id("media_medium"+TestMediaIdValue+"Options").click()
         driver.find_element_by_id("inputInfo").clear()
         driver.find_element_by_id("inputInfo").send_keys("MediaEditTest.avi")
         driver.find_element_by_id("okExistingMedia").click()
         for i in range(60):
             try:
-                if u"MediaEditTest.avi" == driver.find_element_by_css_selector("#media_medium"+uploadMediaMediaModifiedId +"> div.mediaBg.itemContent > div.blockText").text: break
+                if u"MediaEditTest.avi" == driver.find_element_by_css_selector("#media_medium"+TestMediaIdValue +"> div.mediaBg.itemContent > div.blockText").text: break
             except: pass
             time.sleep(1)
         else: self.fail("time out")

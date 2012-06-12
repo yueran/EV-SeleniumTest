@@ -21,17 +21,17 @@ class EnScheduleTemplatesFunctionDragAndDrop(unittest.TestCase):
 #        driver.find_element_by_xpath("//li[@id='hierarchy_storeGroup202']/div/span").click()
 #        try: self.assertTrue(self.is_element_present(By.CSS_SELECTOR, "#hierarchy_store203 > div.itemContent.storeBg > div.blockText"))
 #        except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertTrue(self.is_element_present(By.CSS_SELECTOR, "#hierarchy_store"+groupMediaPlayersAssignStoreID+" > div.itemContent.storeBg > div.blockText"))
+        try: self.assertTrue(self.is_element_present(By.CSS_SELECTOR, "#hierarchy_store"+modifyTmpIdValue+" > div.itemContent.storeBg > div.blockText"))
         except AssertionError as e: self.verificationErrors.append(str(e))
         # ERROR: Caught exception [ERROR: Unsupported command [isTextPresent]]
-        try: self.assertTrue(self.is_element_present(By.CSS_SELECTOR, "#scheduleCol_schedule"+templateStylesDefaultTempID+" > div.itemContent.templateBg > div.handle"))
+        try: self.assertTrue(self.is_element_present(By.CSS_SELECTOR, "#scheduleCol_schedule"+modifyTmpIdValue+" > div.itemContent.templateBg > div.handle"))
         except AssertionError as e: self.verificationErrors.append(str(e))
         # ERROR: Caught exception [ERROR: Unsupported command [dragAndDropToObject]]
-        driver.find_element_by_xpath("//li[@id='hierarchy_store"+groupMediaPlayersAssignStoreID+"']/div/span").click()
+        driver.find_element_by_xpath("//li[@id='hierarchy_store"+assignStoreIdValue+"']/div/span").click()
         driver.refresh()
-        try: self.assertTrue(self.is_element_present(By.CSS_SELECTOR, "#scheduleContainersCol_container"+groupMediaPlayersAssignStoreID+" _schedule"+templateStylesDefaultTempID+" > div.itemContent.templateBg > span.unassign"))
+        try: self.assertTrue(self.is_element_present(By.CSS_SELECTOR, "#scheduleContainersCol_container"+modifyTmpIdValue+" _schedule"+assignLoopsIdValue+" > div.itemContent.templateBg > span.unassign"))
         except AssertionError as e: self.verificationErrors.append(str(e))
-        driver.find_element_by_css_selector("#scheduleContainersCol_container"+groupMediaPlayersAssignStoreID+" _schedule"+templateStylesDefaultTempID+"> div.itemContent.templateBg > span.unassign").click()
+        driver.find_element_by_css_selector("#scheduleContainersCol_container"+assignStoreIdValue+" _schedule"+modifyTmpIdValue+"> div.itemContent.templateBg > span.unassign").click()
     
     def is_element_present(self, how, what):
         try: self.driver.find_element(by=how, value=what)

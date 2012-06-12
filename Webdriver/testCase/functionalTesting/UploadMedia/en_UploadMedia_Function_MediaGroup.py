@@ -32,13 +32,13 @@ class EnUploadMediaFunctionMediaGroup(unittest.TestCase):
         driver.find_element_by_id("mediaGroupName").send_keys("CreateMediaGroup")
         driver.find_element_by_id("mediaGroupPopupOK").click()
         driver.get(self.base_url + "/ev/uploadmedia")
-        driver.find_element_by_id("mediaGroup_mediaGroup"+uploadMediaModifyMediaGroupId+"Options").click()
+        driver.find_element_by_id("mediaGroup_mediaGroup"+ModifyMediaGroupIdValue+"Options").click()
         driver.find_element_by_id("mediaGroupName").clear()
         driver.find_element_by_id("mediaGroupName").send_keys("ModifySuccess")
         driver.find_element_by_id("mediaGroupPopupOK").click()
         for i in range(60):
             try:
-                if u"ModifySuccess" == driver.find_element_by_css_selector("#mediaGroup_mediaGroup"+uploadMediaModifyMediaGroupId +"> div.mediaGroupBg.itemContent > div.blockText").text: break
+                if u"ModifySuccess" == driver.find_element_by_css_selector("#mediaGroup_mediaGroup"+ModifyMediaGroupIdValue +"> div.mediaGroupBg.itemContent > div.blockText").text: break
             except: pass
             time.sleep(1)
         else: self.fail("time out")
@@ -49,7 +49,7 @@ class EnUploadMediaFunctionMediaGroup(unittest.TestCase):
         try: self.assertNotIn(u"ModifyMediaGroup", driver.find_element_by_id("mediaGroupBrowser").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
         driver.get(self.base_url + "/ev/uploadmedia")
-        driver.find_element_by_id("mediaGroup_mediaGroup"+uploadMediaModifyMediaGroupId+"Options").click()
+        driver.find_element_by_id("mediaGroup_mediaGroup"+ModifyMediaGroupIdValue+"Options").click()
         driver.find_element_by_id("mediaGroupName").clear()
         driver.find_element_by_id("mediaGroupName").send_keys("ModifyMediaGroup")
         driver.find_element_by_id("mediaGroupPopupOK").click()

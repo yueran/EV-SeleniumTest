@@ -12,34 +12,34 @@ gb_filename_prefix = '/home/yueran/zignage/test/EV-SeleniumTest/result'
 gb_manTestValue = 6
 
 #AddProductsToPosts:
-addProductsToPostsProduct1=u"abcd"
-addProductsToPostsProduct2=u"test product 1 Aifon"
+#addProductsToPostsProduct1=u"abcd"
+#addProductsToPostsProduct2=u"test product 1 Aifon"
+addProductsToPostsSearchKey = u'1'
 addProductsToPostsHelpLine1=u"A Media Player needs to be selected first before a product can be applied. Select a media from the Choose Media Player section."
 addProductsToPostsHelpLine2=u"Once a media player is selected. Search through the Find Product section for the product to be placed on the post. Once the product is found, Click and Drag the product from the picture box and drop it in the desired post location."
 
 
 
 #AddPostsToDisplay:
-addPostsToDisplayStore = "//li[@id='hierarchy_store19']/div/span"
-addPostsToDisplayDevice = "//li[@id='deviceContainersCol_device17']/div/div"
+
 addPostsToDisplayHelpLine1 = u"In Non-touchscreen media players with multiple displays attached, this section allows posts to be assigned to specific displays."
 addPostsToDisplayHelpLine2 = u"Select a device from the Choose Media Player. All DIB(s) and all Displays attached to the media player will appear. Click on the post and drag to a display that you want the product information to be displayed on."
 addPostsToDisplayButtonIdentifyDisplay ="(//button[@id='identifyDisplay'])[7]"
 
 #UploadMedia:
 #
-uploadMediaGroupID = "78"
-uploadMediaMediumID = "69"
+#TestMediaGroupIdValue = "78"
+#TestMediaIdValue = "69"
 
 #2)Help
 uploadMediaHelpLine1 = u"Upload all types of media by clicking the Create New Media button. Media is uploaded from the local computer only."
 uploadMediaHelpLine2 = u"Media Groups is an easy way to organize uploaded media."
 uploadMediaHelpLine3 = u"Media removed from this area will remove the media from products or attract loops."
 #3)MediaModification
-uploadMediaModifyMediaGroupId = "79"
+#ModifyMediaGroupIdValue = "79"
 uploadMediaOriginalMedia = u"MediaEditTest.avi"
 uploadMediaModifiedMedia =u"MediaSuccess.avi"
-uploadMediaMediaModifiedId = "69"
+#TestMediaIdValue = "69"
 
 #Classify Products
 #classifyProductsCategoryId = "70"
@@ -48,14 +48,14 @@ uploadMediaMediaModifiedId = "69"
 
 #Create Products:
 #1)CreateManufacture:
-createProductsManufactureId = "8"
+#createProductsManufactureId = "8"
 createProductsManModifyText = u"ManTest"
 createProductsManModifySuccessText=u"MModifySuccess"
 #2)Medialist:
 createProductsMedia1 ="defaultSecondaryImage.jpg"
 createProductsMedia2 = "iceweasel.png"
 createProductsProduct1 = u"abcd"
-createProductsProduct1ID = "95"
+#testProduct1IdValue = "95"
 createProductsProduct2 = u"xyz"
 createProductsInvueProd1 = u"InvuePro1"
 createProductsInvueProdKeyword ="1"
@@ -63,36 +63,36 @@ createProductsInvueProd2 = u"InvuePro2"
 createProductsProdKeyword ="ab"
 
 #Assign Accessory
-assignAccessoryAcc1ID = "100"
-assignAccessoryProd1ID = "95"
-assignAccessorySearchAcc1 =u"acc1"
-assignAccessorySearchAcc2 =u"acc2"
-assignAccessoryAccSearchKey1 ="1"
-assignAccessoryCategory1 = u"test"
-assignAccessoryProSearchKey1="test"
+#testAcc1IdValue = "100"
+#assignAccessoryProd1ID = "95"
+#assignAccessorySearchAcc1 =u"acc1"
+#assignAccessorySearchAcc2 =u"acc2"
+#assignAccessoryAccSearchKey1 ="1"
+#assignAccessoryCategory1 = u"test"
+#assignAccessoryProSearchKey1="test"
 
 #********************************************************
 #Setup Users Or groups:
-setupUsersOrGroupsUserID = "45"
-setupUsersOrGroupsUserGroupID ="10"
+#testUserIdValue = "45"
+#testUserGroupIdValue ="10"
 setupUsersOrGroupsSearchUser1 = u"cd, ab"
-setupUsersOrGroupsSearchUser1ID = "46"
+#searchUserIdValue = "46"
 setupUsersOrGroupsSearchUser2 = u"xyz, xyz"
-setupUsersOrGroupsSearchUser2ID = "47"
+#setupUsersOrGroupsSearchUser2ID = "47"
 setupUsersOrGroupsSearchUserKey1 = "ab"
-setupUsersOrGroupsSearchUserKey2 = "x"
-setupUsersOrGroupsAssginStoreID = "20"
+setupUsersOrGroupsSearchUserKey2 = "edit"
+#assignStoreIdValue = "20"
 #*create user group:
 setupUsersOrGroupsNewUserGroupSendKey = "createUserGroup"
 setupUsersOrGroupsNewUserGroup = u"createUserGroup"
 #*Duplicate user Group:
 setupUsersOrGroupsDuplicateUserGroup = u"DuplicateUserGroup"
-setupUsersOrGroupsDuplicateUserGroupID = "49"
+#duplicateUserGroupIdValue = "49"
 setupUsersOrGroupsDuplicateUserGroupCopySendKey = u"DuplicateSuccess"
 setupUsersOrGroupsDuplicateUserGroupCopy = u"DuplicateSuccess"
 #*Edit user group:
 setupUsersOrGroupsEditUserGroup = u"EditUserGroup"
-setupUsersOrGroupsEditUserGroupID = "51"
+#editUserGroupIdValue = "51"
 setupUsersOrGroupsEditUserGroupSendKey = u"EditUserGroup"
 setupUsersOrGroupsEditUserGroupModifiedSendKey = "ModifiySuccess"
 setupUsersOrGroupsEditUserGroupModified = "ModifiySuccess"
@@ -110,7 +110,7 @@ setupUsersOrGroupsCreateUserPasswordSendKeys = "test"
 setupUsersOrGroupsCreateUserRepeatPasswordSendKeys = "test"
 #*Edit user:
 setupUsersOrGroupsEditUser =u"editUser, editUser"
-setupUsersOrGroupsEditUserID ="55"
+#editUserIdValue ="55"
 setupUsersOrGroupsEditUserModifiedFirstNameSendKeys ="modifyUser"
 setupUsersOrGroupsEditUserModifiedLastNameSendKeys ="modifyUser"
 setupUsersOrGroupsEditUserModifiedEmailSendKeys ="modifyUser@test.com"
@@ -122,14 +122,14 @@ setupUsersOrGroupsEditUserEmailSendKeys ="editUser@test.com"
 setupUsersOrGroupsEditUserUserNameSendKeys ="editUser"
 
 #********************************************************************
-storeHierarchyCompanyID = "28"
+#storeHierarchyCompanyID = "28"
 storeHierarchyCompany = u"companyTest"
-storeHierarchyStoreGroupID = "27"
+#storeHierarchyStoreGroupID = "27"
 storeHierarchyStoreGroup = u"storeGroupTest"
-storeHierarchyStoreID = "19"
+#storeHierarchyStoreID = "19"
 storeHierarchyStore = u"Storetest"
 storeHierarchyDuplicateStore = u"dStore"
-storeHierarchyDuplicateStoreID = "60"
+#storeHierarchyDuplicateStoreID = "60"
 storeHierarchyCompanyCopy =u"companyTest - Copy (1)"
 storeHierarchyStoreGroupCopy = u"storeGroupTest - Copy (1)"
 storeHierarchyDuplicateStoreCopy = u"dStore - Copy (1)"
@@ -140,8 +140,8 @@ storeHierarchyStoreModified = u"StoreModified"
 
 #****************************************************************************
 #GroupMediaPlayers:
-groupMediaPlayersDeviceStore15ID = "17"
-groupMediaPlayersAssignStoreID = "20"
+#groupMediaPlayersDeviceStore15ID = "17"
+#assignStoreIdValue = "20"
 groupMediaPlayersDeviceStore15 = u"test device 1 (store 15)"
 groupMediaPlayersDeviceStore16 = u"test device 1 (store 16)"
 groupMediaPlayersDeviceStore15Modified = u"deviceModified"
@@ -150,18 +150,18 @@ groupMediaPlayersDeviceStore15Modified = u"deviceModified"
 #Template Styles:
 templateStylesCreateTemp = u"CreateTmp"
 templateStylesDefaultTemp = u"companyTest's Default Template"
-templateStylesDefaultTempID = "123"
+#templateStylesDefaultTempID = "123"
 templateStylesDuplicateTemp = u"DuplicateTmp"
-templateStylesDuplicateTempID = "225"
+#duplicateTmpIdValue = "225"
 templateStylesDuplicateTempCopy = u"DuplicateCopyTmp"
 templateStylesModifyTmp = u"ModifyTmp"
-templateStylesModifyTmpID = "227"
+#templateStylesModifyTmpID = "227"
 templateStylesTmpNameModified =u"TmpNameIsChanged"
 templateStylesSearchKey = u"Modify"
 #************************************************************************
 #Schedule Templates:
 EditTmpSchedule = u"EditTmpSchedule"
-EditTmpScheduleID ="74"
+#EditTmpScheduleID ="74"
 EditTmpScheduleStartDateKey1 = "10"
 EditTmpScheduleStartDateKey2 = "15"
 EditTmpScheduleStartDate1 = u"06/10/2012"
@@ -174,10 +174,10 @@ EditTmpScheduleEndDateKey2 = "31"
 #Create Loops:
 NewAttractLoop=u"NewAttractLoop"
 DefaultAttractLoop =u"companyTest's Default Loop"
-DefaultAttractLoopID="117"
+#assignLoopsIdValue="117"
 assignLoops = u"assignLoops"
 #assignLoopsID= "232"
-video1ID = "118"
+#video1ID = "118"
 video1 =u"AVI_to_MPEG-4.avi"
 video2ID = "69"
 video2 = u"MediaEditTest.avi"

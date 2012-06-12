@@ -20,7 +20,7 @@ class EnSetupUsersOrGroupsFunctionUsersEditUsers(unittest.TestCase):
         except AssertionError as e: self.verificationErrors.append(str(e))
         try: self.assertNotIn(setupUsersOrGroupsEditUserModified,driver.find_element_by_id("usrBrowser").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
-        driver.find_element_by_id("users_userOptions"+setupUsersOrGroupsEditUserID).click()
+        driver.find_element_by_id("users_userOptions"+editUserIdValue).click()
         #driver.find_element_by_id("users_userOptions15").click()
         driver.find_element_by_id("firstName").clear()
         driver.find_element_by_id("firstName").send_keys(setupUsersOrGroupsEditUserModifiedFirstNameSendKeys)
@@ -34,7 +34,7 @@ class EnSetupUsersOrGroupsFunctionUsersEditUsers(unittest.TestCase):
         #driver.find_element_by_id("users_userOptions149").click()
         for i in range(60):
             try:
-                if setupUsersOrGroupsEditUserModified == driver.find_element_by_css_selector("#users_user"+setupUsersOrGroupsEditUserID+" > div.userBg.itemContent > div.blockText").text: break
+                if setupUsersOrGroupsEditUserModified == driver.find_element_by_css_selector("#users_user"+editUserIdValue+" > div.userBg.itemContent > div.blockText").text: break
             except: pass
             time.sleep(1)
         else: self.fail("time out")
@@ -43,7 +43,7 @@ class EnSetupUsersOrGroupsFunctionUsersEditUsers(unittest.TestCase):
         except AssertionError as e: self.verificationErrors.append(str(e))
         try: self.assertIn(setupUsersOrGroupsEditUserModified,driver.find_element_by_id("usrBrowser").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
-        driver.find_element_by_id("users_userOptions"+setupUsersOrGroupsEditUserID).click()
+        driver.find_element_by_id("users_userOptions"+editUserIdValue).click()
         #driver.find_element_by_id("users_userOptions15").click()
         driver.find_element_by_id("firstName").clear()
         driver.find_element_by_id("firstName").send_keys(setupUsersOrGroupsEditUserFirstNameSendKeys)
@@ -57,7 +57,7 @@ class EnSetupUsersOrGroupsFunctionUsersEditUsers(unittest.TestCase):
         self.driver.implicitly_wait(30)
         for i in range(60):
             try:
-                if setupUsersOrGroupsEditUser == driver.find_element_by_css_selector("#users_user"+setupUsersOrGroupsEditUserID+" > div.userBg.itemContent > div.blockText").text: break
+                if setupUsersOrGroupsEditUser == driver.find_element_by_css_selector("#users_user"+editUserIdValue+" > div.userBg.itemContent > div.blockText").text: break
             except: pass
             time.sleep(1)
         else: self.fail("time out")
@@ -66,7 +66,7 @@ class EnSetupUsersOrGroupsFunctionUsersEditUsers(unittest.TestCase):
         except AssertionError as e: self.verificationErrors.append(str(e))
         try: self.assertNotIn(setupUsersOrGroupsEditUserModified,driver.find_element_by_id("usrBrowser").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
-        driver.find_element_by_id("users_userOptions"+setupUsersOrGroupsEditUserID).click()
+        driver.find_element_by_id("users_userOptions"+editUserIdValue).click()
     
     def is_element_present(self, how, what):
         try: self.driver.find_element(by=how, value=what)

@@ -82,8 +82,9 @@ class createTemplates(unittest.TestCase):
         text_file = open(gb_Preprocess_ids_Prefix+"ids.py", "a")
 #        ids =[]
         text_file.write("duplicateTmpIdValue=\""+duplicateTmpIdValue+"\"\n")
-        text_file.write("editTmpScheduleValue=\""+editTmpScheduleIdValue+"\"\n")
+        text_file.write("EditTmpScheduleID=\""+editTmpScheduleIdValue+"\"\n")
         text_file.write("modifyTmpIdValue=\""+modifyTmpIdValue+"\"\n")
+        text_file.write("templateStylesModifyTmpID=\""+modifyTmpIdValue+"\"\n")
 
 #        text_file.write(("".join(ids))+"\n")
         text_file.close()

@@ -19,7 +19,7 @@ class EnTemplateStyleFunctionDuplicateTmp(unittest.TestCase):
         driver.find_element_by_css_selector("div.bigDownArrow").click()
         for i in range(60):
             try:
-                if templateStylesDuplicateTemp == driver.find_element_by_css_selector("#templates_template"+templateStylesDuplicateTempID+"> div.itemContent.templateBg > div.blockText").text: break
+                if templateStylesDuplicateTemp == driver.find_element_by_css_selector("#templates_template"+duplicateTmpIdValue+"> div.itemContent.templateBg > div.blockText").text: break
             except: pass
             time.sleep(1)
         else: self.fail("time out")
@@ -28,7 +28,7 @@ class EnTemplateStyleFunctionDuplicateTmp(unittest.TestCase):
         except AssertionError as e: self.verificationErrors.append(str(e))
         try: self.assertNotIn(templateStylesDuplicateTempCopy, driver.find_element_by_id("templateSpace").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
-        driver.find_element_by_css_selector("#templates_template"+templateStylesDefaultTempID+"> div.itemContent.templateBg > div.blockText").click()
+        driver.find_element_by_css_selector("#templates_template"+modifyTmpIdValue+"> div.itemContent.templateBg > div.blockText").click()
 
         driver.find_element_by_id("duplicateTemplate").click()
         driver.find_element_by_id("templateEditName").clear()
@@ -41,7 +41,7 @@ class EnTemplateStyleFunctionDuplicateTmp(unittest.TestCase):
         driver.find_element_by_css_selector("div.bigDownArrow").click()
         for i in range(60):
             try:
-                if templateStylesDuplicateTemp == driver.find_element_by_css_selector("#templates_template"+templateStylesDuplicateTempID+"> div.itemContent.templateBg > div.blockText").text: break
+                if templateStylesDuplicateTemp == driver.find_element_by_css_selector("#templates_template"+duplicateTmpIdValue+"> div.itemContent.templateBg > div.blockText").text: break
             except: pass
             time.sleep(1)
         else: self.fail("time out")

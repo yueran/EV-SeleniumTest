@@ -25,7 +25,7 @@ class EnCreateLoopsFunctionCreateNewLoop(unittest.TestCase):
 		driver.find_element_by_id("attractLoopPopupOK").click()
 		for i in range(60):
 			try:
-				if DefaultAttractLoop == driver.find_element_by_xpath("//li[@id='aLCol_attractLoop"+DefaultAttractLoopID+"']/div/div").text: break
+				if assignLoops == driver.find_element_by_xpath("//li[@id='aLCol_attractLoop"+assignLoopsIdValue+"']/div/div").text: break
 			except: pass
 			time.sleep(1)
 		else: self.fail("time out")
@@ -34,7 +34,7 @@ class EnCreateLoopsFunctionCreateNewLoop(unittest.TestCase):
 		driver.refresh()
 		for i in range(60):
 			try:
-				if DefaultAttractLoop == driver.find_element_by_xpath("//li[@id='aLCol_attractLoop"+DefaultAttractLoopID+"']/div/div").text: break
+				if assignLoops == driver.find_element_by_xpath("//li[@id='aLCol_attractLoop"+assignLoopsIdValue+"']/div/div").text: break
 			except: pass
 			time.sleep(1)
 		else: self.fail("time out")

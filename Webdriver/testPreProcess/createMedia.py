@@ -95,7 +95,7 @@ class createMedia(unittest.TestCase):
         driver.get(self.base_url + "/ev/groupdevices")
         testDevice1Id = driver.find_element_by_xpath("//ul[@class='listDevices genericBrowser']/li[1]").get_attribute("id")
         testDevice1IdValue = re.sub("\D","",testDevice1Id)
-        print "testDevice1IdValue=\""+testDevice1IdValue+"\"\n"
+        print "groupMediaPlayersDeviceStore15ID=\""+testDevice1IdValue+"\"\n"
         testDevice2Id = driver.find_element_by_xpath("//ul[@class='listDevices genericBrowser']/li[2]").get_attribute("id")
         testDevice2IdValue = re.sub("\D","",testDevice2Id)
         print "testDevice2IdValue=\""+testDevice2IdValue+"\"\n"
@@ -106,6 +106,7 @@ class createMedia(unittest.TestCase):
         text_file.write("TestMediaIdValue=\""+TestMediaIdValue+"\"\n")
         text_file.write("Device1ID=\""+testDevice1IdValue+"\"\n")
         text_file.write("Device2ID=\""+testDevice2IdValue+"\"\n")
+        text_file.write("groupMediaPlayersDeviceStore15ID=\""+testDevice2IdValue+"\"\n")
 #        text_file.write(("".join(ids))+"\n")
         text_file.close()
 

@@ -111,12 +111,15 @@ class createTestUsersAndGroups(unittest.TestCase):
         editUserGroupIdValue = re.sub("\D","",editUserGroupId)
         print "editUserGroupIdValue=\""+editUserGroupIdValue+"\""
 
+        searchUserId = driver.find_element_by_xpath("//ul[@id='usrBrowser']//li[1]").get_attribute("id")
+        searchUserIdValue = re.sub("\D","",searchUserId)
+        print "searchUserIdValue=\""+searchUserIdValue+"\"\n"
         text_file = open(gb_Preprocess_ids_Prefix+"ids.py", "a")
 #        ids =[]
         text_file.write("editUserIdValue=\""+editUserIdValue+"\"\n")
         text_file.write("duplicateUserGroupIdValue=\""+duplicateUserGroupIdValue+"\"\n")
         text_file.write("editUserGroupIdValue=\""+editUserGroupIdValue+"\"\n")
-
+        text_file.write("searchUserIdValue=\""+searchUserIdValue+"\"\n")
 #        text_file.write(("".join(ids))+"\n")
         text_file.close()
 

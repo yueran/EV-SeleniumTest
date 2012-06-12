@@ -20,12 +20,12 @@ class EnAssignAccessoryFunctionAssign(unittest.TestCase):
         driver.get(self.base_url + "/ev/assignaccessories")
 #        driver.find_element_by_xpath("//li[@id='categories_category517']/div/span").click()
 #        driver.find_element_by_xpath("//li[@id='accessories_category514']/div/span").click()
-        try: self.assertTrue(self.is_element_present(By.XPATH, "//li[@id='accessories_accessory"+assignAccessoryAcc1ID+"']/div/div"))
+        try: self.assertTrue(self.is_element_present(By.XPATH, "//li[@id='accessories_accessory"+testAcc1IdValue+"']/div/div"))
         except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertTrue(self.is_element_present(By.XPATH, "//li[@id='products_product"+assignAccessoryProd1ID+"']/div/div"))
+        try: self.assertTrue(self.is_element_present(By.XPATH, "//li[@id='products_product"+testProduct1IdValue+"']/div/div"))
         except AssertionError as e: self.verificationErrors.append(str(e))
-        element = driver.find_element_by_xpath("//li[@id='accessories_accessory"+assignAccessoryAcc1ID+"']/div/div")
-        target = driver.find_element_by_xpath("//li[@id='products_product"+assignAccessoryProd1ID+"']/div/div")
+        element = driver.find_element_by_xpath("//li[@id='accessories_accessory"+testAcc1IdValue+"']/div/div")
+        target = driver.find_element_by_xpath("//li[@id='products_product"+testProduct1IdValue+"']/div/div")
         action_chains = ActionChains(driver)
         action_chains.drag_and_drop(element, target);
 

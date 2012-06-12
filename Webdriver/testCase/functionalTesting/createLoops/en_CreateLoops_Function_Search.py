@@ -25,7 +25,7 @@ class EnCreateLoopsFunctionSearch(unittest.TestCase):
 		driver.find_element_by_id("filterMediaText").send_keys(video1)
 		for i in range(60):
 			try:
-				if video1 == driver.find_element_by_css_selector("#videoColumn_video"+video1ID+" > div.videoBg.itemContent > div.blockText").text: break
+				if video1 == driver.find_element_by_xpath("//ul[@class='videoList genericBrowser'/li[1]").text: break
 			except: pass
 			time.sleep(1)
 		else: self.fail("time out")
@@ -48,7 +48,7 @@ class EnCreateLoopsFunctionSearch(unittest.TestCase):
 		Select(driver.find_element_by_id("filterLoopValue")).select_by_visible_text("Media")
 		for i in range(60):
 			try:
-				if DefaultAttractLoop == driver.find_element_by_xpath("//li[@id='aLCol_attractLoop"+DefaultAttractLoopID+"']/div/div").text: break
+				if assignLoops == driver.find_element_by_xpath("//li[@id='aLCol_attractLoop"+assignLoopsIdValue+"']/div/div").text: break
 			except: pass
 			time.sleep(1)
 		else: self.fail("time out")
@@ -58,13 +58,13 @@ class EnCreateLoopsFunctionSearch(unittest.TestCase):
 		except AssertionError as e: self.verificationErrors.append(str(e))
 		try: self.assertIn(video2, driver.find_element_by_class_name("attractLoopColumn").text)
 		except AssertionError as e: self.verificationErrors.append(str(e))
-		try: self.assertIn(DefaultAttractLoop, driver.find_element_by_class_name("attractLoopColumn").text)
+		try: self.assertIn(assignLoops, driver.find_element_by_class_name("attractLoopColumn").text)
 		except AssertionError as e: self.verificationErrors.append(str(e))
 		driver.find_element_by_id("filterMediaText").clear()
 		driver.find_element_by_id("filterMediaText").send_keys(video2)
 		for i in range(60):
 			try:
-				if DefaultAttractLoop == driver.find_element_by_xpath("//li[@id='aLCol_attractLoop"+DefaultAttractLoopID+"']/div/div").text: break
+				if assignLoops == driver.find_element_by_xpath("//li[@id='aLCol_attractLoop"+assignLoopsIdValue+"']/div/div").text: break
 			except: pass
 			time.sleep(1)
 		else: self.fail("time out")
@@ -75,7 +75,7 @@ class EnCreateLoopsFunctionSearch(unittest.TestCase):
 #		except AssertionError as e: self.verificationErrors.append(str(e))
 		try: self.assertNotIn(EditNameOfLoop, driver.find_element_by_class_name("attractLoopColumn").text)
 		except AssertionError as e: self.verificationErrors.append(str(e))
-		try: self.assertIn(DefaultAttractLoop, driver.find_element_by_class_name("attractLoopColumn").text)
+		try: self.assertIn(assignLoops, driver.find_element_by_class_name("attractLoopColumn").text)
 		except AssertionError as e: self.verificationErrors.append(str(e))
 
 		driver.refresh()
@@ -91,7 +91,7 @@ class EnCreateLoopsFunctionSearch(unittest.TestCase):
 		Select(driver.find_element_by_id("filterLoopValue")).select_by_visible_text("Attract Loops")
 		for i in range(60):
 			try:
-				if DefaultAttractLoop == driver.find_element_by_xpath("//li[@id='aLCol_attractLoop"+DefaultAttractLoopID+"']/div/div").text: break
+				if assignLoops == driver.find_element_by_xpath("//li[@id='aLCol_attractLoop"+assignLoopsIdValue+"']/div/div").text: break
 			except: pass
 			time.sleep(1)
 		else: self.fail("time out")
@@ -116,7 +116,7 @@ class EnCreateLoopsFunctionSearch(unittest.TestCase):
 		except AssertionError as e: self.verificationErrors.append(str(e))
 		try: self.assertNotIn(video1, driver.find_element_by_class_name("attractLoopColumn").text)
 		except AssertionError as e: self.verificationErrors.append(str(e))
-		try: self.assertNotIn(DefaultAttractLoop, driver.find_element_by_class_name("attractLoopColumn").text)
+		try: self.assertNotIn(assignLoops, driver.find_element_by_class_name("attractLoopColumn").text)
 		except AssertionError as e: self.verificationErrors.append(str(e))
 		try: self.assertNotIn(video2, driver.find_element_by_class_name("attractLoopColumn").text)
 		except AssertionError as e: self.verificationErrors.append(str(e))

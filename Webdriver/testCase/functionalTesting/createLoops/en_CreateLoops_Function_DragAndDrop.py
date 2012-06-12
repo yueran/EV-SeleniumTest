@@ -16,7 +16,7 @@ class EnCreateLoopsFunctionDragAndDrop(unittest.TestCase):
 		driver.get(self.base_url + "/ev/createloops")
 		# ERROR: Caught exception [ERROR: Unsupported command [isTextPresent]]
 		# ERROR: Caught exception [ERROR: Unsupported command [isTextPresent]]
-		try: self.assertTrue(self.is_element_present(By.XPATH, "//li[@id='videoColumn_video"+video1ID+"']/div/div"))
+		try: self.assertTrue(self.is_element_present(By.XPATH, "//ul[@class='videoList genericBrowser'/li[1]/div/div"))
 		except AssertionError as e: self.verificationErrors.append(str(e))
 		try: self.assertTrue(self.is_element_present(By.XPATH, "//li[@id='aLCol_attractLoop"+assignLoopsID+"']/div/div"))
 		except AssertionError as e: self.verificationErrors.append(str(e))

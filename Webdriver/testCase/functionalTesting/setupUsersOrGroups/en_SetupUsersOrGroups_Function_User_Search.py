@@ -46,28 +46,28 @@ class EnSetupUsersOrGroupsFunctionUsersSearch(unittest.TestCase):
         driver.find_element_by_id("filterTextUserColumn").send_keys(setupUsersOrGroupsSearchUserKey1)
         for i in range(60):
             try:
-                if setupUsersOrGroupsSearchUser1 == driver.find_element_by_xpath("//li[@id='users_user"+setupUsersOrGroupsSearchUser1ID +"']/div/div[2]").text: break
+                if "\""+searchUserLastName+", "+searchUserFirstName+"\"" == driver.find_element_by_xpath("//li[@id='users_user"+searchUserIdValue +"']/div/div[2]").text: break
             except: pass
             time.sleep(1)
         else: self.fail("time out")
-        try: self.assertIn(setupUsersOrGroupsSearchUser1, driver.find_element_by_id("usrBrowser").text)
+        try: self.assertIn("\""+searchUserLastName+", "+searchUserFirstName+"\"", driver.find_element_by_id("usrBrowser").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertNotIn(setupUsersOrGroupsSearchUser2, driver.find_element_by_id("usrBrowser").text)
+        try: self.assertNotIn("\""+editUserLastName+", "+editUserFirstName+"\"", driver.find_element_by_id("usrBrowser").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
 #        try: self.assertNotIn(u"Modify", driver.find_element_by_id("usrBrowser").text)
 #        except AssertionError as e: self.verificationErrors.append(str(e))
         driver.find_element_by_id("filterTextUserColumn").clear()
         Select(driver.find_element_by_id("filterUserColumn")).select_by_visible_text("Last Name")
-        driver.find_element_by_id("filterTextUserColumn").send_keys(setupUsersOrGroupsSearchUserKey2)
+        driver.find_element_by_id("filterTextUserColumn").send_keys(editUserName)
         for i in range(60):
             try:
-                if setupUsersOrGroupsSearchUser2 == driver.find_element_by_xpath("//li[@id='users_user"+setupUsersOrGroupsSearchUser2ID+"']/div/div[2]").text: break
+                if "\""+editUserLastName+", "+editUserFirstName+"\"" == driver.find_element_by_xpath("//li[@id='users_user"+editUserIdValue+"']/div/div[2]").text: break
             except: pass
             time.sleep(1)
         else: self.fail("time out")
-        try: self.assertNotIn(setupUsersOrGroupsSearchUser1, driver.find_element_by_id("usrBrowser").text)
+        try: self.assertNotIn("\""+searchUserLastName+", "+searchUserFirstName+"\"", driver.find_element_by_id("usrBrowser").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertIn(setupUsersOrGroupsSearchUser2, driver.find_element_by_id("usrBrowser").text)
+        try: self.assertIn("\""+editUserLastName+", "+editUserFirstName+"\"", driver.find_element_by_id("usrBrowser").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
 #        try: self.assertNotIn(u"Modify", driver.find_element_by_id("usrBrowser").text)
 #        except AssertionError as e: self.verificationErrors.append(str(e))

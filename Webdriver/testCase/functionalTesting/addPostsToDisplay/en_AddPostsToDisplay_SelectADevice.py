@@ -17,8 +17,8 @@ class EnAddPostsToDisplaySelectADevice(unittest.TestCase):
         gb_login(self)
         driver.get(self.base_url + "/ev/addpoststodisplay")
         driver.find_element_by_css_selector("span.bigDownArrow").click()
-        driver.find_element_by_xpath(addPostsToDisplayStore).click()
-        driver.find_element_by_xpath(addPostsToDisplayDevice).click()
+        driver.find_element_by_xpath("//li[@id='hierarchy_store"+assignStoreIdValue+"']/div/span").click()
+        driver.find_element_by_xpath("//li[@id='deviceContainersCol_device"+Device1ID+"']/div/div").click()
         driver.find_element_by_css_selector("span.bigDownArrow").click()
     
     def is_element_present(self, how, what):

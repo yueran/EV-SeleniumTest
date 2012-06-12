@@ -138,7 +138,7 @@ class EnTemplateStyleFunctionCreateTemplates(unittest.TestCase):
 #reloading problem.
         for i in range(60):
             try:
-                if templateStylesDefaultTemp == driver.find_element_by_css_selector("#templates_template"+templateStylesDefaultTempID +"> div.itemContent.templateBg > div.blockText").text: break
+                if templateStylesDefaultTemp == driver.find_element_by_css_selector("#templates_template"+modifyTmpIdValue +"> div.itemContent.templateBg > div.blockText").text: break
             except: pass
             time.sleep(1)
         else: self.fail("time out")
@@ -149,7 +149,7 @@ class EnTemplateStyleFunctionCreateTemplates(unittest.TestCase):
         driver.find_element_by_css_selector("div.bigDownArrow").click()
         for i in range(60):
             try:
-                if templateStylesDefaultTemp == driver.find_element_by_css_selector("#templates_template"+templateStylesDefaultTempID +"> div.itemContent.templateBg > div.blockText").text: break
+                if templateStylesDefaultTemp == driver.find_element_by_css_selector("#templates_template"+modifyTmpIdValue +"> div.itemContent.templateBg > div.blockText").text: break
             except: pass
             time.sleep(1)
         else: self.fail("time out")

@@ -110,24 +110,24 @@ class createStoreHierarchy(unittest.TestCase):
         companyTestId = driver.find_element_by_xpath("//ul[@class='genericBrowser']/li[1]").get_attribute("id")
         companyTestIdValue = re.sub("\D","",companyTestId)
 #        print "companyTestId="+companyTestId
-        print "companyTestIdValue=\""+companyTestIdValue+"\""
+        print "storeHierarchyCompanyID=\""+companyTestIdValue+"\""
 
         storeGroupTestId = driver.find_element_by_xpath("//ul[@class='genericBrowser']/li[2]").get_attribute("id")
         storeGroupTestIdValue = re.sub("\D","",storeGroupTestId)
 #        print "storeGroupTestId="+storeGroupTestId
-        print "storeGroupTestIdValue=\""+storeGroupTestIdValue+"\""
+        print "storeHierarchyStoreGroupID=\""+storeGroupTestIdValue+"\""
 
         storeTestId = driver.find_element_by_xpath("//ul[@class='genericBrowser']/li[3]").get_attribute("id")
         storeTestIdValue = re.sub("\D","",storeTestId)
 
 #        print "storeTestId="+storeTestId
-        print "storeTestIdValue=\""+storeTestIdValue+"\""
+        print "storeHierarchyStoreID=\""+storeTestIdValue+"\""
 
         dStoreId = driver.find_element_by_xpath("//ul[@class='genericBrowser']/li[4]").get_attribute("id")
         dStoreIdValue = re.sub("\D","",dStoreId)
 
 #        print "dStore="+dStoreId
-        print "dStoreIdValue=\""+dStoreIdValue+"\""
+        print "storeHierarchyDuplicateStoreID=\""+dStoreIdValue+"\""
 
         assignStoreId = driver.find_element_by_xpath("//ul[@class='genericBrowser']/li[5]").get_attribute("id")
         assignStoreIdValue = re.sub("\D","",assignStoreId)
@@ -142,6 +142,9 @@ class createStoreHierarchy(unittest.TestCase):
 
         text_file = open(gb_Preprocess_ids_Prefix+"ids.py", "a")
 #        ids =[]
+        text_file.write("storeHierarchyCompanyID=\""+companyTestIdValue+"\"\n")
+        text_file.write("storeHierarchyStoreGroupID=\""+storeGroupTestIdValue+"\"\n")
+        text_file.write("storeHierarchyStoreID=\""+storeTestIdValue+"\"\n")
         text_file.write("companyTestIdValue=\""+companyTestIdValue+"\"\n")
         text_file.write("storeGroupTestIdValue=\""+storeGroupTestIdValue+"\"\n")
         text_file.write("storeTestIdValue=\""+storeTestIdValue+"\"\n")

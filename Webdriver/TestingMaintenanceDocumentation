@@ -76,8 +76,8 @@ Note: this step might should be manually implemented for now.
 Login as user 'yrtest/test',
 1)Upload Media:
 *Create 'ModifyMediaGroup',find its id as 'uploadMediaModifyMediaGroupId'
-*Create 'TestMediaGroup', find its id as 'uploadMediaGroupID'
-*Find media with title 'MediaEditTest.avi', find its id as 'uploadMediaMediumID'
+*Create 'TestMediaGroup', find its id as 'TestMediaGroupIdValue'
+*Find media with title 'MediaEditTest.avi', find its id as 'TestMediaIdValue'
 
 2)Classify Products:
 *Create category named as 'test', find its id as 'classifyProductsCategoryId'
@@ -92,11 +92,11 @@ Login as user 'yrtest/test',
 *Create Prod1 named as 'acc2', find its id as 'createProductsAcc2ID'
 
 4)Setup Users Or Groups:
-*Create User1:'setupUsersOrGroupsSearchUser1'fn:ab, ln:cd, email:abcd@abcd.com; Login:abcd, pwd: test/test; find its id as setupUsersOrGroupsSearchUser1ID
+*Create User1:'setupUsersOrGroupsSearchUser1'fn:ab, ln:cd, email:abcd@abcd.com; Login:abcd, pwd: test/test; find its id as searchUserIdValue
 *Create User2:'setupUsersOrGroupsSearchUser2' fn:xyz, ln:xyz, email:xyz@xyz.com; login: xyz, pwd:test/test; find its id as setupUsersOrGroupsSearchUser2D
-*Create User3:'setupUsersOrGroupsEditUser' fn:editUser; ln:edituser; email: editUser@test.com; login:editUser; pwd:test/test; find its id as setupUsersOrGroupsEditUserID
-*Create UserGroup:setupUsersOrGroupsDuplicateUserGroup named as 'u"DuplicateUserGroup"', find its id as setupUsersOrGroupsDuplicateUserGroupID
-*Create UserGroup:setupUsersOrGroupsEditUserGroup = u"EditUserGroup", find its id as setupUsersOrGroupsEditUserGroupID
+*Create User3:'setupUsersOrGroupsEditUser' fn:editUser; ln:edituser; email: editUser@test.com; login:editUser; pwd:test/test; find its id as editUserIdValue
+*Create UserGroup:setupUsersOrGroupsDuplicateUserGroup named as 'u"DuplicateUserGroup"', find its id as duplicateUserGroupIdValue
+*Create UserGroup:setupUsersOrGroupsEditUserGroup = u"EditUserGroup", find its id as editUserGroupIdValue
 
 5)Store Hierarchy:
 *Create Company:
@@ -108,12 +108,12 @@ storeHierarchyStoreID = "19"
 storeHierarchyStore = u"Storetest"
 storeHierarchyDuplicateStore = u"dStore"
 storeHierarchyDuplicateStoreID = "60"
-groupMediaPlayersAssignStoreID = "20"
+assignStoreIdValue = "20"
 groupMediaPlayersAssignStore = "assignStore"
 
 6)Template Styles:
 templateStylesDuplicateTemp = u"DuplicateTmp"
-templateStylesDuplicateTempID = "225"
+duplicateTmpIdValue = "225"
 templateStylesModifyTmp = u"ModifyTmp"
 templateStylesModifyTmpID = "227"
 EditTmpSchedule = u"EditTmpSchedule"

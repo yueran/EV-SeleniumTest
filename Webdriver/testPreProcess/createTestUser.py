@@ -130,21 +130,25 @@ class createTestUser(unittest.TestCase):
 ##        action_chains.perform()
 #################################################################################################################3
 #
+#        reply = "Do you want to print out the results?"
+#        if reply == 'y':
+#            print"Here is the results:\n"
+#            continue
         testUserGroupId = driver.find_element_by_xpath("//ul[@class='userGroupList genericBrowser']/li[last()]").get_attribute("id")
-#        print "testUserGroupId="+testUserGroupId
-        testUserGroupIdValue = re.sub("\D","",testUserGroupId)
-        print "testUserGroupIdValue=\""+testUserGroupIdValue+"\""
+    #        print "testUserGroupId="+testUserGroupId
+        testUserGroupIdValue = re.sub("\D", "", testUserGroupId)
+        print "testUserGroupIdValue=\"" + testUserGroupIdValue + "\""
 
         testUserId = driver.find_element_by_xpath("//ul[@id='usrBrowser']//li[last()]").get_attribute("id")
-#        print "testUserId="+testUserId
-        testUserIdValue = re.sub("\D","",testUserId)
-        print "testUserIdValue=\""+testUserIdValue+"\""
+    #        print "testUserId="+testUserId
+        testUserIdValue = re.sub("\D", "", testUserId)
+        print "testUserIdValue=\"" + testUserIdValue + "\""
 
-        text_file = open(gb_Preprocess_ids_Prefix+"ids.py", "a")
-#        ids =[]
-        text_file.write("testUserGroupIdValue=\""+testUserGroupIdValue+"\"\n")
-        text_file.write("testUserIdValue=\""+testUserIdValue+"\"\n")
-#        text_file.write(("".join(ids))+"\n")
+        text_file = open(gb_Preprocess_ids_Prefix + "ids.py", "a")
+    #        ids =[]
+        text_file.write("testUserGroupIdValue=\"" + testUserGroupIdValue + "\"\n")
+        text_file.write("testUserIdValue=\"" + testUserIdValue + "\"\n")
+    #        text_file.write(("".join(ids))+"\n")
         text_file.close()
         
     def is_element_present(self, how, what):

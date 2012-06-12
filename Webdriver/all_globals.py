@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 import unittest, time, re
-
+from Webdriver.testPreProcess.input import *
 
 #global Ids:
 gb_ip = "10.0.2.15"
@@ -26,9 +26,9 @@ def gb_login(self):
     driver = self.driver
     driver.get(self.base_url + "/ev/login")
     driver.find_element_by_id("form.login").clear()
-    driver.find_element_by_id("form.login").send_keys("yrtest")
+    driver.find_element_by_id("form.login").send_keys(userName)
     driver.find_element_by_id("form.password").clear()
-    driver.find_element_by_id("form.password").send_keys("test")
+    driver.find_element_by_id("form.password").send_keys(userPassword)
     #driver.find_element_by_id("form.login").send_keys("andrew")
     #driver.find_element_by_id("form.password").clear()
     #driver.find_element_by_id("form.password").send_keys("andrew")

@@ -20,7 +20,7 @@ class EnGroupMediaPlayersFunctionDragAndDrop(unittest.TestCase):
         Select(driver.find_element_by_id("filterStoresBy")).select_by_visible_text("")
         try: self.assertTrue(self.is_element_present(By.XPATH, "//li[@id='deviceCol_device"+groupMediaPlayersDeviceStore15ID+"']/div/div"))
         except AssertionError as e: self.verificationErrors.append(str(e))
-        driver.find_element_by_xpath("//li[@id='hierarchy_store"+groupMediaPlayersAssignStoreID+"']/div/span").click()
+        driver.find_element_by_xpath("//li[@id='hierarchy_store"+assignStoreIdValue+"']/div/span").click()
 #        try: self.assertTrue(self.is_element_present(By.CSS_SELECTOR, "#hierarchy_store200 > div.itemContent.storeBg > div.blockText"))
 #        except AssertionError as e: self.verificationErrors.append(str(e))
         # ERROR: Caught exception [ERROR: Unsupported command [dragAndDropToObject]]
