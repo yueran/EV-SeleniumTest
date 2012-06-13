@@ -64,7 +64,7 @@ if __name__ == "__main__":
 
     runner = HTMLTestRunner(
             stream=fp,
-            title='Test Result',
+            title='groupMediaPlayer',
             description='Test Report'
             )
  #   runner = unittest.TextTestRunner()

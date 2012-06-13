@@ -22,13 +22,13 @@ class EnGroupMediaPlayersFunctionModification(unittest.TestCase):
         except AssertionError as e: self.verificationErrors.append(str(e))
         try: self.assertNotIn(groupMediaPlayersDeviceStore15Modified, driver.find_element_by_class_name("deviceCol").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
-        driver.find_element_by_id("deviceCol_device"+groupMediaPlayersDeviceStore15ID+"Options").click()
+        driver.find_element_by_id("deviceCol_device"+Device1ID+"Options").click()
         driver.find_element_by_id("deviceName").clear()
         driver.find_element_by_id("deviceName").send_keys(groupMediaPlayersDeviceStore15Modified)
         driver.find_element_by_id("renameDevice").click()
         for i in range(60):
             try:
-                if groupMediaPlayersDeviceStore15Modified == driver.find_element_by_xpath("//li[@id='deviceCol_device"+groupMediaPlayersDeviceStore15ID+"']/div/div[2]").text: break
+                if groupMediaPlayersDeviceStore15Modified == driver.find_element_by_xpath("//li[@id='deviceCol_device"+Device1ID+"']/div/div[2]").text: break
             except: pass
             time.sleep(1)
         else: self.fail("time out")
@@ -45,7 +45,7 @@ class EnGroupMediaPlayersFunctionModification(unittest.TestCase):
         except AssertionError as e: self.verificationErrors.append(str(e))
         try: self.assertIn(groupMediaPlayersDeviceStore15Modified, driver.find_element_by_class_name("deviceCol").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
-        driver.find_element_by_id("deviceCol_device"+groupMediaPlayersDeviceStore15ID+"Options").click()
+        driver.find_element_by_id("deviceCol_device"+Device1ID+"Options").click()
         driver.find_element_by_id("deviceName").clear()
         driver.find_element_by_id("deviceName").send_keys(groupMediaPlayersDeviceStore15)
         driver.find_element_by_id("renameDevice").click()

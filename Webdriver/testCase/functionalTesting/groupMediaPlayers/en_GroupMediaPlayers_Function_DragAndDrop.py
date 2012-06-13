@@ -24,8 +24,8 @@ class EnGroupMediaPlayersFunctionDragAndDrop(unittest.TestCase):
 #        try: self.assertTrue(self.is_element_present(By.CSS_SELECTOR, "#hierarchy_store200 > div.itemContent.storeBg > div.blockText"))
 #        except AssertionError as e: self.verificationErrors.append(str(e))
         # ERROR: Caught exception [ERROR: Unsupported command [dragAndDropToObject]]
-        driver.find_element_by_xpath("//li[@id='hierarchy_store200']/div/span").click()
-        driver.find_element_by_id("deviceContainersCol_device28Unassign").click()
+        driver.find_element_by_xpath("//li[@id='hierarchy_store"+assignStoreIdValue+"']/div/span").click()
+        driver.find_element_by_id("deviceContainersCol_device"+Device1ID+"Unassign").click()
     
     def is_element_present(self, how, what):
         try: self.driver.find_element(by=how, value=what)

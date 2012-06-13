@@ -189,8 +189,8 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>Test Result</h1>
-<p class='attribute'><strong>Start Time:</strong> 2012-05-30 18:37:48</p>
-<p class='attribute'><strong>Duration:</strong> 0:01:38.867876</p>
+<p class='attribute'><strong>Start Time:</strong> 2012-06-13 17:04:06</p>
+<p class='attribute'><strong>Duration:</strong> 0:01:09.935746</p>
 <p class='attribute'><strong>Status:</strong> Pass 4 Error 1</p>
 
 <p class='description'>Test Report</p>
@@ -274,19 +274,11 @@ function showOutput(id, name) {
         <pre>
         
 ft3.1: Traceback (most recent call last):
-  File "/home/yueran/zignage/test/EV-SeleniumTest/Webdriver/testSuites/en_GroupMediaPlayers.py", line 30, in test_en_group_media_players_function_drag_and_drop
+  File "/home/yueran/zignage/test/EV-SeleniumTest/Webdriver/testSuites/en_GroupMediaPlayers.py", line 32, in test_en_group_media_players_function_drag_and_drop
     TestCase3.EnGroupMediaPlayersFunctionDragAndDrop.test_en_group_media_players_function_drag_and_drop(self)
   File "/home/yueran/zignage/test/EV-SeleniumTest/Webdriver/testCase/functionalTesting/groupMediaPlayers/en_GroupMediaPlayers_Function_DragAndDrop.py", line 21, in test_en_group_media_players_function_drag_and_drop
-    driver.find_element_by_xpath("//li[@id='hierarchy_store"+groupMediaPlayersAssignStoreID+"']/div/span").click()
-  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webelement.py", line 51, in click
-    self._execute(Command.CLICK_ELEMENT)
-  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webelement.py", line 204, in _execute
-    return self._parent.execute(command, params)
-  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webdriver.py", line 153, in execute
-    self.error_handler.check_response(response)
-  File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/errorhandler.py", line 147, in check_response
-    raise exception_class(message, screen, stacktrace)
-ElementNotVisibleException: Message: u'Element is not currently visible and so may not be interacted with' 
+    try: self.assertTrue(self.is_element_present(By.XPATH, "//li[@id='deviceCol_device"+groupMediaPlayersDeviceStore15ID+"']/div/div"))
+NameError: global name 'groupMediaPlayersDeviceStore15ID' is not defined
 
 
         </pre>
