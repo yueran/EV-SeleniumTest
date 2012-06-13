@@ -26,6 +26,9 @@ class createProducts(unittest.TestCase):
 
     def test_create_products(self):
         driver = self.driver
+
+
+
         driver.get(self.base_url + "/ev/login")
         driver.find_element_by_id("form.password").clear()
         driver.find_element_by_id("form.password").send_keys("")
@@ -130,7 +133,38 @@ class createProducts(unittest.TestCase):
 #        text_file.write("testManId=\""+testManId+"\"")
 #        text_file.write(("".join(ids))+"\n")
         text_file.close()
+        driver.get(self.base_url + "/ev/login")
+        driver.find_element_by_id("form.password").clear()
+        driver.find_element_by_id("form.password").send_keys("")
+        driver.find_element_by_id("form.login").clear()
+        driver.find_element_by_id("form.login").send_keys("andrew")
+        driver.find_element_by_id("form.password").clear()
+        driver.find_element_by_id("form.password").send_keys("andrew")
+        driver.find_element_by_css_selector("span.commonButton.login_ok").click()
+        driver.get(self.base_url + "/ev/createproducts")
+        driver.find_element_by_id("newProduct").click()
+        driver.find_element_by_id("product").click()
+        try: self.assertIn("New Product", driver.find_element_by_id("productName").text)
+        except AssertionError as e: self.verificationErrors.append(str(e))
+        Select(driver.find_element_by_id("detailManufacturer")).select_by_visible_text("test")
+        #Select(driver.find_element_by_id("detailCategory")).select_by_visible_text("")
+        driver.find_element_by_id("detailModel").clear()
+        driver.find_element_by_id("detailModel").send_keys(testInvueProduct1)
+        driver.find_element_by_id("detailSeries").clear()
+        driver.find_element_by_id("saveProduct").click()
 
+        driver.refresh()
+
+        driver.find_element_by_id("newProduct").click()
+        driver.find_element_by_id("product").click()
+        try: self.assertIn("New Product", driver.find_element_by_id("productName").text)
+        except AssertionError as e: self.verificationErrors.append(str(e))
+        Select(driver.find_element_by_id("detailManufacturer")).select_by_visible_text("test")
+        #Select(driver.find_element_by_id("detailCategory")).select_by_visible_text("")
+        driver.find_element_by_id("detailModel").clear()
+        driver.find_element_by_id("detailModel").send_keys(testInvueProduct2)
+        driver.find_element_by_id("detailSeries").clear()
+        driver.find_element_by_id("saveProduct").click()
 
     def is_element_present(self, how, what):
         try: self.driver.find_element(by=how, value=what)

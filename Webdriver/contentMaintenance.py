@@ -51,16 +51,17 @@ uploadMediaModifiedMedia =u"MediaSuccess.avi"
 #createProductsManufactureId = "8"
 createProductsManModifyText = u"ManTest"
 createProductsManModifySuccessText=u"MModifySuccess"
+createNewProduct='3testProduct'
 #2)Medialist:
 createProductsMedia1 ="defaultSecondaryImage.jpg"
-createProductsMedia2 = "iceweasel.png"
-createProductsProduct1 = u"abcd"
-#testProduct1IdValue = "95"
-createProductsProduct2 = u"xyz"
+createProductsMedia2 = "AVI_to_MPEG-4.avi"
+#createProductsProduct1 = u"abcd"
+##testProduct1IdValue = "95"
+#createProductsProduct2 = u"xyz"
 createProductsInvueProd1 = u"InvuePro1"
 createProductsInvueProdKeyword ="1"
 createProductsInvueProd2 = u"InvuePro2"
-createProductsProdKeyword ="ab"
+createProductsProdKeyword ="1"
 
 #Assign Accessory
 #testAcc1IdValue = "100"

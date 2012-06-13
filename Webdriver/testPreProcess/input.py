@@ -47,6 +47,8 @@ testProduct1 = u"1testProduct1"
 testProduct2 = u"2testProduct2"
 testAcc1 = u"3testzAcc1"
 testAcc2 = u"4testzAcc2"
+testInvueProduct1=u"testInvueProduct1"
+testInvueProduct2=u"testInvueProduct2"
 
 #*****************************************************
 duplicateTmp = u"1DuplicateTmp"

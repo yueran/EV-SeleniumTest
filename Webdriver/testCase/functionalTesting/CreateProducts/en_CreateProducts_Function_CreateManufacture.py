@@ -38,19 +38,19 @@ class EnCreateProductsFunctionCreateManufacture(unittest.TestCase):
         driver.find_element_by_id("manufacturerName").send_keys(createProductsManModifySuccessText)
         driver.find_element_by_id("saveManufacturer").click()
         driver.refresh()
-#        for i in range(60):
-#            try:
-#                if createProductsManModifySuccessText == driver.find_element_by_css_selector("option[value=\""+createProductsManufactureId+"\"]").text: break
-#            except: pass
-#            time.sleep(1)
-#        else: self.fail("time out")
-        try: self.assertNotIn(createProductsManModifyText, driver.find_element_by_id("detailManufacturer").text)
-        except AssertionError as e: self.verificationErrors.append(str(e))
+        for i in range(60):
+            try:
+                if "--New Manufacturer--" == driver.find_element_by_id("anyManufacturer").text: break
+            except: pass
+            time.sleep(1)
+        else: self.fail("time out")
+#        try: self.assertNotIn(createProductsManModifyText, driver.find_element_by_id("detailManufacturer").text)
+#        except AssertionError as e: self.verificationErrors.append(str(e))
         try: self.assertIn(createProductsManModifySuccessText, driver.find_element_by_id("detailManufacturer").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
         driver.refresh()
-        try: self.assertNotIn(createProductsManModifyText, driver.find_element_by_id("detailManufacturer").text)
-        except AssertionError as e: self.verificationErrors.append(str(e))
+#        try: self.assertNotIn(createProductsManModifyText, driver.find_element_by_id("detailManufacturer").text)
+#        except AssertionError as e: self.verificationErrors.append(str(e))
         try: self.assertIn(createProductsManModifySuccessText, driver.find_element_by_id("detailManufacturer").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
         Select(driver.find_element_by_id("detailManufacturer")).select_by_visible_text(createProductsManModifySuccessText)
@@ -58,12 +58,12 @@ class EnCreateProductsFunctionCreateManufacture(unittest.TestCase):
         driver.find_element_by_id("manufacturerName").clear()
         driver.find_element_by_id("manufacturerName").send_keys(createProductsManModifyText)
         driver.find_element_by_id("saveManufacturer").click()
-#        for i in range(60):
-#            try:
-#                if createProductsManModifyText == driver.find_element_by_css_selector("option[value=\""+createProductsManufactureId+"\"]").text: break
-#            except: pass
-#            time.sleep(1)
-#        else: self.fail("time out")
+        for i in range(60):
+            try:
+                if "--New Manufacturer--" == driver.find_element_by_id("anyManufacturer").text: break
+            except: pass
+            time.sleep(1)
+        else: self.fail("time out")
         driver.refresh()
         try: self.assertIn(createProductsManModifyText, driver.find_element_by_id("detailManufacturer").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
