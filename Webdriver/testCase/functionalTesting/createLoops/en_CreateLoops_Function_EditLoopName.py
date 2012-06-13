@@ -14,7 +14,7 @@ class EnCreateLoopsFunctionEditLoopNameAndCreateLoops(unittest.TestCase):
 		driver.get(self.base_url + "/ev/createloops")
 		try: self.assertNotIn(NewAttractLoop, driver.find_element_by_class_name("attractLoopColumn").text)
 		except AssertionError as e: self.verificationErrors.append(str(e))
-		try: self.assertIn(EditNameOfLoop, driver.find_element_by_class_name("attractLoopColumn").text)
+		try: self.assertIn(editNameOfLoop, driver.find_element_by_class_name("attractLoopColumn").text)
 		except AssertionError as e: self.verificationErrors.append(str(e))
 		try: self.assertNotIn(EditLoopNameSuccess, driver.find_element_by_class_name("attractLoopColumn").text)
 		except AssertionError as e: self.verificationErrors.append(str(e))
@@ -25,13 +25,13 @@ class EnCreateLoopsFunctionEditLoopNameAndCreateLoops(unittest.TestCase):
 		driver.find_element_by_id("attractLoopPopupOK").click()
 
 		#Edit Loop Name:
-		driver.find_element_by_xpath("//li[@id='aLCol_attractLoop"+EditAttractLoopID+"']/div/span[3]").click()
+		driver.find_element_by_xpath("//li[@id='aLCol_attractLoop"+editNameOfLoopIdValue+"']/div/span[3]").click()
 		driver.find_element_by_id("loopName").clear()
 		driver.find_element_by_id("loopName").send_keys(EditLoopNameSuccess)
 		driver.find_element_by_id("attractLoopPopupOK").click()
 		for i in range(60):
 			try:
-				if EditLoopNameSuccess == driver.find_element_by_xpath("//li[@id='aLCol_attractLoop"+EditAttractLoopID+"']/div/div").text: break
+				if EditLoopNameSuccess == driver.find_element_by_xpath("//li[@id='aLCol_attractLoop"+editNameOfLoopIdValue+"']/div/div").text: break
 			except: pass
 			time.sleep(1)
 		else: self.fail("time out")
@@ -41,7 +41,7 @@ class EnCreateLoopsFunctionEditLoopNameAndCreateLoops(unittest.TestCase):
 		except AssertionError as e: self.verificationErrors.append(str(e))
 
 		#Verify Edit Loop Name:
-		try: self.assertNotIn(EditNameOfLoop, driver.find_element_by_class_name("attractLoopColumn").text)
+		try: self.assertNotIn(editNameOfLoop, driver.find_element_by_class_name("attractLoopColumn").text)
 		except AssertionError as e: self.verificationErrors.append(str(e))
 		try: self.assertIn(EditLoopNameSuccess, driver.find_element_by_class_name("attractLoopColumn").text)
 		except AssertionError as e: self.verificationErrors.append(str(e))
@@ -50,24 +50,35 @@ class EnCreateLoopsFunctionEditLoopNameAndCreateLoops(unittest.TestCase):
 		try: self.assertIn(NewAttractLoop, driver.find_element_by_class_name("attractLoopColumn").text)
 		except AssertionError as e: self.verificationErrors.append(str(e))
 		#Verify Edit Loop Name:
-		try: self.assertNotIn(EditNameOfLoop, driver.find_element_by_class_name("attractLoopColumn").text)
+		try: self.assertNotIn(editNameOfLoop, driver.find_element_by_class_name("attractLoopColumn").text)
 		except AssertionError as e: self.verificationErrors.append(str(e))
 		try: self.assertIn(EditLoopNameSuccess, driver.find_element_by_class_name("attractLoopColumn").text)
 		except AssertionError as e: self.verificationErrors.append(str(e))
 		driver.refresh()
-		driver.find_element_by_xpath("//li[@id='aLCol_attractLoop"+EditAttractLoopID+"']/div/span[3]").click()
+		driver.find_element_by_xpath("//li[@id='aLCol_attractLoop"+editNameOfLoopIdValue+"']/div/span[3]").click()
 		driver.find_element_by_id("loopName").clear()
-		driver.find_element_by_id("loopName").send_keys(EditNameOfLoop)
+		driver.find_element_by_id("loopName").send_keys(editNameOfLoop)
 		driver.find_element_by_id("attractLoopPopupOK").click()
 		for i in range(60):
 			try:
-				if EditNameOfLoop == driver.find_element_by_xpath("//li[@id='aLCol_attractLoop"+EditAttractLoopID+"']/div/div").text: break
+				if editNameOfLoop == driver.find_element_by_xpath("//li[@id='aLCol_attractLoop"+editNameOfLoopIdValue+"']/div/div").text: break
 			except: pass
 			time.sleep(1)
 		else: self.fail("time out")
-        	try: self.assertIn(EditNameOfLoop, driver.find_element_by_class_name("attractLoopColumn").text)
+        	try: self.assertIn(editNameOfLoop, driver.find_element_by_class_name("attractLoopColumn").text)
 		except AssertionError as e: self.verificationErrors.append(str(e))
 
+                newLoopId = driver.find_element_by_xpath("//ul[@class='loopList genericBrowser']/li[5]").get_attribute("id")
+        #        print "editLoopScheduleId=\""+editLoopScheduleId+"\""
+                newLoopIdValue = re.sub("\D","",newLoopId)
+                print "newLoopIdIDValue=\""+newLoopIdValue+"\""
+                driver.refresh()
+
+                text_file = open(gb_Preprocess_ids_Prefix+"ids.py", "a")
+        #        ids =[]
+                text_file.write("newLoopIdIDValue=\""+newLoopIdValue+"\"\n")
+        #        text_file.write(("".join(ids))+"\n")
+                text_file.close()
 	def is_element_present(self, how, what):
 		try: self.driver.find_element(by=how, value=what)
 		except NoSuchElementException, e: return False

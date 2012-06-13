@@ -51,19 +51,19 @@ class createLoops(unittest.TestCase):
         driver.find_element_by_id("attractLoopPopupOK").click()
         driver.refresh()
 
-        assignLoopsId = driver.find_element_by_xpath("//ul[@class='loopList genericBrowser']/li[1]").get_attribute("id")
+        assignLoopsId = driver.find_element_by_xpath("//ul[@class='loopList genericBrowser']/li[2]").get_attribute("id")
 #        print "assignLoopsId=\""+assignLoopsId+"\""
         assignLoopsIdValue = re.sub("\D","",assignLoopsId)
         print "assignLoopsID=\""+assignLoopsIdValue+"\""
 
 
-        editLoopScheduleId = driver.find_element_by_xpath("//ul[@class='loopList genericBrowser']/li[2]").get_attribute("id")
+        editLoopScheduleId = driver.find_element_by_xpath("//ul[@class='loopList genericBrowser']/li[3]").get_attribute("id")
 #        print "editLoopScheduleId=\""+editLoopScheduleId+"\""
         editLoopScheduleIdValue = re.sub("\D","",editLoopScheduleId)
         print "EditLoopScheduleID=\""+editLoopScheduleIdValue+"\""
         driver.refresh()
 
-        editNameOfLoopId = driver.find_element_by_xpath("//ul[@class='loopList genericBrowser']/li[3]").get_attribute("id")
+        editNameOfLoopId = driver.find_element_by_xpath("//ul[@class='loopList genericBrowser']/li[4]").get_attribute("id")
 #        print "editNameOfLoopId=\""+editNameOfLoopId+"\""
         editNameOfLoopIdValue = re.sub("\D","",editNameOfLoopId)
         print "EditAttractLoopID=\""+editNameOfLoopIdValue+"\""

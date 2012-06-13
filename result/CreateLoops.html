@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Test Result</title>
+    <title>CreateLoops</title>
     <meta name="generator" content="HTMLTestRunner 0.8.2"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     
@@ -188,10 +188,10 @@ function showOutput(id, name) {
 --></script>
 
 <div class='heading'>
-<h1>Test Result</h1>
-<p class='attribute'><strong>Start Time:</strong> 2012-05-31 14:07:23</p>
-<p class='attribute'><strong>Duration:</strong> 0:02:02.638772</p>
-<p class='attribute'><strong>Status:</strong> Pass 7 Error 1</p>
+<h1>CreateLoops</h1>
+<p class='attribute'><strong>Start Time:</strong> 2012-06-13 13:42:59</p>
+<p class='attribute'><strong>Duration:</strong> 0:02:38.430535</p>
+<p class='attribute'><strong>Status:</strong> Pass 7 Error 2</p>
 
 <p class='description'>Create Loops</p>
 </div>
@@ -251,11 +251,11 @@ function showOutput(id, name) {
 
 <tr class='errorClass'>
     <td>EnCreateLoopsFunctionDragAndDrop</td>
-    <td>1</td>
+    <td>2</td>
     <td>0</td>
     <td>0</td>
-    <td>1</td>
-    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+    <td>2</td>
+    <td><a href="javascript:showClassDetail('c3',2)">Detail</a></td>
 </tr>
 
 <tr id='ft3.1' class='none'>
@@ -274,10 +274,10 @@ function showOutput(id, name) {
         <pre>
         
 ft3.1: Traceback (most recent call last):
-  File "/home/yueran/zignage/test/EV-SeleniumTest/Webdriver/testSuites/en_CreateLoops.py", line 37, in test_en_create_loops_function_drag_and_drop
+  File "/home/yueran/zignage/test/EV-SeleniumTest/Webdriver/testSuites/en_CreateLoops.py", line 38, in test_en_create_loops_function_drag_and_drop
     TestCase4.EnCreateLoopsFunctionDragAndDrop.test_en_create_loops_function_drag_and_drop(self)
-  File "/home/yueran/zignage/test/EV-SeleniumTest/Webdriver/testCase/functionalTesting/createLoops/en_CreateLoops_Function_DragAndDrop.py", line 25, in test_en_create_loops_function_drag_and_drop
-    driver.find_element_by_xpath("//li[@id='aLCol_attractLoop"+assignLoopsID+"']/div/span").click()
+  File "/home/yueran/zignage/test/EV-SeleniumTest/Webdriver/testCase/functionalTesting/createLoops/en_CreateLoops_Function_DragAndDrop.py", line 28, in test_en_create_loops_function_drag_and_drop
+    driver.find_element_by_css_selector("span.unassign").click()
   File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webelement.py", line 51, in click
     self._execute(Command.CLICK_ELEMENT)
   File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/webelement.py", line 204, in _execute
@@ -287,6 +287,41 @@ ft3.1: Traceback (most recent call last):
   File "/usr/local/lib/python2.7/dist-packages/selenium/webdriver/remote/errorhandler.py", line 147, in check_response
     raise exception_class(message, screen, stacktrace)
 ElementNotVisibleException: Message: u'Element is not currently visible and so may not be interacted with' 
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft3.2' class='none'>
+    <td class='errorCase'><div class='testcase'>test_en_create_loops_function_drag_and_drop</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.2')" >
+        error</a>
+
+    <div id='div_ft3.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft3.2: Traceback (most recent call last):
+  File "/home/yueran/zignage/test/EV-SeleniumTest/Webdriver/testCase/functionalTesting/createLoops/en_CreateLoops_Function_DragAndDrop.py", line 38, in tearDown
+    self.assertEqual([], self.verificationErrors)
+AssertionError: Lists differ: [] != ['False is not true']
+
+Second list contains 1 additional elements.
+First extra element 0:
+False is not true
+
+- []
++ ['False is not true']
 
 
         </pre>
@@ -307,7 +342,27 @@ ElementNotVisibleException: Message: u'Element is not currently visible and so m
 
 <tr id='pt4.1' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_en_create_loops_function_edit_loop_name_and_create_loops</div></td>
-    <td colspan='5' align='center'>pass</td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+        pass</a>
+
+    <div id='div_pt4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.1: newLoopIdIDValue="709"
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
 </tr>
 
 <tr class='passClass'>
@@ -368,10 +423,10 @@ ElementNotVisibleException: Message: u'Element is not currently visible and so m
 
 <tr id='total_row'>
     <td>Total</td>
-    <td>8</td>
+    <td>9</td>
     <td>7</td>
     <td>0</td>
-    <td>1</td>
+    <td>2</td>
     <td>&nbsp;</td>
 </tr>
 </table>

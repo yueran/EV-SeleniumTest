@@ -86,7 +86,7 @@ if __name__ == "__main__":
 
     runner = HTMLTestRunner(
             stream=fp,
-            title='Test Result',
+            title='CreateLoops',
             description='Create Loops'
             )
  #   runner = unittest.TextTestRunner()

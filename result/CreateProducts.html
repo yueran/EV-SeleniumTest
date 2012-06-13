@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>Create Products</h1>
-<p class='attribute'><strong>Start Time:</strong> 2012-05-30 12:57:37</p>
-<p class='attribute'><strong>Duration:</strong> 0:02:07.615650</p>
-<p class='attribute'><strong>Status:</strong> Pass 6 Error 2</p>
+<p class='attribute'><strong>Start Time:</strong> 2012-06-13 14:01:58</p>
+<p class='attribute'><strong>Duration:</strong> 0:03:25.226152</p>
+<p class='attribute'><strong>Status:</strong> Pass 3 Failure 1 Error 5</p>
 
 <p class='description'>Test Report</p>
 </div>
@@ -249,18 +249,48 @@ function showOutput(id, name) {
     <td colspan='5' align='center'>pass</td>
 </tr>
 
-<tr class='passClass'>
+<tr class='errorClass'>
     <td>EnCreateProductsFunctionCreateManufacture</td>
     <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
 </tr>
 
-<tr id='pt3.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_en_create_products_function_create_manufacture</div></td>
-    <td colspan='5' align='center'>pass</td>
+<tr id='ft3.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_en_create_products_function_create_manufacture</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.1')" >
+        error</a>
+
+    <div id='div_ft3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft3.1: Traceback (most recent call last):
+  File "/home/yueran/zignage/test/EV-SeleniumTest/Webdriver/testCase/functionalTesting/CreateProducts/en_CreateProducts_Function_CreateManufacture.py", line 86, in tearDown
+    self.assertEqual([], self.verificationErrors)
+AssertionError: Lists differ: [] != ["'MCreateSuccess' unexpectedl...
+
+Second list contains 1 additional elements.
+First extra element 0:
+'MCreateSuccess' unexpectedly found in u'--New Manufacturer--\nBlackberry\nLG\nManTest\nMCreateSuccess\nNokia\nSamsung\nSony Ericsson\ntest'
+
+- []
++ ["'MCreateSuccess' unexpectedly found in u'--New Manufacturer--\\nBlackberry\\nLG\\nManTest\\nMCreateSuccess\\nNokia\\nSamsung\\nSony Ericsson\\ntest'"]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
 </tr>
 
 <tr class='passClass'>
@@ -277,32 +307,123 @@ function showOutput(id, name) {
     <td colspan='5' align='center'>pass</td>
 </tr>
 
-<tr class='passClass'>
+<tr class='errorClass'>
     <td>EnCreateProductsFunctionMediaSearch</td>
     <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
 </tr>
 
-<tr id='pt5.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_en_create_products_function_media_search</div></td>
-    <td colspan='5' align='center'>pass</td>
+<tr id='ft5.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_en_create_products_function_media_search</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.1')" >
+        error</a>
+
+    <div id='div_ft5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft5.1: Traceback (most recent call last):
+  File "/home/yueran/zignage/test/EV-SeleniumTest/Webdriver/testCase/functionalTesting/CreateProducts/en_CreateProducts_Function_MediaSearch.py", line 44, in tearDown
+    self.assertEqual([], self.verificationErrors)
+AssertionError: Lists differ: [] != ["'iceweasel.png' not found in...
+
+Second list contains 1 additional elements.
+First extra element 0:
+'iceweasel.png' not found in u'Media\nUpload New Media\n1ModifyMediaGroup\n2TestMediaGroup\nAVI_to_MPEG-4.avi\ndefaultSlideShowImage.jpg\ndefaultBackgroundImage.jpg\ndefaultSecondaryImage.jpg\nybuy attract loop.mov\ndefaultLogo.png\nTux.png'
+
+- []
++ ["'iceweasel.png' not found in u'Media\\nUpload New Media\\n1ModifyMediaGroup\\n2TestMediaGroup\\nAVI_to_MPEG-4.avi\\ndefaultSlideShowImage.jpg\\ndefaultBackgroundImage.jpg\\ndefaultSecondaryImage.jpg\\nybuy attract loop.mov\\ndefaultLogo.png\\nTux.png'"]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
 </tr>
 
-<tr class='passClass'>
+<tr class='errorClass'>
     <td>EnCreateProductsFunctionProductSearch</td>
+    <td>2</td>
+    <td>0</td>
     <td>1</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
+    <td><a href="javascript:showClassDetail('c6',2)">Detail</a></td>
 </tr>
 
-<tr id='pt6.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_en_create_products_function_product_search</div></td>
-    <td colspan='5' align='center'>pass</td>
+<tr id='ft6.1' class='none'>
+    <td class='failCase'><div class='testcase'>test_en_create_products_function_product_search</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.1')" >
+        fail</a>
+
+    <div id='div_ft6.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.1: Traceback (most recent call last):
+  File "/home/yueran/zignage/test/EV-SeleniumTest/Webdriver/testSuites/en_CreateProducts.py", line 51, in test_en_create_products_function_product_search
+    TestCase6.EnCreateProductsFunctionProductSearch.test_en_create_products_function_product_search(self)
+  File "/home/yueran/zignage/test/EV-SeleniumTest/Webdriver/testCase/functionalTesting/CreateProducts/en_CreateProducts_Function_ProductSearch.py", line 47, in test_en_create_products_function_product_search
+    else: self.fail("time out")
+AssertionError: time out
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft6.2' class='none'>
+    <td class='errorCase'><div class='testcase'>test_en_create_products_function_product_search</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.2')" >
+        error</a>
+
+    <div id='div_ft6.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.2: Traceback (most recent call last):
+  File "/home/yueran/zignage/test/EV-SeleniumTest/Webdriver/testCase/functionalTesting/CreateProducts/en_CreateProducts_Function_ProductSearch.py", line 101, in tearDown
+    self.assertEqual([], self.verificationErrors)
+AssertionError: Lists differ: [] != ["u'abcd' not found in u'1test...
+
+Second list contains 2 additional elements.
+First extra element 0:
+u'abcd' not found in u'1testProduct1\n2testProduct2\ntest product 0 Aifon\ntestMod\n3testzAcc1\n4testzAcc2\ntest\nztest'
+
+- []
++ ["u'abcd' not found in u'1testProduct1\\n2testProduct2\\ntest product 0 Aifon\\ntestMod\\n3testzAcc1\\n4testzAcc2\\ntest\\nztest'",
++  "u'xyz' not found in u'1testProduct1\\n2testProduct2\\ntest product 0 Aifon\\ntestMod\\n3testzAcc1\\n4testzAcc2\\ntest\\nztest'"]
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
 </tr>
 
 <tr class='errorClass'>
@@ -330,9 +451,9 @@ function showOutput(id, name) {
         <pre>
         
 ft7.1: Traceback (most recent call last):
-  File "/home/yueran/zignage/test/EV-SeleniumTest/Webdriver/testSuites/en_CreateProducts.py", line 55, in test_en_create_products_function_upload_media
+  File "/home/yueran/zignage/test/EV-SeleniumTest/Webdriver/testSuites/en_CreateProducts.py", line 56, in test_en_create_products_function_upload_media
     TestCase7.EnCreateProductsFunctionUploadMedia.test_en_create_products_function_upload_media(self)
-  File "/home/yueran/zignage/test/EV-SeleniumTest/Webdriver/testCase/functionalTesting/CreateProducts/en_CreateProducts_Function_UploadMedia.py", line 12, in test_en_create_products_function_upload_media
+  File "/home/yueran/zignage/test/EV-SeleniumTest/Webdriver/testCase/functionalTesting/CreateProducts/en_CreateProducts_Function_UploadMedia.py", line 14, in test_en_create_products_function_upload_media
     driver = self.driver
 AttributeError: 'EnCreateProductsFunctionUploadMedia' object has no attribute 'driver'
 
@@ -360,7 +481,7 @@ AttributeError: 'EnCreateProductsFunctionUploadMedia' object has no attribute 'd
         <pre>
         
 ft7.2: Traceback (most recent call last):
-  File "/home/yueran/zignage/test/EV-SeleniumTest/Webdriver/testCase/functionalTesting/CreateProducts/en_CreateProducts_Function_UploadMedia.py", line 22, in tearDown
+  File "/home/yueran/zignage/test/EV-SeleniumTest/Webdriver/testCase/functionalTesting/CreateProducts/en_CreateProducts_Function_UploadMedia.py", line 24, in tearDown
     self.driver.quit()
 AttributeError: 'EnCreateProductsFunctionUploadMedia' object has no attribute 'driver'
 
@@ -374,10 +495,10 @@ AttributeError: 'EnCreateProductsFunctionUploadMedia' object has no attribute 'd
 
 <tr id='total_row'>
     <td>Total</td>
-    <td>8</td>
-    <td>6</td>
-    <td>0</td>
-    <td>2</td>
+    <td>9</td>
+    <td>3</td>
+    <td>1</td>
+    <td>5</td>
     <td>&nbsp;</td>
 </tr>
 </table>

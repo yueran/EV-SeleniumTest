@@ -41,7 +41,7 @@ assignStore = u"5assignStore"
 classifyProductsCategory = u"test"
 classifyProductsKeyword = u"keywordOptions"
 classfiyProductsSubCategory = u"subCategoryOptions"
-
+classifyProductsNewCategory = u"ztest"
 #********************************************************************
 testProduct1 = u"1testProduct1"
 testProduct2 = u"2testProduct2"
@@ -54,6 +54,6 @@ editTmpSchedule = u"2editTmpSchedule"
 modifyTmp = u"3modifyTmp"
 
 #******************************************************
-assignLoops = u"1assignLoops"
-editLoopSchedule = u"2editLoopSchedule"
-editNameOfLoop = u"3editNameOfLoop"
+assignLoops = u"z1assignLoops"
+editLoopSchedule = u"z2editLoopSchedule"
+editNameOfLoop = u"z3editNameOfLoop"

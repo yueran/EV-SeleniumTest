@@ -14,7 +14,7 @@ class EnCreateLoopsFunctionPreview(unittest.TestCase):
 		driver = self.driver
 		gb_login(self)
 		driver.get(self.base_url + "/ev/createloops")
-		try: self.assertIn(EditNameOfLoop, driver.find_element_by_class_name("attractLoopColumn").text)
+		try: self.assertIn(editNameOfLoop, driver.find_element_by_class_name("attractLoopColumn").text)
 		except AssertionError as e: self.verificationErrors.append(str(e))
 		try: self.assertTrue(self.is_element_present(By.CSS_SELECTOR, "span.play"))
 		except AssertionError as e: self.verificationErrors.append(str(e))

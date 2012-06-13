@@ -42,6 +42,12 @@ class createCSCKeywords(unittest.TestCase):
         driver.find_element_by_css_selector("input.inputInfo").clear()
         driver.find_element_by_css_selector("input.inputInfo").send_keys(classifyProductsCategory)
         driver.find_element_by_id("okCategory").click()
+
+        driver.find_element_by_css_selector("span.add").click()
+        driver.find_element_by_css_selector("input.inputInfo").clear()
+        driver.find_element_by_css_selector("input.inputInfo").send_keys(classifyProductsNewCategory)
+        driver.find_element_by_id("okCategory").click()
+
         driver.refresh()
         driver.find_element_by_css_selector("div.itemContent.subCategoryBg > span.add").click()
         driver.find_element_by_css_selector("input.inputInfo").clear()
@@ -61,7 +67,7 @@ class createCSCKeywords(unittest.TestCase):
         driver.find_element_by_id("okKeyword").click()
         
 #Verify if the Category, Subcategory and keyword successfully created by checking the name.
-        self.driver.implicitly_wait(30)
+#        self.driver.implicitly_wait(30)
         driver.refresh()
         classifyProductsCategoryId = driver.find_element_by_xpath("//ul[@id='categoryBrowser']/li[1]").get_attribute("id")
 #        print "classifyProductsCategoryId="+classifyProductsCategoryId
@@ -93,11 +99,17 @@ class createCSCKeywords(unittest.TestCase):
         classifyProductsKeywordIdValue = re.sub("\D","",classifyProductsKeywordId)
         print "classifyProductsKeywordIdValue=\""+classifyProductsKeywordIdValue+"\""
 
+        classifyProductsNewCategoryId = driver.find_element_by_xpath("//ul[@id='categoryBrowser']/li[2]").get_attribute("id")
+#        print "classifyProductsKeywordId="+classifyProductsKeywordId
+        classifyProductsNewCategoryIdValue = re.sub("\D","",classifyProductsNewCategoryId)
+        print "classifyProductsNewCategoryIdValue=\""+classifyProductsNewCategoryIdValue+"\""
+
         text_file = open(gb_Preprocess_ids_Prefix+"ids.py", "a")
 #        ids =[]
         text_file.write("classifyProductsCategoryId=\""+classifyProductsCategoryIdValue+"\"\n")
         text_file.write("classfiyProductsSubCategoryId=\""+classifyProductsSubCategoryIdValue+"\"\n")
         text_file.write("classifyProductsKeywordId=\""+classifyProductsKeywordIdValue+"\"\n")
+        text_file.write("classifyProductsNewCategoryIdValue=\""+classifyProductsNewCategoryIdValue+"\"\n")
 #        text_file.write(("".join(ids))+"\n")
         text_file.close()
     def is_element_present(self, how, what):

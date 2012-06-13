@@ -18,13 +18,13 @@ class EnCreateLoopsFunctionDragAndDrop(unittest.TestCase):
 		# ERROR: Caught exception [ERROR: Unsupported command [isTextPresent]]
 		try: self.assertTrue(self.is_element_present(By.XPATH, "//ul[@class='videoList genericBrowser'/li[1]/div/div"))
 		except AssertionError as e: self.verificationErrors.append(str(e))
-		try: self.assertTrue(self.is_element_present(By.XPATH, "//li[@id='aLCol_attractLoop"+assignLoopsID+"']/div/div"))
+		try: self.assertTrue(self.is_element_present(By.XPATH, "//li[@id='aLCol_attractLoop"+assignLoopsIdValue+"']/div/div"))
 		except AssertionError as e: self.verificationErrors.append(str(e))
 		# ERROR: Caught exception [ERROR: Unsupported command [dragAndDropToObject]]
-		try: self.assertEqual("", driver.find_element_by_xpath("//li[@id='aLCol_attractLoop"+assignLoopsID+"']/div/span").text)
+		try: self.assertEqual("", driver.find_element_by_xpath("//li[@id='aLCol_attractLoop"+assignLoopsIdValue+"']/div/span").text)
 		except AssertionError as e: self.verificationErrors.append(str(e))
 		driver.refresh()
-		driver.find_element_by_xpath("//li[@id='aLCol_attractLoop"+assignLoopsID+"']/div/span").click()
+		driver.find_element_by_xpath("//li[@id='aLCol_attractLoop"+assignLoopsIdValue+"']/div/span").click()
 		driver.find_element_by_css_selector("span.unassign").click()
 		# ERROR: Caught exception [ERROR: Unsupported command [isTextPresent]]
     
