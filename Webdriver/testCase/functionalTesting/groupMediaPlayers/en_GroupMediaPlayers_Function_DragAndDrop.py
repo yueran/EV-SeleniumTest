@@ -18,7 +18,7 @@ class EnGroupMediaPlayersFunctionDragAndDrop(unittest.TestCase):
         gb_login(self)
         driver.get(self.base_url + "/ev/groupdevices")
         Select(driver.find_element_by_id("filterStoresBy")).select_by_visible_text("")
-        try: self.assertTrue(self.is_element_present(By.XPATH, "//li[@id='deviceCol_device"+groupMediaPlayersDeviceStore15ID+"']/div/div"))
+        try: self.assertTrue(self.is_element_present(By.XPATH, "//li[@id='deviceCol_device"+Device1ID+"']/div/div"))
         except AssertionError as e: self.verificationErrors.append(str(e))
         driver.find_element_by_xpath("//li[@id='hierarchy_store"+assignStoreIdValue+"']/div/span").click()
 #        try: self.assertTrue(self.is_element_present(By.CSS_SELECTOR, "#hierarchy_store200 > div.itemContent.storeBg > div.blockText"))
