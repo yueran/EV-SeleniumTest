@@ -13,22 +13,22 @@ class EnScheduleLoopsFunctionEditLoopName(unittest.TestCase):
         driver = self.driver
         gb_login(self)
         driver.get(self.base_url + "/ev/scheduleloop")
-        try: self.assertIn(EditNameOfLoop, driver.find_element_by_class_name("scheduleColumn").text)
+        try: self.assertIn(editNameOfLoop, driver.find_element_by_class_name("scheduleColumn").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
         try: self.assertNotIn(EditLoopNameSuccess, driver.find_element_by_class_name("scheduleColumn").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
 
-        driver.find_element_by_css_selector("#scheduleCol_schedule"+EditAttractLoopID+" > div.itemContent.attractLoopBg > span.options.scheduleLoopOptions").click()
+        driver.find_element_by_css_selector("#scheduleCol_schedule"+editNameOfLoopIdValue+" > div.itemContent.attractLoopBg > span.options.scheduleLoopOptions").click()
         driver.find_element_by_id("scheduleName").clear()
         driver.find_element_by_id("scheduleName").send_keys(EditLoopNameSuccess)
         driver.find_element_by_id("scheduleOptionsPopup_OK").click()
         for i in range(60):
             try:
-                if EditLoopNameSuccess == driver.find_element_by_css_selector("#scheduleCol_schedule"+EditAttractLoopID+" > div.itemContent.attractLoopBg > div.blockText").text: break
+                if EditLoopNameSuccess == driver.find_element_by_css_selector("#scheduleCol_schedule"+editNameOfLoopIdValue+" > div.itemContent.attractLoopBg > div.blockText").text: break
             except: pass
             time.sleep(1)
         else: self.fail("time out")
-        try: self.assertNotIn(EditNameOfLoop, driver.find_element_by_class_name("scheduleColumn").text)
+        try: self.assertNotIn(editNameOfLoop, driver.find_element_by_class_name("scheduleColumn").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
         try: self.assertIn(EditLoopNameSuccess, driver.find_element_by_class_name("scheduleColumn").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
@@ -36,25 +36,25 @@ class EnScheduleLoopsFunctionEditLoopName(unittest.TestCase):
         driver.refresh()
         for i in range(60):
             try:
-                if EditLoopNameSuccess == driver.find_element_by_css_selector("#scheduleCol_schedule"+EditAttractLoopID+" > div.itemContent.attractLoopBg > div.blockText").text: break
+                if EditLoopNameSuccess == driver.find_element_by_css_selector("#scheduleCol_schedule"+editNameOfLoopIdValue+" > div.itemContent.attractLoopBg > div.blockText").text: break
             except: pass
             time.sleep(1)
         else: self.fail("time out")
-        try: self.assertNotIn(EditNameOfLoop, driver.find_element_by_class_name("scheduleColumn").text)
+        try: self.assertNotIn(editNameOfLoop, driver.find_element_by_class_name("scheduleColumn").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
         try: self.assertIn(EditLoopNameSuccess, driver.find_element_by_class_name("scheduleColumn").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
-        driver.find_element_by_css_selector("#scheduleCol_schedule"+EditAttractLoopID+" > div.itemContent.attractLoopBg > span.options.scheduleLoopOptions").click()
+        driver.find_element_by_css_selector("#scheduleCol_schedule"+editNameOfLoopIdValue+" > div.itemContent.attractLoopBg > span.options.scheduleLoopOptions").click()
         driver.find_element_by_id("scheduleName").clear()
-        driver.find_element_by_id("scheduleName").send_keys("EditNameOfLoop")
+        driver.find_element_by_id("scheduleName").send_keys(editNameOfLoop)
         driver.find_element_by_id("scheduleOptionsPopup_OK").click()
         for i in range(60):
             try:
-                if EditNameOfLoop == driver.find_element_by_css_selector("#scheduleCol_schedule"+EditAttractLoopID+" > div.itemContent.attractLoopBg > div.blockText").text: break
+                if editNameOfLoop == driver.find_element_by_css_selector("#scheduleCol_schedule"+editNameOfLoopIdValue+" > div.itemContent.attractLoopBg > div.blockText").text: break
             except: pass
             time.sleep(1)
         else: self.fail("time out")
-        try: self.assertIn(EditNameOfLoop, driver.find_element_by_class_name("scheduleColumn").text)
+        try: self.assertIn(editNameOfLoop, driver.find_element_by_class_name("scheduleColumn").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
         try: self.assertNotIn(EditLoopNameSuccess, driver.find_element_by_class_name("scheduleColumn").text)
         except AssertionError as e: self.verificationErrors.append(str(e))

@@ -18,88 +18,88 @@ class EnScheduleLoopsFunctionEditLoopSchedule2(unittest.TestCase):
         driver = self.driver
         gb_login(self)
         driver.get(self.base_url + "/ev/scheduleloop")
-        try: self.assertIn(EditLoopSchedule, driver.find_element_by_class_name("scheduleColumn").text)
+        try: self.assertIn(editLoopSchedule, driver.find_element_by_class_name("scheduleColumn").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertTrue(self.is_element_present(By.CSS_SELECTOR,"#scheduleCol_schedule"+EditLoopScheduleID+"> div.itemContent.attractLoopBg > span.fold"))
+        try: self.assertTrue(self.is_element_present(By.CSS_SELECTOR,"#scheduleCol_schedule"+editLoopScheduleIdValue+"> div.itemContent.attractLoopBg > span.fold"))
         except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertTrue(self.is_element_present(By.CSS_SELECTOR,"#scheduleCol_schedule"+EditLoopScheduleID+" > div.itemContent.attractLoopBg > span.options.scheduleLoopOptions"))
+        try: self.assertTrue(self.is_element_present(By.CSS_SELECTOR,"#scheduleCol_schedule"+editLoopScheduleIdValue+" > div.itemContent.attractLoopBg > span.options.scheduleLoopOptions"))
         except AssertionError as e: self.verificationErrors.append(str(e))
-        driver.find_element_by_css_selector("#scheduleCol_schedule"+EditLoopScheduleID+" > div.itemContent.attractLoopBg > span.fold").click()
+        driver.find_element_by_css_selector("#scheduleCol_schedule"+editLoopScheduleIdValue+" > div.itemContent.attractLoopBg > span.fold").click()
 
         for i in range(60):
             try:
-                if u"Start Date:" == driver.find_element_by_css_selector("#scheduleCol_schedule"+EditLoopScheduleID+" > div.scheduleInfo > span.dateSettings > label").text: break
+                if u"Start Date:" == driver.find_element_by_css_selector("#scheduleCol_schedule"+editLoopScheduleIdValue+" > div.scheduleInfo > span.dateSettings > label").text: break
             except: pass
             time.sleep(1)
         else: self.fail("time out")
-        try: self.assertEqual(EditLoopScheduleStartDate2, driver.find_element_by_id("scheduleCol_schedule"+EditLoopScheduleID+"startDate").get_attribute("value"))
+        try: self.assertEqual(EditLoopScheduleStartDate2, driver.find_element_by_id("scheduleCol_schedule"+editLoopScheduleIdValue+"startDate").get_attribute("value"))
         except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertTrue(self.is_element_present(By.ID,"scheduleCol_schedule"+EditLoopScheduleID+"startDate"))
+        try: self.assertTrue(self.is_element_present(By.ID,"scheduleCol_schedule"+editLoopScheduleIdValue+"startDate"))
         except AssertionError as e: self.verificationErrors.append(str(e))
-        driver.find_element_by_id("scheduleCol_schedule"+EditLoopScheduleID+"startDate").click()
+        driver.find_element_by_id("scheduleCol_schedule"+editLoopScheduleIdValue+"startDate").click()
         driver.find_element_by_link_text(EditLoopScheduleStartDateKey1).click()
         for i in range(60):
             try:
-                if EditLoopScheduleStartDate1 == driver.find_element_by_id("scheduleCol_schedule"+EditLoopScheduleID+"startDate").get_attribute("value"): break
+                if EditLoopScheduleStartDate1 == driver.find_element_by_id("scheduleCol_schedule"+editLoopScheduleIdValue+"startDate").get_attribute("value"): break
             except: pass
             time.sleep(1)
         else: self.fail("time out")
-        try: self.assertEqual(EditLoopScheduleStartDate1, driver.find_element_by_id("scheduleCol_schedule"+EditLoopScheduleID+"startDate").get_attribute("value"))
+        try: self.assertEqual(EditLoopScheduleStartDate1, driver.find_element_by_id("scheduleCol_schedule"+editLoopScheduleIdValue+"startDate").get_attribute("value"))
         except AssertionError as e: self.verificationErrors.append(str(e))
 		
         driver.refresh()
-        driver.find_element_by_css_selector("#scheduleCol_schedule"+EditLoopScheduleID+" > div.itemContent.attractLoopBg > span.fold").click()
+        driver.find_element_by_css_selector("#scheduleCol_schedule"+editLoopScheduleIdValue+" > div.itemContent.attractLoopBg > span.fold").click()
         for i in range(60):
             try:
-                if u"Start Date:" == driver.find_element_by_css_selector("#scheduleCol_schedule"+EditLoopScheduleID+"> div.scheduleInfo > span.dateSettings > label").text: break
+                if u"Start Date:" == driver.find_element_by_css_selector("#scheduleCol_schedule"+editLoopScheduleIdValue+"> div.scheduleInfo > span.dateSettings > label").text: break
             except: pass
             time.sleep(1)
         else: self.fail("time out")
-        driver.find_element_by_id("scheduleCol_schedule"+EditLoopScheduleID+"startDate").click()
+        driver.find_element_by_id("scheduleCol_schedule"+editLoopScheduleIdValue+"startDate").click()
         driver.find_element_by_link_text(EditLoopScheduleStartDateKey2).click()
         for i in range(60):
             try:
-                if EditLoopScheduleStartDate2 == driver.find_element_by_id("scheduleCol_schedule"+EditLoopScheduleID+"startDate").get_attribute("value"): break
+                if EditLoopScheduleStartDate2 == driver.find_element_by_id("scheduleCol_schedule"+editLoopScheduleIdValue+"startDate").get_attribute("value"): break
             except: pass
             time.sleep(1)
         else: self.fail("time out")
-        try: self.assertEqual(EditLoopScheduleStartDate2, driver.find_element_by_id("scheduleCol_schedule"+EditLoopScheduleID+"startDate").get_attribute("value"))
+        try: self.assertEqual(EditLoopScheduleStartDate2, driver.find_element_by_id("scheduleCol_schedule"+editLoopScheduleIdValue+"startDate").get_attribute("value"))
         except AssertionError as e: self.verificationErrors.append(str(e))
 
-        try: self.assertEqual(EditLoopScheduleEndDate1, driver.find_element_by_id("scheduleCol_schedule"+EditLoopScheduleID+"endDate").get_attribute("value"))
+        try: self.assertEqual(EditLoopScheduleEndDate1, driver.find_element_by_id("scheduleCol_schedule"+editLoopScheduleIdValue+"endDate").get_attribute("value"))
         except AssertionError as e: self.verificationErrors.append(str(e))
 
-        try: self.assertTrue(self.is_element_present(By.ID,"scheduleCol_schedule"+EditLoopScheduleID+"endDate"))
+        try: self.assertTrue(self.is_element_present(By.ID,"scheduleCol_schedule"+editLoopScheduleIdValue+"endDate"))
         except AssertionError as e: self.verificationErrors.append(str(e))
-        driver.find_element_by_id("scheduleCol_schedule"+EditLoopScheduleID+"endDate").click()
+        driver.find_element_by_id("scheduleCol_schedule"+editLoopScheduleIdValue+"endDate").click()
         driver.find_element_by_link_text(EditLoopScheduleEndDateKey1).click()
         for i in range(60):
             try:
-                if u"Start Date:" == driver.find_element_by_css_selector("#scheduleCol_schedule"+EditLoopScheduleID+" > div.scheduleInfo > span.dateSettings > label").text: break
+                if u"Start Date:" == driver.find_element_by_css_selector("#scheduleCol_schedule"+editLoopScheduleIdValue+" > div.scheduleInfo > span.dateSettings > label").text: break
             except: pass
             time.sleep(1)
         else: self.fail("time out")
-        try: self.assertEqual(EditLoopScheduleEndDate2, driver.find_element_by_id("scheduleCol_schedule"+EditLoopScheduleID+"endDate").get_attribute("value"))
+        try: self.assertEqual(EditLoopScheduleEndDate2, driver.find_element_by_id("scheduleCol_schedule"+editLoopScheduleIdValue+"endDate").get_attribute("value"))
         except AssertionError as e: self.verificationErrors.append(str(e))
 
         driver.refresh()
-        driver.find_element_by_css_selector("#scheduleCol_schedule"+EditLoopScheduleID+" > div.itemContent.attractLoopBg > span.fold").click()
+        driver.find_element_by_css_selector("#scheduleCol_schedule"+editLoopScheduleIdValue+" > div.itemContent.attractLoopBg > span.fold").click()
         for i in range(60):
             try:
-                if u"Start Date:" == driver.find_element_by_css_selector("#scheduleCol_schedule"+EditLoopScheduleID+" > div.scheduleInfo > span.dateSettings > label").text: break
+                if u"Start Date:" == driver.find_element_by_css_selector("#scheduleCol_schedule"+editLoopScheduleIdValue+" > div.scheduleInfo > span.dateSettings > label").text: break
             except: pass
             time.sleep(1)
         else: self.fail("time out")
-        driver.find_element_by_id("scheduleCol_schedule"+EditLoopScheduleID+"endDate").click()
+        driver.find_element_by_id("scheduleCol_schedule"+editLoopScheduleIdValue+"endDate").click()
         driver.find_element_by_link_text(EditLoopScheduleEndDateKey2).click()
         for i in range(60):
             try:
-                if EditLoopScheduleEndDate1 == driver.find_element_by_id("scheduleCol_schedule"+EditLoopScheduleID+"endDate").get_attribute("value"): break
+                if EditLoopScheduleEndDate1 == driver.find_element_by_id("scheduleCol_schedule"+editLoopScheduleIdValue+"endDate").get_attribute("value"): break
             except: pass
             time.sleep(1)
         else: self.fail("time out")
 
-        try: self.assertEqual(EditLoopScheduleEndDate1, driver.find_element_by_id("scheduleCol_schedule"+EditLoopScheduleID+"endDate").get_attribute("value"))
+        try: self.assertEqual(EditLoopScheduleEndDate1, driver.find_element_by_id("scheduleCol_schedule"+editLoopScheduleIdValue+"endDate").get_attribute("value"))
         except AssertionError as e: self.verificationErrors.append(str(e))
 
 

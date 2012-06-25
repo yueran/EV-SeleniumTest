@@ -13,17 +13,17 @@ class EnScheduleLoopsFunctionEditLoopSchedule1(unittest.TestCase):
         driver = self.driver
         gb_login(self)
         driver.get(self.base_url + "/ev/scheduleloop")
-        try: self.assertIn(EditNameOfLoop, driver.find_element_by_class_name("scheduleColumn").text)
+        try: self.assertIn(editNameOfLoop, driver.find_element_by_class_name("scheduleColumn").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertTrue(self.is_element_present(By.CSS_SELECTOR,"#scheduleCol_schedule"+EditAttractLoopID+" > div.itemContent.attractLoopBg > span.fold"))
+        try: self.assertTrue(self.is_element_present(By.CSS_SELECTOR,"#scheduleCol_schedule"+editNameOfLoopIdValue+" > div.itemContent.attractLoopBg > span.fold"))
         except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertTrue(self.is_element_present(By.CSS_SELECTOR,"#scheduleCol_schedule"+EditAttractLoopID+"> div.itemContent.attractLoopBg > span.options.scheduleLoopOptions"))
+        try: self.assertTrue(self.is_element_present(By.CSS_SELECTOR,"#scheduleCol_schedule"+editNameOfLoopIdValue+"> div.itemContent.attractLoopBg > span.options.scheduleLoopOptions"))
         except AssertionError as e: self.verificationErrors.append(str(e))
-        driver.find_element_by_css_selector("#scheduleCol_schedule"+EditAttractLoopID+" > div.itemContent.attractLoopBg > span.fold").click()
+        driver.find_element_by_css_selector("#scheduleCol_schedule"+editNameOfLoopIdValue+" > div.itemContent.attractLoopBg > span.fold").click()
 
         for i in range(60):
             try:
-                if u"Start Date:" == driver.find_element_by_css_selector("#scheduleCol_schedule"+EditAttractLoopID+" > div.scheduleInfo > span.dateSettings > label").text: break
+                if u"Start Date:" == driver.find_element_by_css_selector("#scheduleCol_schedule"+editNameOfLoopIdValue+" > div.scheduleInfo > span.dateSettings > label").text: break
             except: pass
             time.sleep(1)
         else: self.fail("time out")
@@ -37,32 +37,32 @@ class EnScheduleLoopsFunctionEditLoopSchedule1(unittest.TestCase):
         try: self.assertIn(u"End Time:", driver.find_element_by_class_name("scheduleColumn").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
 
-        try: self.assertEqual("--/--/--", driver.find_element_by_id("scheduleCol_schedule"+EditAttractLoopID+"startDate").get_attribute("value"))
+        try: self.assertEqual("--/--/--", driver.find_element_by_id("scheduleCol_schedule"+editNameOfLoopIdValue+"startDate").get_attribute("value"))
         except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertEqual("--/--/--", driver.find_element_by_id("scheduleCol_schedule"+EditAttractLoopID+"endDate").get_attribute("value"))
+        try: self.assertEqual("--/--/--", driver.find_element_by_id("scheduleCol_schedule"+editNameOfLoopIdValue+"endDate").get_attribute("value"))
         except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertEqual("00:00:00", driver.find_element_by_id("scheduleCol_schedule"+EditAttractLoopID+"startTime").get_attribute("value"))
+        try: self.assertEqual("00:00:00", driver.find_element_by_id("scheduleCol_schedule"+editNameOfLoopIdValue+"startTime").get_attribute("value"))
         except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertEqual("00:00:00", driver.find_element_by_id("scheduleCol_schedule"+EditAttractLoopID+"endTime").get_attribute("value"))
+        try: self.assertEqual("00:00:00", driver.find_element_by_id("scheduleCol_schedule"+editNameOfLoopIdValue+"endTime").get_attribute("value"))
         except AssertionError as e: self.verificationErrors.append(str(e))
         try: self.assertTrue(self.is_element_present(By.CLASS_NAME,"timeEntry_control"))
         except AssertionError as e: self.verificationErrors.append(str(e))
 
-        try: self.assertTrue(self.is_element_present(By.ID,"schedule"+EditAttractLoopID+"allWeek"))
+        try: self.assertTrue(self.is_element_present(By.ID,"schedule"+editNameOfLoopIdValue+"allWeek"))
         except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertTrue(self.is_element_present(By.ID,"schedule"+EditAttractLoopID+"Sun"))
+        try: self.assertTrue(self.is_element_present(By.ID,"schedule"+editNameOfLoopIdValue+"Sun"))
         except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertTrue(self.is_element_present(By.ID,"schedule"+EditAttractLoopID+"Mon"))
+        try: self.assertTrue(self.is_element_present(By.ID,"schedule"+editNameOfLoopIdValue+"Mon"))
         except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertTrue(self.is_element_present(By.ID,"schedule"+EditAttractLoopID+"Tues"))
+        try: self.assertTrue(self.is_element_present(By.ID,"schedule"+editNameOfLoopIdValue+"Tues"))
         except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertTrue(self.is_element_present(By.ID,"schedule"+EditAttractLoopID+"Wed"))
+        try: self.assertTrue(self.is_element_present(By.ID,"schedule"+editNameOfLoopIdValue+"Wed"))
         except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertTrue(self.is_element_present(By.ID,"schedule"+EditAttractLoopID+"Thur"))
+        try: self.assertTrue(self.is_element_present(By.ID,"schedule"+editNameOfLoopIdValue+"Thur"))
         except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertTrue(self.is_element_present(By.ID,"schedule"+EditAttractLoopID+"Fri"))
+        try: self.assertTrue(self.is_element_present(By.ID,"schedule"+editNameOfLoopIdValue+"Fri"))
         except AssertionError as e: self.verificationErrors.append(str(e))
-        try: self.assertTrue(self.is_element_present(By.ID,"schedule"+EditAttractLoopID+"Sat"))
+        try: self.assertTrue(self.is_element_present(By.ID,"schedule"+editNameOfLoopIdValue+"Sat"))
         except AssertionError as e: self.verificationErrors.append(str(e))
 
         try: self.assertIn(u"All Week", driver.find_element_by_class_name("scheduleColumn").text)
@@ -82,10 +82,10 @@ class EnScheduleLoopsFunctionEditLoopSchedule1(unittest.TestCase):
         try: self.assertIn(u"Sat", driver.find_element_by_class_name("scheduleColumn").text)
         except AssertionError as e: self.verificationErrors.append(str(e))
 
-        try: self.assertTrue(self.is_element_present(By.XPATH,"//li[@id='scheduleCol_schedule"+EditAttractLoopID+"']/div[2]/span[2]/label[2]"))
+        try: self.assertTrue(self.is_element_present(By.XPATH,"//li[@id='scheduleCol_schedule"+editNameOfLoopIdValue+"']/div[2]/span[2]/label[2]"))
         except AssertionError as e: self.verificationErrors.append(str(e))
 
-        driver.find_element_by_xpath("//li[@id='scheduleCol_schedule"+EditAttractLoopID+"']/div/span").click()
+        driver.find_element_by_xpath("//li[@id='scheduleCol_schedule"+editNameOfLoopIdValue+"']/div/span").click()
     
     def is_element_present(self, how, what):
         try: self.driver.find_element(by=how, value=what)

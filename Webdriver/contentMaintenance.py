@@ -188,12 +188,12 @@ EditLoopNameSuccess =u"EditLoopNameSuccess"
 
 #********************************************
 #Schedule Loops:
-EditLoopSchedule=u"EditLoopSchedule"
+#EditLoopSchedule=u"EditLoopSchedule"
 #EditLoopScheduleID = "235"
-EditLoopScheduleStartDateKey1 = "10"
-EditLoopScheduleStartDateKey2 = "15"
-EditLoopScheduleStartDate1 = u"06/10/2012"
-EditLoopScheduleStartDate2 = u"06/15/2012"
+EditLoopScheduleStartDateKey1 = "25"
+EditLoopScheduleStartDateKey2 = "30"
+EditLoopScheduleStartDate1 = u"06/25/2012"
+EditLoopScheduleStartDate2 = u"06/30/2012"
 EditLoopScheduleEndDate1 = u"07/31/2012"
 EditLoopScheduleEndDateKey1 = "25"
 EditLoopScheduleEndDate2 = u"07/25/2012"
